@@ -40,22 +40,50 @@ As well as a way for me to remember what I have done while building this project
 
 ### Setting up Routing with React-Router (v6.4)
 
-https://reactrouter.com/en/main 
+[React-Router Documentation](https://reactrouter.com/en/main)
 
 1. Installilng the package
-        npm install react-router-dom localforage match-sorter sort-by
-        - fixing any conflicts from npm audit
+        -  `npm install react-router-dom localforage match-sorter sort-by`
+        -   fixing any conflicts from `npm` audit
 
-2.  Creating a Routes Folder and transfering the 'home' 
+2.  Creating a Routes Folder and transferring the 'home' 
 
-3.  In the App.jsx
-    - Importing { Routes, Route } from 'react-router-dom' and 
+3.  In the `App.jsx
+`    - Importing { Routes, Route } from 'react-router-dom' and 
     - Wrapping everything in Routes 
     - Creating a Route path to the Home page 
 
-4.  In the Main.jsx
-    - Importing { BrowserRouter } from 'react-router-dom'
-    - wrapping the "App" with "BrowserRouter"
+4.  In the `Main.jsx`
+    - Importing `{ BrowserRouter } from 'react-router-dom'`
+    - wrapping the "App" with `BrowserRouter`
 
+
+### Setting up FireBase 
+
+[FireBase](https://firebase.google.com/docs/web/setup#add-sdks-initialize)
+
+1.  Create a Firebase project and register your app
+
+2.  Installing the SDK and initialize Firebase
+        -   `npm install firebase`
+        -   Adding a `Utils` Folder with `FireBase folder` and a file called `firebase.utils`
+
+3.  Accessing Firebase in the app - in the `firebase.utils`
+        -   <code>import { initializeApp } from 'firebase/app';</code>
+        -   Setting up authentication
+            <code>Import {} from `firebase/auth`;</code>
+                -  `getAuth`
+                -  `signInWithRedirect,`
+                -  `signInWithPopup,`
+                -  `GoogleAuthProvider,`
+        -   Create firebaseConfig with info from FireBase web-app
+        -   InitializeApp with firebaseConfig
+        -   Enforce account selection 
+        -   In the Firebase console - enable the Google Sign in method
+
+4.  Setting up the `sign-in route` page                              
+        -   <code>import { signInWithGooglePopup, createUserProfileDocument } from 'firebase.utils';</code>
+        -   Creating Async Sign-in Function/Method to get access token
+    
 
 
