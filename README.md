@@ -14,9 +14,9 @@ Firstly I am using this project to further familiarize myself with React Library
 
 
 Further there are a few things I want to do to simulate some real world practice.
-<li> I want to initially build this with Vanilla JavaScript and later convert it into a TypeScript Project
-<li> I want to initially style this project with Styled Components and then later convert styling into a
-<li> I want to practice writing some tests for this project wiht Jest and Snapshot Testing
+<li> Initially build this with Vanilla JavaScript and later convert it into a TypeScript Project
+<li> Initially style this project with Styled Components and then later convert to JS library
+<li> I want to practice writing some tests for this project with Jest and Snapshot Testing
 
 
 
