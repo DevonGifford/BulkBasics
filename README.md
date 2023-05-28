@@ -101,12 +101,12 @@ As well as a way for me to remember what I have done while building this project
 Obviously we are just using FireBase for authentication.  To be able to store the users, I will need a database.
 Enter Cloud FireStore.
 
-1.  Created a production FireStore database in the web-console and amended the rules - based in EU
+1.  ##### Created a production FireStore database in the web-console and amended the rules - based in EU
 
-2.  Imported the necessary methods into Firebase utils (`{ getFirestore,  doc, getDoc,  setDoc }`)
+2.  ##### Imported the necessary methods into Firebase utils (`{ getFirestore,  doc, getDoc,  setDoc }`)
 
-3.  Created a method to store users data from authentication
-        - used an if statement with try block, so as if user does not exist do 'x' or else return user.
+3.  ##### Created a method to store users data from authentication
+        -   used an if statement with try block, so as if user does not exist do 'x' or else return user.
         - used a catch block , so as if an error occurs console.log the error.
         - logging date data for creation of new users (new Data()).
 
