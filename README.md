@@ -26,7 +26,7 @@ Further there are a few things I want to do to simulate some real world practice
 This is supposed to be a sort of "Code with me - Diary".
 As well as a way for me to remember what I have done while building this project. 
 
-### Scaffolding the Vite Project
+### Scaffolding the Vite/React Project
 <hr>
 
 [Vite doc's](https://vitejs.dev/guide/)
@@ -133,7 +133,6 @@ Enter Cloud FireStore.
 ### Setting up email & password - sign-up & sign-in
 
 1.  ##### Adding a new provider in FireStore 
-        via web console
 
 2.  ##### Creating new sign-up component 
 
@@ -144,3 +143,66 @@ Enter Cloud FireStore.
 4.  ##### Refactoring Form-inputs into seperate component
 
 5.  ##### Renaming Sign-in to Authentication 
+
+
+
+### Adding Context - using react-context
+
+The users profile will be present in many components throughout the app
+(Such as a Signing-in, profile management, shopping cart etc.)
+Will require having to have access to the 'user' context through out the app
+
+1.  ##### Creating a Context Folder
+    -  Created a user.context.jsx file, using; 
+        -  useState  
+        -  createContext
+
+    -  Created UserContext to store the users data (& null as defaults),
+       as well as export into components.
+
+    -  Create `userProvider` to pass this into/wrap the entire app. 
+    -  Obviously wrapped the app inside <userProvider> in Main.jsx
+    
+2. ##### Giving Sign-in Form access to the context
+    -  When 'user' signs in, store the 'user' into the context
+    -  Added `useContext` &  imported the `context` object
+    -  Added the `SetCurrentUser` functionality to the Sign-in method
+    -  Running `SetCurrent` user if sign-in promise returns a 'user'.
+    -  (Both For google and email sign in)  
+
+3.  ##### Accessing Context in the Navigation component 
+    -  Added `UseContext` & imported the `context` object
+    -  Added the currentUser = useContext(UserContext)
+
+4.  ##### Giving Sign-up Form access to the context
+    -  When 'user' creates an account, store 'user' into the context
+    -  Added `useContext` &  imported the `context` object
+    -  Added the `SetCurrentUser` functionality to the Sign-in method
+    -  Running `SetCurrent` user if sign-in promise returns a 'user'
+
+5.  ##### Updating Navigation bar with conditional (ternary)
+    -  If user signed in, 'sign-in' link should turn into 'sign-out'
+    -  Simple Conditional (ternary) operator in the jsx
+
+### Adding Sign-Out Functionality 
+
+Obviously once the user is signed in, they will need to be able to sign-out.
+
+1.  #####  Adding Sign-Out Functionality in FireBase Utils
+    [Sign-Out Doc's](https://firebase.google.com/docs/reference/js/auth#signout)
+    -  imported `signOut` from firebase/auth
+    -  Created an export for `signOutUser`
+
+
+2.  #####  Import signout user into Navigation component 
+    -  Imported the `SignOut` Function from `FireBase Utils`
+    -  Updated the conditional sign-out link with an onClick with `signOutUser`
+
+
+3.  ##### Created Sign-Out Handler Function 
+    -  await `signOutUser`
+    -  then `setCurrentUser` = null;  
+    -  updated the sign-out link to use the `signOutHandler`
+
+
+4.  #####  Just as I finished this I learned read about Observer's and onAuthStateChange

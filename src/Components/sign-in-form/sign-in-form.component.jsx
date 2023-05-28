@@ -1,44 +1,68 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
+
+import { UserContext } from '../../contexts/user.context';
 
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
 
 import './sign-in-form.styles.scss';
+
+/*------------------------------------------------------------
+//Setting Default Form Fields
+------------------------------------------------------------*/
 
 const defaultFormFields = {
   email: '',
   password: '',
 };
 
+/*------------------------------------------------------------
+  Handle the Sign in 
+------------------------------------------------------------*/
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  
+  //Adding functionality to set the Context  
+  const { setCurrentUser } = useContext(UserContext);
+
+
+  //Return forms to blank after sign in
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
+
+  /*Handle Google Sign in
+  -------------------------*/ 
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    setCurrentUser(user);
   };
 
+  
+  /*Handle Email+Password  (submit & sign-in)
+  -------------------------*/ 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+      setCurrentUser(user);
       resetFormFields();
+      //running setCurrentUser TESTS
+      console.log('USER SIGNED IN!');
+      console.log(user);
+  
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
@@ -53,11 +77,15 @@ const SignInForm = () => {
     }
   };
 
+  //Handle Changes made to the form 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
     setFormFields({ ...formFields, [name]: value });
   };
+
+
+  
 
   return (
     <div className='sign-up-container'>
@@ -71,6 +99,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name='email'
           value={email}
+          autoComplete='on'
         />
 
         <FormInput
@@ -80,13 +109,19 @@ const SignInForm = () => {
           onChange={handleChange}
           name='password'
           value={password}
+          autoComplete='on'
         />
+
         <div className='buttons-container'>
           <Button type='submit'>Sign In</Button>
-          <Button type='button' buttonType='google' onClick={signInWithGoogle}>
+          <Button 
+            type='button' 
+            buttonType='google' 
+            onClick={signInWithGoogle}>
             Google sign in
           </Button>
         </div>
+        
       </form>
     </div>
   );
