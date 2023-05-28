@@ -53,7 +53,7 @@ As well as a way for me to remember what I have done while building this project
 2.  #### Creating a Routes Folder and transferring the 'home' 
 
 3.  #### In the `App.jsx
-`   - Importing { Routes, Route } from 'react-router-dom' and 
+    - Importing { Routes, Route } from 'react-router-dom' ` 
     - Wrapping everything in Routes 
     - Creating a Route path to the Home page 
 
@@ -72,23 +72,25 @@ As well as a way for me to remember what I have done while building this project
 
 2.  #### Installed the SDK and initialized Firebase
         -   npm install firebase
-        -   Adding a `Utils` Folder with `FireBase folder` and a file called `firebase.utils`
+        -   Added a `Utils` Folder with `FireBase folder` 
+        -   Added file called `firebase.utils`
 
 3.  #### Created access for Firebase in the app - via  `firebase.utils`
-        -   <code>import { initializeApp } from 'firebase/app';</code>
+        -   import { initializeApp } from 'firebase/app';
         -   Setting up authentication
-            <code>Import {} from `firebase/auth`;</code>
-                -  `getAuth`
-                -  `signInWithRedirect,`
-                -  `signInWithPopup,`
-                -  `GoogleAuthProvider,`
+            Import {} from `firebase/auth`;
+                -  getAuth
+                -  signInWithRedirect,
+                -  signInWithPopup,
+                -  GoogleAuthProvider,
+
         -   Created firebaseConfig with info from FireBase web-app
         -   Initialized the App with firebaseConfig
         -   Enforcing account selection 
         -   In the Firebase console - enabled the Google Sign in method
 
 4.  #### Setting up the `sign-in route` page                              
-        -   <code>import { signInWithGooglePopup, createUserProfileDocument } from 'firebase.utils';</code>
+        -   import {signInWithGooglePopup, createUserProfileDocument} from 'firebase.utils';        
         -   Creating Async Sign-in Function/Method to get access token
     
 
@@ -105,7 +107,7 @@ Enter Cloud FireStore.
     amended the rules 
 
 2.  ##### Imported the necessary methods into Firebase utils 
-    -  (`{ getFirestore,  doc, getDoc,  setDoc }`)
+    -  { getFirestore,  doc, getDoc,  setDoc }
 
 3.  ##### Created a method to store users data from authentication
     -  used an if statement with try block, 
@@ -117,3 +119,28 @@ Enter Cloud FireStore.
     -  `npm install vite-plugin-svgr`
     -   Updated the vite.config.js
 
+
+### Experimenting with a Google Redirect Sign in 
+
+1. #### Importing `GoogleRedirect` from `firebase/auth` into utils
+
+2. #### Setting up Sign-in Component
+    -  Using `useEffect` Hook from `react`
+    -  Using `getRedirectResult` from `firebase/auth`
+    -  Amended the SignIn method to incorporate the above
+
+
+### Setting up email & password - sign-up & sign-in
+
+1.  ##### Adding a new provider in FireStore 
+        via web console
+
+2.  ##### Creating new sign-up component 
+
+3.  ##### Creating new sign-in component 
+
+4.  ##### Refactoring Buttons into seperate component
+
+4.  ##### Refactoring Form-inputs into seperate component
+
+5.  ##### Renaming Sign-in to Authentication 
