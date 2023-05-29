@@ -338,3 +338,57 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 <br><br>
+
+
+###  Adding Functionality to the Cart
+
+<hr>
+
+1.  #####  Create a CartItem Component 
+    -  Created simple cart item that will return, using `destructuring` ;
+        -  the `Image` of the item
+        -  the `Name` of item
+        -  the `Price` of the item (`Quantity x Price`)
+
+2.  #####  Amending the CartContext 
+    -  In the `CartContext`;
+        -  Added `CartItems Array` 
+        -  Added `addItemToCart` function 
+    
+    -  In the `CartProvider`;
+        -  Added useState  `[cartItems, setCartItems] = useState([]);`
+        -  Added `addItemToCart` function 
+        -  Updated the value to include `cartItems` & `addItemToCart`
+
+    -  Created new export `addCartItem` helper funciton;
+        This will be a helper function to see if newly added items exist in the cart already.
+        Therefore will know how to handle the quantity inside in the cart.
+        (i.e. - if product exists in the cart: plus quantity by 1, else add item to the cart)
+        -  
+
+3.  #####  Added CartItem into the Cart-Dropdown component
+    -  Imported the `Cart-Item` compnent 
+    -  Imported the `useContext` & `Cart.Context`
+    -  From the CartContext I used destructuring to get the `cartItems`
+
+    -  In the return, created a function to map over the cartItems 🤔🤔🤔
+    
+    -  Wrapped the above in a ternary conditional using `cartItems.length`
+        - if there is a length, return the above
+        - if there is no length, thus empty = return a message cart is empty
+            - added styling for empty cart message.
+
+4.  #####  Updated Button functionality in Product.Card Component 
+    -  Imported `useContext` & `Cart.Context`
+    -  Added the `AddItemToCart` method via destructing from `Cart.Context`
+    -  In the Button, 
+        -  added onClick handler to call the `AddItemToCart` as a fucntion
+        -  passing the `product` through the function 
+    
+    - In Hindsight I took the above button function and made it a function called `addProductToCart`
+    - Then passed it into the onClick Handler
+    (better for readability and optimization)
+
+
+
+<br><br>
