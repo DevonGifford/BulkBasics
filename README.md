@@ -21,7 +21,7 @@ Further there are a few things I want to do to simulate some real world practice
 
 
 
-## How I built this:  
+# How I built this:  
 
 This is supposed to be a sort of "Code with me - Diary".
 As well as a way for me to remember what I have done while building this project. 
@@ -40,6 +40,8 @@ As well as a way for me to remember what I have done while building this project
     `npm install sass`
 
 4.  #### Setting up the most essential folder structure for components
+
+<br><br>
 
 ### Setting up Routing with React-Router (v6.4)
 <hr>
@@ -61,6 +63,7 @@ As well as a way for me to remember what I have done while building this project
     - Importing `{ BrowserRouter } from 'react-router-dom'`
     - wrapping the "App" with `BrowserRouter`
 
+<br><br>
 
 ### Basic FireBase Setup 
 <hr>
@@ -92,7 +95,7 @@ As well as a way for me to remember what I have done while building this project
 4.  #### Setting up the `sign-in route` page                              
         -   import {signInWithGooglePopup, createUserProfileDocument} from 'firebase.utils';        
         -   Creating Async Sign-in Function/Method to get access token
-    
+<br><br>    
 
 ### Setting up Firestore Data Model
 
@@ -115,12 +118,16 @@ Enter Cloud FireStore.
     - used a catch block , so as if an error occurs console.log the error.
     - logging date data for creation of new users (new Data()).
 
-#### Additionally, installed a package to handle the import of SVG Files
+4.  ##### Additionally, installed a package to handle the import of SVG Files
     -  `npm install vite-plugin-svgr`
     -   Updated the vite.config.js
 
+<br><br>
+
 
 ### Experimenting with a Google Redirect Sign in 
+
+<hr> 
 
 1. #### Importing `GoogleRedirect` from `firebase/auth` into utils
 
@@ -129,8 +136,11 @@ Enter Cloud FireStore.
     -  Using `getRedirectResult` from `firebase/auth`
     -  Amended the SignIn method to incorporate the above
 
+<br><br>
 
 ### Setting up email & password - sign-up & sign-in
+
+<hr>
 
 1.  ##### Adding a new provider in FireStore 
 
@@ -144,9 +154,11 @@ Enter Cloud FireStore.
 
 5.  ##### Renaming Sign-in to Authentication 
 
-
+<br><br>
 
 ### Adding Context - using react-context
+
+<hr>
 
 The users profile will be present in many components throughout the app
 (Such as a Signing-in, profile management, shopping cart etc.)
@@ -184,7 +196,12 @@ Will require having to have access to the 'user' context through out the app
     -  If user signed in, 'sign-in' link should turn into 'sign-out'
     -  Simple Conditional (ternary) operator in the jsx
 
+
+<br><br>
+
 ### Adding Sign-Out Functionality 
+
+<hr>
 
 Obviously once the user is signed in, they will need to be able to sign-out.
 
@@ -204,5 +221,47 @@ Obviously once the user is signed in, they will need to be able to sign-out.
     -  then `setCurrentUser` = null;  
     -  updated the sign-out link to use the `signOutHandler`
 
+<br><br>
 
-4.  #####  Just as I finished this I learned read about Observer's and onAuthStateChange
+###  Just as I finished this I learned read about Observer's and onAuthStateChange
+
+<hr>
+
+[onAuthStateChanged](https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed-in_user)
+
+This is actually essential otherwise the user will have this unwanted persistent-signed-in-state - i.e. the user will remain signed-in, even if we refresh the page.
+
+The problem being it will appear if we have to sign-in again but in the console if we log our user, it will show the last signed in user.
+
+Additionally we dont need to hook into the sign and sign out components any longer and therefore don't have to re-run all those fucntions on a change - instead our onAuthStateChange listener will do this for us.  
+
+Ultimatly saving some computing power.  Wish I read about this before coding all that. lol
+
+
+1.  ##### In the fireBase utils file; 
+    - imported this on AuthChange 
+    - created an export for it
+
+2.  ##### In the user.context file;
+    - added the `useEffect` Hook 
+    - added new functions from `firebase.utils`
+    - created a hook that will track the authChange;
+        - Needed to prevent a memory leak
+        - Needed to use effect cleanup to dispose when no longer needed.
+
+3.  ##### In the sign-in and sign-up components;
+    no longer require to run the functions everytime a change in sign-in occurs , therefore;
+    - removed all `context` imports
+    - removed all `setCurrentUser` functions
+
+    - Google sign in function;
+        - removed `createUserDocumentFromAuth`
+        - added this function to the user.context
+        (the above can't be done with sign-up)
+
+4.  ##### In the Navigation components;
+    - no longer required to `setCurrentUser`
+    - removed `signOutHandler` function
+
+
+<br><br>
