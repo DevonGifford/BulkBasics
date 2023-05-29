@@ -306,3 +306,35 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
         -  Button 
 
 <br><br>
+
+
+###  Creating Cart-Icon with a DropDown Menu
+
+<hr>
+
+1.  #####  Created a Cart Icon
+    -  Added SVG image to the assets folder
+
+2.  #####  Creating Cart-icon Component
+    -  Imported styles sheet, SVG file, 
+    -  Created a function to set the cartContext from false to true 
+    -  Function is run with an onClick (Cart-Icon Button) 
+
+3.  ##### Updating the Navigation to include the Cart -Icon
+    -  updated the overall styling to make things easier to look at.
+    -  added the cart-component 
+    -  added the drop-down component
+
+4.  #####  Creating Cart-Dropdown Component 
+    - simple layout with button for a checkout (future)
+    - created simple styling 
+
+5.  #####  Creating Cart Context
+    - Very simple setup - is the cart open set to false by default
+    - Set the cart open 
+
+    - Imported CardProvider to App.js
+    - Imported isCartOpen to Navigation using a short-circuit operator (&&)
+
+
+<br><br>
