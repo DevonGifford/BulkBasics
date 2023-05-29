@@ -265,3 +265,44 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 <br><br>
+
+
+###  Mocking Shop-Data and scaffolding the actual 'Shop' page
+
+<hr>
+
+1.  #####  Mocking Shop Data and building functionality 
+    Created a simple JSON file with some simple clothing store items (just hats).  I will use this to mock having content for the store temporarily while I finish building some of the essential functionality, then later I will remove/replace the hard coded shop data. 
+
+
+2.  #####  Creating a Shop Page Route
+    -  Imported React-Context
+    -  Imported the ProductsContext and destructuring to get the 'products' source 
+    -  Mapping over the Products to display individual items on the site 
+
+3.  #####  Creating a Products.Context File
+    -  Imported `create context` and `shop-data`
+    -  Created ProductsContext export 
+    -  Created ProducsProvider export to wrap the app inside
+
+4.    ##### Amending the Main.jsx
+    -  I want the products be able to access the user context
+    (this could be a debate but for my app, I think this would be the simplest)
+    -  Wrapped the <App> inside <ProductsProvider>
+
+5.    ##### Amending the APP.jsx
+    -  Removed the old temporary 'blank' shop page
+    -  Imported the newly created shop component 
+
+
+6.  #####  Creating a 'product-card' component - basic styling
+    -  Imported Button component
+    -  Created basic scss styling sheet and imported into the component 
+    -  Getting individual clothing items from passing in the products and destructuring (This will rely on receiving the individual items in the Shop.route file - via mapping)
+    -  Created layout of the card and returning the following in the card;
+        -  Image
+        -  Name
+        -  Price
+        -  Button 
+
+<br><br>
