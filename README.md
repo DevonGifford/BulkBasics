@@ -429,3 +429,107 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
     -  Using the above in the span inside the `ShoppingIcon`
 
 <br><br>
+
+
+### Create a checkout page 
+
+<hr>
+
+####  Creating a route for the checkout page
+
+- [x] The _Checkout Button_ in the _Cart.Icon-DropDown_ should take you to this new page
+
+1.  ######  Creating a new folder in Routes Folder 
+    -  Created a simple `checkout.component.jsx `
+    -  Created and imported an empty scss style sheet (updated with styling later )
+    
+    -  In the main `App.jsx` ;
+        - imported the checkout component 
+        - added a route to the new checkout component 
+    
+    -  In the `cart-dropdown` ;
+        -  imported the `useNavigate` from `react-dom-router`;
+        -  had to create a const that calls the useNavigate 🤔
+        -  created a `gotToCheckoutHandler` to handle the navigation to new component 
+        -  Used onClick method to call `goToCheckoutHandler`
+    
+    - Scaffolded the `checkout.component` return (productsm descruotion etc.)
+    -  Added some basic styling to the scss
+
+
+
+
+
+#### This new page should have the following functionality and styling :
+
+- [x]  Quantity Increase
+- [x]  Quantity Decrease
+- [x]  Total Price (Quantity x Price)
+- [x]  Ability to remove the item entirely (Item and Quantity)
+- [x]  Total  Amount of all Items in the Cart.
+
+
+2. ##### Think of a way to pass Items in Cart into the Checkout 
+    
+    🤔
+    Need to create a way to pass the products in the cart into the Checkout...
+    These items will need to be passed into a row/card sort of way...
+
+    What I am thinking is I can map over the cartItems and pass them into a checkoutCard component (thats imported in this checkout.component)
+
+
+3.  ##### Creating a `CheckoutItem Component` to receive `cartItems` and display them in the `CheckOut-Component` page
+    -  Created a simple `checkout.component.jsx `
+    -  Created and imported an empty scss style sheet (updated with styling later)
+
+🤔  I am going to neeed some new functions to handle the:
+    -  increasing and decreasing the quantity 
+    -  removing the item from the cart  
+
+    -  Destructured the `cartItems` Objects (name, image etc.)
+    -  Imported `CartContext` 
+    -  Destructured the function from `CartContext` (inlcuding newly created)
+    -  Created handlers to pass `CartContext` funcitons into the return 
+
+    -  Finished creating the return 
+    -  Finished the basic styling for the component
+        
+
+4.  #####  Adding new functions to the `CartContext`
+    -  `removeItemToCart`
+        (I want this to be named similaryly to the `addItemToCart` )
+        -  find the cart item to remove
+        -  check if this is the last item 
+            - if so remove entire item from cart
+        -  If more than 1 of this item in cart, 
+            -return back cartitems with matching cart item with reduced quantity
+
+
+    -  `clearItemFromCart` 
+        -  Remove entire Item from the cart
+    
+    -  updated the `CartContext` export 
+
+    - updated the `CartProvider` export  
+        - updating `cartItemCount` and `SetCartItemCount` to `cartCount` and `setCartCount`
+        - added `cartTotal` 
+        - minor naming updates to the `newCartCount` - `useEffect`
+        - added useEffect to handle the cost of the total cart 
+        - minor naming updates to `addItemToCart`
+        - added `removeItemToCart`
+        - added `clearITemFromCart`
+        - updated the values accordingly 
+        - Getting the total cost of an item. (Quantity x Price)
+        
+        
+5.  #####  Updating the Checkout Page to use new Component 
+
+    - Imported `useContext` & `CartContext`
+    - Used `cartItems` from `CartContext` via destructuring 
+
+5.  #####  Other Minor Changes 
+    -  Updating the CartIcon with changes made to Context 
+
+
+6.  #####  Created styling for all the new components 
+
