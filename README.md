@@ -391,3 +391,25 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 <br><br>
+
+###  Adding count to the Cart.Icon
+
+<hr>
+
+1.  #####  Initial Approach
+    -  Created a simple count of the items 
+    -  Created an empty array
+    -  Created a for loop to loop over cartItems and extract the quantity  and push to the empty array
+    -  Using reducer to get the total of the array 
+
+    This is working, however in hindsight I might want to be able to use this functionality in the checkout.(still to be built)
+    
+    "If an item should be removed from the cart ( this functionality has not yet been implemented), the number should decrease."
+
+    It would be better if this functionality was in the cart.context.
+    It could also be solved by using the useEffect Hook 
+
+2. #####  Second Attempt - 
+
+
+<br><br>
