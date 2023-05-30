@@ -408,8 +408,24 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
     It would be better if this functionality was in the cart.context.
     It could also be solved by using the useEffect Hook 
+    Back to the drawing board - lets undo this messy approach.  
 
-2. #####  Second Attempt - 
+2. #####  Second Attempt - using useEffect 
+    Because we are recounting the total quantity every time the `cartItems` changes, it makes sense to use the useEffect Hook.  
+    - Imported useEffect
+    - Added `cartItemCount` (default 0) to CartContext
+    - Added `[cartItemCount, setCartItemCount] = useState(0);`
 
+    -  Using the useEffect 
+        - dependancy = `[cartItems]`
+        - created `count` using the reduce method
+        - `total` + `cartItem.quantity`
+        - `setCartItemCount` using the `count` funciton 
+    
+    - Added the `cartItemCount` to the value to be passed into the provider
+
+3.  #####  Finally, adding the `cartItemCount` to Cart.Icon
+    -  Added `carItemCount` via destructuring 
+    -  Using the above in the span inside the `ShoppingIcon`
 
 <br><br>
