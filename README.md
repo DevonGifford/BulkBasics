@@ -340,7 +340,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-###  Adding Functionality to the Cart
+###  Adding Basic Functionality to the Cart
 
 <hr>
 
@@ -361,10 +361,10 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
         -  Updated the value to include `cartItems` & `addItemToCart`
 
     -  Created new export `addCartItem` helper funciton;
-        This will be a helper function to see if newly added items exist in the cart already.
-        Therefore will know how to handle the quantity inside in the cart.
-        (i.e. - if product exists in the cart: plus quantity by 1, else add item to the cart)
-        -  
+        -  This will be a helper function to see if newly added items exist in the cart already.
+        -  Therefore will know how to handle the quantity inside in the cart.
+        -  (i.e. - if product exists in the cart: plus quantity by 1, else add item to the cart)
+
 
 3.  #####  Added CartItem into the Cart-Dropdown component
     -  Imported the `Cart-Item` compnent 
@@ -390,5 +390,42 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
     (better for readability and optimization)
 
 
+<br><br>
+
+###  Adding count to the Cart.Icon
+
+<hr>
+
+1.  #####  Initial Approach
+    -  Created a simple count of the items 
+    -  Created an empty array
+    -  Created a for loop to loop over cartItems and extract the quantity  and push to the empty array
+    -  Using reducer to get the total of the array 
+
+    This is working, however in hindsight I might want to be able to use this functionality in the checkout.(still to be built)
+    
+    "If an item should be removed from the cart ( this functionality has not yet been implemented), the number should decrease."
+
+    It would be better if this functionality was in the cart.context.
+    It could also be solved by using the useEffect Hook 
+    Back to the drawing board - lets undo this messy approach.  
+
+2. #####  Second Attempt - using useEffect 
+    Because we are recounting the total quantity every time the `cartItems` changes, it makes sense to use the useEffect Hook.  
+    - Imported useEffect
+    - Added `cartItemCount` (default 0) to CartContext
+    - Added `[cartItemCount, setCartItemCount] = useState(0);`
+
+    -  Using the useEffect 
+        - dependancy = `[cartItems]`
+        - created `count` using the reduce method
+        - `total` + `cartItem.quantity`
+        - `setCartItemCount` using the `count` funciton 
+    
+    - Added the `cartItemCount` to the value to be passed into the provider
+
+3.  #####  Finally, adding the `cartItemCount` to Cart.Icon
+    -  Added `carItemCount` via destructuring 
+    -  Using the above in the span inside the `ShoppingIcon`
 
 <br><br>
