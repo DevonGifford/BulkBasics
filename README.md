@@ -340,7 +340,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-###  Adding Functionality to the Cart
+###  Adding Basic Functionality to the Cart
 
 <hr>
 
@@ -361,10 +361,10 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
         -  Updated the value to include `cartItems` & `addItemToCart`
 
     -  Created new export `addCartItem` helper funciton;
-        This will be a helper function to see if newly added items exist in the cart already.
-        Therefore will know how to handle the quantity inside in the cart.
-        (i.e. - if product exists in the cart: plus quantity by 1, else add item to the cart)
-        -  
+        -  This will be a helper function to see if newly added items exist in the cart already.
+        -  Therefore will know how to handle the quantity inside in the cart.
+        -  (i.e. - if product exists in the cart: plus quantity by 1, else add item to the cart)
+
 
 3.  #####  Added CartItem into the Cart-Dropdown component
     -  Imported the `Cart-Item` compnent 
@@ -388,7 +388,6 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
     - In Hindsight I took the above button function and made it a function called `addProductToCart`
     - Then passed it into the onClick Handler
     (better for readability and optimization)
-
 
 
 <br><br>
