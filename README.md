@@ -533,3 +533,48 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 6.  #####  Created styling for all the new components 
 
+<br><br>
+
+### Storing the data on the backend - Setting up FireStoreDB
+<hr>
+
+<br>
+
+1. ####  Adding some new mock data
+    -   As a test run I am going to add a bit more mock data with different types 
+        (i.e. Mens, Jackets, Shoes etc.)
+    -   Updating the `shop-data` json file 
+    -   Reflecting changes in `products.context` 
+        (Temporarily breaks the shop page but after pushing the data up we will access the data via FireSotre)
+
+<br>
+
+2.  ####  Creating a way to push this data to the FireStore DB
+
+##### In the `FireBase.utils`;   
+-   Bringing in two new methods 
+        -   [collections](https://firebase.google.com/docs/firestore/data-model#collections)
+        -   [writeBatch](https://firebase.google.com/docs/reference/js/firestore_.writebatch)
+
+
+    -   Created a `addCollectionandDocuments` function 
+        -   This is an async function that will take two params 
+            -   `key` - this wll be the name of the collection
+            -   `object` - this will be the data  
+        -   Obviously uses the `batch` and `collection` methods
+        -   As this could be a large file, it's broken into batches to be sent
+        -   Await's a batch.commit() in return 
+
+<br>
+
+##### In the `Products.Context` ;
+
+-   Imported the new `SHOP_DATA`
+-   Imported teh new `addCollectionandDocuments`
+-   Imported teh `useEffect` Hook
+
+-   Using the useEffect as I only want this to run once, thus commenting out after it's single use
+    -   Passing in product-categories as the key
+    -   Passing in SHOP_DATA as the object
+
+<br>
