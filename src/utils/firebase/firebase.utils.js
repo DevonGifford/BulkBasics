@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+
 import {
   getAuth,
   signInWithRedirect,
@@ -9,12 +10,18 @@ import {
   signOut,
   onAuthStateChanged,
 } from 'firebase/auth';
+
 import { 
   getFirestore,
   doc,
-  getDoc,
-  setDoc 
+  getDocs,
+  setDoc,
+  collection,
+  writeBatch,
+  query,
 } from "firebase/firestore";
+
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyB-gtBHLGq1wnqWYFNudEpQk5WGqolGHUo",
@@ -39,6 +46,44 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
 
 export const db = getFirestore();
+
+
+//  Function for Firing-off Data to the FireStore DataBase (NoSQL)
+export const addCollectionAndDocuments = async ( collectionKey, objectsToAdd ) => {
+  const batch = writeBatch(db);
+  const collectionRef = collection(db, collectionKey);
+  
+  //creating the batches to fire off - key is the title, the object is the object itself
+  objectsToAdd.forEach((object) => {
+     const docRef = doc(collectionRef, object.title.toLowerCase());
+     batch.set(docRef, object);
+  });
+
+  //waiting for the commit - thus we know it's been successfully pushed to the db
+  await batch.commit();
+  console.log('done');
+};
+
+
+//  Function for retrieving the data in the FireStore Database
+export const getCategoriesAndDocuments = async () => {
+  //fetching the data
+  const collectionRef = collection(db, 'product-categories');
+  const q = query(collectionRef);
+
+  //defining the data
+  const querySnapshot = await getDocs(q);
+
+  //manipulating the data into the format we want
+  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  //Return the catergory map
+  return categoryMap;
+};
 
 
 // Creating a user from the Google authentication 
