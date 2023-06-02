@@ -26,7 +26,7 @@ Further there are a few things I want to do to simulate some real world practice
 This is supposed to be a sort of "Code with me - Diary".
 As well as a way for me to remember what I have done while building this project. 
 
-### Scaffolding the Vite/React Project
+## Scaffolding the Vite/React Project
 <hr>
 
 [Vite doc's](https://vitejs.dev/guide/)
@@ -43,7 +43,7 @@ As well as a way for me to remember what I have done while building this project
 
 <br><br>
 
-### Setting up Routing with React-Router (v6.4)
+## Setting up Routing with React-Router (v6.4)
 <hr>
 
 [React-Router Doc's](https://reactrouter.com/en/main)
@@ -65,20 +65,20 @@ As well as a way for me to remember what I have done while building this project
 
 <br><br>
 
-### Basic FireBase Setup 
+## Basic FireBase Setup 
 <hr>
 
 [Cloud FireBase Doc's](https://firebase.google.com/docs/firestore)
 
-1.  #### Created a Firebase project 
+1.  ### Created a Firebase project 
     registered the Ecommerce-projec/app in the FireBase web-console
 
-2.  #### Installed the SDK and initialized Firebase
+2.  ### Installed the SDK and initialized Firebase
         -   npm install firebase
         -   Added a `Utils` Folder with `FireBase folder` 
         -   Added file called `firebase.utils`
 
-3.  #### Created access for Firebase in the app - via  `firebase.utils`
+3.  ### Created access for Firebase in the app - via  `firebase.utils`
         -   import { initializeApp } from 'firebase/app';
         -   Setting up authentication
             Import {} from `firebase/auth`;
@@ -92,12 +92,12 @@ As well as a way for me to remember what I have done while building this project
         -   Enforcing account selection 
         -   In the Firebase console - enabled the Google Sign in method
 
-4.  #### Setting up the `sign-in route` page                              
+4.  ### Setting up the `sign-in route` page                              
         -   import {signInWithGooglePopup, createUserProfileDocument} from 'firebase.utils';        
         -   Creating Async Sign-in Function/Method to get access token
 <br><br>    
 
-### Setting up Firestore Data Model
+## Setting up Firestore Data Model
 
 <hr>
 
@@ -105,27 +105,27 @@ As well as a way for me to remember what I have done while building this project
 Obviously we are just using FireBase for authentication.  To be able to store the users, I will need a database.
 Enter Cloud FireStore.
 
-1.  ##### Created a production FireStore database 
+1.  #### Created a production FireStore database 
     via web-console and based in EU
     amended the rules 
 
-2.  ##### Imported the necessary methods into Firebase utils 
+2.  #### Imported the necessary methods into Firebase utils 
     -  { getFirestore,  doc, getDoc,  setDoc }
 
-3.  ##### Created a method to store users data from authentication
+3.  #### Created a method to store users data from authentication
     -  used an if statement with try block, 
        so as if user does not exist do 'x' or else return user.
     - used a catch block , so as if an error occurs console.log the error.
     - logging date data for creation of new users (new Data()).
 
-4.  ##### Additionally, installed a package to handle the import of SVG Files
+4.  #### Additionally, installed a package to handle the import of SVG Files
     -  `npm install vite-plugin-svgr`
     -   Updated the vite.config.js
 
 <br><br>
 
 
-### Experimenting with a Google Redirect Sign in 
+## Experimenting with a Google Redirect Sign in 
 
 <hr> 
 
@@ -223,7 +223,7 @@ Obviously once the user is signed in, they will need to be able to sign-out.
 
 <br><br>
 
-###  Just as I finished this I learned read about Observer's and onAuthStateChange
+##  Just as I finished this I learned read about Observer's and onAuthStateChange
 
 <hr>
 
@@ -267,7 +267,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-###  Mocking Shop-Data and scaffolding the actual 'Shop' page
+##  Mocking Shop-Data and scaffolding the actual 'Shop' page
 
 <hr>
 
@@ -308,7 +308,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-###  Creating Cart-Icon with a DropDown Menu
+##  Creating Cart-Icon with a DropDown Menu
 
 <hr>
 
@@ -340,7 +340,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-###  Adding Basic Functionality to the Cart
+##  Adding Basic Functionality to the Cart
 
 <hr>
 
@@ -392,7 +392,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
-###  Adding count to the Cart.Icon
+##  Adding count to the Cart.Icon
 
 <hr>
 
@@ -431,7 +431,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br><br>
 
 
-### Create a checkout page 
+## Create a checkout page 
 
 <hr>
 
@@ -535,7 +535,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
-### Storing the data on the backend - Setting up FireStoreDB
+## Storing the data on the backend - Setting up FireStoreDB
 <hr>
 
 <br>
@@ -573,8 +573,251 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 -   Imported teh new `addCollectionandDocuments`
 -   Imported teh `useEffect` Hook
 
--   Using the useEffect as I only want this to run once, thus commenting out after it's single use
+-   Using the useEffect as I only want this to run literally once, thus commenting out after it's single use
     -   Passing in product-categories as the key
     -   Passing in SHOP_DATA as the object
+    -   I realise this is not a normal way to push data but I just need to push some data up there one time and it gets the job done.
+
+-   Saving - confirming the useEffect and function worked - it Did! 
+
+-   Commenting out the useEffect
 
 <br>
+
+
+3.  ####  Pulling our data from the FireBase DB  ;
+
+##### In the `FireBase.utils`; 
+
+-   Bringing in the [querey](https://firebase.google.com/docs/reference/js/firestore_.query) method
+
+-   Created a `getCategoriesAndDocuments` function
+    -   definining the `collectionRef` we want access too
+    -   using the `querey` on our `collectionRef`
+    -   creating a const for the raw data
+    -   manipulating the data to return in a format we can work with
+
+<br>
+
+##### In the `Products.Context` ;
+
+-   Imported the new `getCategoriesAndDocuments` function
+
+- Created a useEffect Hook to fetch the data
+    -  async function 
+    -  returns the categoryMap
+    -  Checking the console log if everything worked
+
+<br><br>
+
+## Implementing new FireStore Database
+<hr>
+
+<br>
+
+1. ####  Utilizing the `CategoryMap` data
+
+-   In the `ProductsContext`
+    
+    - renaminng the file from `ProductsContext` to `CategoriesContext` 
+    - updating `main.jsx` to reflect change
+    - updating the `shop.component` to reflect change (more required)
+    <br> 
+    -   renaming some of the exports - makes more sense now;
+        -   `ProductsContext` to `CategoriesContext` 
+        -   `ProducstProvider` to `CategoriesProvider`
+    <br>
+    -  updating functions to reflect `categoriesMap` as an object
+    -  updating return values to reflect name changes
+    <br>
+    -  updating the useEffect Hook;
+        -  include `setCategoriesMap` function using (`CategoryMap`)
+
+
+<br>
+
+2. ####  Updating the `shop.component` return structure
+-   updated to reflect name change of `ProductsContext`
+-   Created a method to map through data from FireStore db.
+    -   Used `Fragment` to wrap the entire return
+    -   Used `Object.keys` to turn keys into an array 
+    -   Then mapped over the array to find the title
+    -   Passed the tile into another `fragment` 
+        -   created heading for category item
+        -   copy pasted the old mapping function for each product
+            -   Updated naming convention to utilise `categoriesMap`
+
+<br><br>
+
+
+## Updating the Category Preview Component 
+<hr>
+<br>
+
+###  Created Category Preview Component :
+
+<br>
+
+This is how I will have the shop page display all the categories with a limited number of items ...
+
+-  In the new `category-preview.component`;
+    -  Imported the `Product.Card` component and `StylesSheet`.
+    -  Passing in the `{title, products}`
+    -  Created a heading div with just the text being clickable 
+    -  Creating the preview of products
+        -  passed in the products 
+        -  using filter to decided what products we want 
+        -  use `_` to ignore product
+        -  use `idx` for the index of the prouduct
+        -  `idx < 4` so we only take in the first 4 products
+        -  then map through the remainging products and pas them into the `Product.Card Component`
+    
+    <br>
+
+-  In the `shop.component`;
+    -  replaced the `ProductCard` import with the new  `category-preview.component`
+    -  
+
+
+<br><br>
+
+###  Created Nested Routes in the shop :
+
+<br>
+
+#### In the `App.jsx` ;
+
+<br>
+
+-  Added `/*` as a wildcard to the end of the shop path
+
+<br>
+
+#### In the `Routes` folder :
+<br>
+
+Created `categories-preview` folder
+-  This will replace what was formly the shop.route
+-  Essentially a copy paste from the shop component 
+-  Minor changes to make use of the `category-preview` component 
+
+Created `category` folder 
+-  Created Style sheet blank, will complete later
+
+-  Imported the `{ useParams }` hook from `react-router-dom`
+
+-  destructuring `category` via `useParams()` hook
+
+-  Imported the `{ useContext }` hook from `react`
+
+-  Imported the `CategoriesContext` in order to get the `categoriesMap` (i.e. all the data)
+
+    <br>
+
+    Initally I just got all the data from the `categoriesMap`   
+    <code>const products = categoriesMap[category];</code> <br>
+    However this was causing an issue in that this was re-loading all the products on each re-render.  This making things slow and sluggish - products would dissapear and have to reload. <br>
+    <br>
+
+    The solution... Using the `useEffect` and `useState` hook's
+    
+    This way we can ensure the data will only rerender on our terms.
+    Specifcally when the category changes or if the actual data changes (from `categoriesmap`)
+
+    <code>
+    const [products, setProducts] = useState(categoriesMap[category]);
+    </code>
+    <br>
+    <br>
+    <code>
+    useEffect(() => {
+        setProducts(categoriesMap[category]);
+    }, [category, categoriesMap]);
+    </code>
+
+Finally,
+-  Imported the `ProductContainer`
+-  Added basic styling to the styles sheet
+    
+<br><br>
+
+#### In the `shop.component` :
+
+<br>
+
+-  Deleted almost all the no longer needed imports 
+-  Imported `CategoriesPreview` & `Category` components
+-  Created paths for the different categories `path=':category' element={<Category />}`
+
+<br>
+
+### Bug-fix - Creating a safegaurd for the products.map
+<hr>
+<br>
+
+The error:   
+
+<code> cannot read properties of undefined (reading 'map') in `catergory.components`</code>
+
+<br>
+
+The issue was that when our application mounts for the first time it is trying to load our categoriesMap 
+
+(i.e. the data from the back end )
+
+Obviously this is async code and we are still waiting for the data to come through 
+
+Therefore we need to only load this data once it has arrived.
+<br><br><br>
+Luckily this was an easy fix after I figured out the issue,
+
+- In the return of the `catergory.components`;
+
+    To ensure that products exists before we map over the products we can use `&&` and have the products 
+
+- Also updated the useStat hook to instead of being a default empty array, to infact include the 
+`(categoriesMap[category])`
+
+
+<br><br>
+
+### Bug-fix - Clashing Styling 
+<hr>
+The error:  
+
+<code> cannot read properties of undefined (reading 'map') in `catergory.components`</code>
+
+<br>
+
+Because of how we named some of our classes and how the website has changed over time, currently we have some classnames that are clashing
+
+<br>
+
+Simple solution:
+<br>
+
+-  Updated the naming convention of the `category-item` to `directory-item`
+-  Updated the styling and classnames
+-  Updated corresponding references.  
+
+
+<br><br>
+
+### Bug-fix - Clickable Category Headings
+<hr>
+<br>
+The problem:
+<br>
+<code> category headings are not routing through to their corresponding path </code>
+<br>
+Simple solution:
+<br>
+
+-  Importing the Link method from react-router-dom
+-  Replacing the `span` with `Link` 
+-  Passing in the title with backticks 
+-  Minor updates to classnames and styling to prevent clashing
+
+
+
+<br><br>
