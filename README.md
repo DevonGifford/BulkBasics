@@ -656,6 +656,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 ###  Created Category Preview Component :
 
+<hr>
 <br>
 
 This is how I will have the shop page display all the categories with a limited number of items ...
@@ -683,6 +684,7 @@ This is how I will have the shop page display all the categories with a limited 
 
 ###  Created Nested Routes in the shop :
 
+<hr>
 <br>
 
 #### In the `App.jsx` ;
@@ -751,7 +753,7 @@ Finally,
 
 <br>
 
-### Bug-fix - Creating a safegaurd for the products.map
+### Bug-fix : Creating a safegaurd for the products.map
 <hr>
 <br>
 
@@ -781,11 +783,15 @@ Luckily this was an easy fix after I figured out the issue,
 
 <br><br>
 
-### Bug-fix - Clashing Styling 
+### Bug-fix : Clashing Styling 
 <hr>
 The error:  
 
-<code> cannot read properties of undefined (reading 'map') in `catergory.components`</code>
+<code> Styles are clashing, causing all sorts of bugs in the home page and shop pages</code>
+
+<br>
+
+The reason:
 
 <br>
 
@@ -803,7 +809,7 @@ Simple solution:
 
 <br><br>
 
-### Bug-fix - Clickable Category Headings
+### Bug-fix : Clickable Category Headings
 <hr>
 <br>
 The problem:
