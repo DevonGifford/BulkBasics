@@ -1,35 +1,23 @@
+import { Outlet } from 'react-router-dom';
+
 import Directory from "../../Components/directory/directory.component";
 
 const Home = () => {
-  const categories = [
-    {
-      id: 1,
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-    },
-    {
-      id: 2,
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-    },
-    {
-      id: 3,
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-    },
-    {
-      id: 4,
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    },
-    {
-      id: 5,
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    },
-  ];
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      <div>
+        <h2>Welcome to the essentials</h2>
+        <p>Here you will find only what you need - Nothing more and nothing less</p>
+      </div>
+      
+      <Directory />
+      <Outlet />
+
+      <h2>BUILD FOOTER COMPONENT</h2>
+    </div>
+  );
 };
+
 
 export default Home;

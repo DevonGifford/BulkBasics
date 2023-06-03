@@ -9,7 +9,7 @@ import {
   createUserDocumentFromAuth
 } from '../../utils/firebase/firebase.utils';
 
-import './sign-in-form.styles.scss';
+import { SignInContainer, ButtonsContainer } from './sign-in-form.styles';
 
 /*------------------------------------------------------------
 //Setting Default Form Fields
@@ -77,7 +77,7 @@ const SignInForm = () => {
   
 
   return (
-    <div className='sign-up-container'>
+    <SignInContainer>
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -88,7 +88,6 @@ const SignInForm = () => {
           onChange={handleChange}
           name='email'
           value={email}
-          autoComplete='on'
         />
 
         <FormInput
@@ -98,21 +97,19 @@ const SignInForm = () => {
           onChange={handleChange}
           name='password'
           value={password}
-          autoComplete='on'
         />
-
-        <div className='buttons-container'>
+        <ButtonsContainer>
           <Button type='submit'>Sign In</Button>
-          <Button 
-            type='button' 
-            buttonType='google' 
-            onClick={signInWithGoogle}>
-            Google sign in
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            type='button'
+            onClick={signInWithGoogle}
+          >
+            Sign In With Google
           </Button>
-        </div>
-        
+        </ButtonsContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 
