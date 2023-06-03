@@ -437,7 +437,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 ####  Creating a route for the checkout page
 
-- [x] The _Checkout Button_ in the _Cart.Icon-DropDown_ should take you to this new page
+- [] The _Checkout Button_ in the _Cart.Icon-DropDown_ should take you to this new page
 
 1.  ######  Creating a new folder in Routes Folder 
     -  Created a simple `checkout.component.jsx `
@@ -819,5 +819,62 @@ Simple solution:
 -  Minor updates to classnames and styling to prevent clashing
 
 
+
+<br><br>
+
+
+## Switching from SASS to Styled-Components 
+<hr>
+<br>
+
+[Styled-Components Documentation](https://styled-components.com/docs)
+
+- Imported the library into the project
+
+    <code> npm install styled-components</code>
+
+<br>
+
+Now comes the fun of converting all the previouse scss files ....
+
+<br>
+
+### COMPONENTS
+
+- [x] button
+- [x] cart-dropdown
+- [x] cart-icon
+- [x] cart-item
+- [x] category-preview
+- [x] Checkout-item
+- [x] directory
+- [x] directory-item
+- [x] form-input
+- [x] product-card
+- [x] sign-in-form
+- [x] sign-up-form
+
+<br>
+
+### ROUTES
+
+- [x] navigation
+- [x] authentication
+- [x] categories-preview
+- [x] category
+- [x] checkout
+- [x] home
+- [x] shop
+
+<br>
+
+### INDEX
+
+- [x] index
+
+<br>
+
+This took way too long lol
+Strictly converted the scss files, some other features/updates required and updates to styling will be updated accordingly.
 
 <br><br>

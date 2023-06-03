@@ -18,6 +18,7 @@
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sort-by": "^0.0.2",
+    "styled-components": "^5.3.11",
     "vite-plugin-svgr": "^3.2.0"
   },
   "devDependencies": {
