@@ -8,7 +8,7 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 
-import { SignUpContainer } from './sign-up-form.styles';
+import { SignUpContainer, TitleWrapper } from './sign-up-form.styles';
 
 
 
@@ -63,7 +63,7 @@ const SignUpForm = () => {
 
   return (
     <SignUpContainer>
-      <h2>Don't have an account?</h2>
+      <TitleWrapper>Don't have an account?</TitleWrapper>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput

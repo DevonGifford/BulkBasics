@@ -7,8 +7,10 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Audiowide', cursive;
+  font-family: 'Fira Code', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -18,4 +20,12 @@ a {
 
 * {
   box-sizing: border-box;
+  
 }
+
+html, body { 
+    height: 100%; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} 

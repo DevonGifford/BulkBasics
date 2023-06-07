@@ -64,7 +64,7 @@ const CheckoutItem =( { cartItem }) => {
             </Quantity>
             
             {/* Price (cost x quantity) */}
-            <BaseSpan> {price}</BaseSpan>
+            <BaseSpan> {price} €</BaseSpan>
             
             {/* Remove Button */}
             <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>

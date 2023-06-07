@@ -1,11 +1,15 @@
 import { useContext, useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ProductCard from '../../components/product-card/product-card.component';
-
 import { CategoriesContext } from '../../contexts/categories.context';
 
-import { CategoryContainer, Title } from './category.styles';
+import ProductCard from '../../components/product-card/product-card.component';
+import Footer from '../../Components/Footer/footer.component';
+
+import { 
+  CategoryContainer, 
+  Title, 
+} from './category.styles';
 
 
 const Category = () => {
@@ -26,6 +30,7 @@ const Category = () => {
             <ProductCard key={product.id} product={product} />
           ))}
       </CategoryContainer>
+      <Footer />
     </Fragment>
   );
 };

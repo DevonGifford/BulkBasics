@@ -1,21 +1,26 @@
+import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import FrontSplash from '../../Components/Front-splash/front-splash.component';
 import Directory from "../../Components/directory/directory.component";
+import Footer from '../../Components/Footer/footer.component';
+
+import { HomeDiv } from './home.styles';
 
 const Home = () => {
 
   return (
-    <div>
-      <div>
-        <h2>Welcome to the essentials</h2>
-        <p>Here you will find only what you need - Nothing more and nothing less</p>
-      </div>
-      
-      <Directory />
-      <Outlet />
+    <Fragment>    
+      <HomeDiv>
 
-      <h2>BUILD FOOTER COMPONENT</h2>
-    </div>
+        <FrontSplash />
+        
+        <Directory />
+        <Outlet />
+        
+      </HomeDiv>
+      <Footer />
+    </Fragment>
   );
 };
 

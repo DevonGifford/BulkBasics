@@ -9,7 +9,7 @@ import {
   createUserDocumentFromAuth
 } from '../../utils/firebase/firebase.utils';
 
-import { SignInContainer, ButtonsContainer } from './sign-in-form.styles';
+import { SignInContainer, ButtonsContainer, TitleWrapper } from './sign-in-form.styles';
 
 /*------------------------------------------------------------
 //Setting Default Form Fields
@@ -78,7 +78,7 @@ const SignInForm = () => {
 
   return (
     <SignInContainer>
-      <h2>Already have an account?</h2>
+      <TitleWrapper>Already have an account?</TitleWrapper>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
