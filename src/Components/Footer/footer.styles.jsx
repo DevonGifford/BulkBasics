@@ -21,7 +21,7 @@ export const BigFooter = styled.div`
     grid-column-gap: 25px;
     grid-row-gap: 0px;
 
-    margin: 20px 10px 20px 20px; 
+    margin: 35px 10px 20px 20px; 
 
     @media (max-width: 900px) {
         grid-column-gap: 5px;
