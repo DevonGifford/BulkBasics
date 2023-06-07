@@ -54,7 +54,7 @@ const About = () => {
         
         <HeadingSplash>
             <BiggestHeading>
-                Hello, there... 
+                Hello there... 
             </BiggestHeading>
             <SmallHeading> 
                 Sorry but this is not a real online shop

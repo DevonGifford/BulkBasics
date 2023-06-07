@@ -914,3 +914,19 @@ New Componenets added:
 - [x]  Image Carousel
 
 - [x]  About Page
+
+
+## Implementing useReducer instead of useState & useEffect
+
+<hr/>
+
+Converted the cart to rather use reducers instead of useState and useEffect -  Cart and Sign-in 
+
+
+Files touched in the process: 
+-  CartContext
+
+-  UserContext 
+
+Created a reducer utils folder with a very simple helper function making reading and writing slightly easier 
+
