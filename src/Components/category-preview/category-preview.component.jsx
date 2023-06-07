@@ -1,24 +1,43 @@
 import ProductCard from '../product-card/product-card.component';
+import { GrMore } from 'react-icons/gr'
+
 
 import {
   CategoryPreviewContainer,
+  TitleContainer,
   Title,
   Preview,
+  SeeMore,
+  StyledIconLink,
+  StyledGrMore,
 } from './category-preview.styles/'
+
 
 const CategoryPreview = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
-      <h2>
+      
+      <TitleContainer to={title}>
         <Title to={title}>{title.toUpperCase()}</Title>
-      </h2>
+      </TitleContainer>
+      
+      
       <Preview>
         {products
           .filter((_, idx) => idx < 4)
           .map((product) => (
             <ProductCard key={product.id} product={product} />
-          ))}
+            ))}
       </Preview>
+    
+      <SeeMore>
+        
+        <StyledIconLink to={title}>
+          <StyledGrMore/>
+        </StyledIconLink>
+
+      </SeeMore>
+    
     </CategoryPreviewContainer>
   );
 };

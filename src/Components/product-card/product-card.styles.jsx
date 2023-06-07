@@ -40,14 +40,20 @@ export const Footer = styled.div`
   height: 5%;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 1.5vw;
+  color: #4e613c;
+
+  @media (min-width: 1500px) {
+    font-size: 22px;
+    
+}
 `;
 
 export const Name = styled.span`
-  width: 90%;
+  width: 80%;
   margin-bottom: 15px;
 `;
 
 export const Price = styled.span`
-  width: 10%;
+  width: 15%;
 `;

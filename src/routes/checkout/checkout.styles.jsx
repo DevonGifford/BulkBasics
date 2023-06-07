@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const CheckoutContainer = styled.div`
-  width: 55%;
+  width: 95%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  margin: 0px 50px 15px 30px;
 `;
 
 export const CheckoutHeader = styled.div`
@@ -14,14 +14,19 @@ export const CheckoutHeader = styled.div`
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
+  text-align: center;
   border-bottom: 1px solid darkgrey;
 `;
 
 export const HeaderBlock = styled.div`
   text-transform: capitalize;
-  width: 23%;
+  width: 18%;
 
   &:last-child {
+    width: 8%;
+  }
+
+  &:first-child {
     width: 8%;
   }
 `;

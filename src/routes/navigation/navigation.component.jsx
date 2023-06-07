@@ -4,19 +4,24 @@ import { Outlet, Link } from 'react-router-dom';
 import CartIcon from '../../Components/cart-icon/cart-icon.component';
 import CartDropdown from '../../Components/cart-dropdown/cart-dropdown.component';
 
+
 import { UserContext } from '../../contexts/user.context';
 import { CartContext } from '../../contexts/cart.context';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
+// import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
+import Logo from '../../assets/Logo.png'
 
 import {
   NavigationContainer,
   LogoContainer,
   NavLinks,
   NavLink,
+  MyLogo,
 } from './navigation.styles';
+
+
 
 
 
@@ -29,11 +34,15 @@ const Navigation = () => {
 
   return (
     <Fragment>
+
       <NavigationContainer>
+
         <LogoContainer to='/'>
-          <CrwnLogo />
+          <MyLogo src={Logo} alt='logo1' />
         </LogoContainer>
+        
         <NavLinks>
+        
           <NavLink to='/shop'>SHOP</NavLink>
 
           {currentUser ? (
@@ -44,10 +53,17 @@ const Navigation = () => {
             <NavLink to='/auth'>SIGN IN</NavLink>
           )}
           <CartIcon />
+
+
         </NavLinks>
+        
         {isCartOpen && <CartDropdown />}
+      
       </NavigationContainer>
       <Outlet />
+
+
+
     </Fragment>
   );
 };

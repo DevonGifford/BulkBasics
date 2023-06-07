@@ -878,3 +878,39 @@ This took way too long lol
 Strictly converted the scss files, some other features/updates required and updates to styling will be updated accordingly.
 
 <br><br>
+
+
+## Refactoring the UI
+
+<hr>
+<br>
+
+####  THE GOAL
+
+The objective is to create an aesthetically pleasing and user-friendly interface that aligns with contemporary design trends while enhancing usability and engagement.
+
+###  Major UI Update 
+
+Refactored the user interface of the website 
+
+Involved the following:
+
+-  implementing substantial design enhancements to improve aesthetics, readability, and user experience. 
+
+-  Overhauled the visual design, optimized layout and typography, and enhanced usability. 
+
+-  Employed modern design principles, intuitive interactions, and visually appealing elements to elevate the website's visual appeal. 
+
+-  Optimized the information hierarchy to ensure a seamless user journey. 
+
+<br/>
+
+New Componenets added:
+
+- [x]  Footer 
+
+- [x]  Front Splash
+
+- [x]  Image Carousel
+
+- [x]  About Page

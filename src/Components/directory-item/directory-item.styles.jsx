@@ -49,7 +49,7 @@ export const DirectoryItemContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  border: 4px solid #628045;
   margin: 2px 10px 15px;
   overflow: hidden;
   
@@ -58,7 +58,7 @@ export const DirectoryItemContainer = styled.div`
   }
   
   @media (max-width: 768px) {
-    height: 210px;
+    height: 160px;
   }
 
 
