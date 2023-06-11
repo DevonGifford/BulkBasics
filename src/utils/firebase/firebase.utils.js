@@ -65,7 +65,9 @@ export const addCollectionAndDocuments = async ( collectionKey, objectsToAdd ) =
 };
 
 
-//  Function for retrieving the data in the FireStore Database
+/*PRE-REDUX 
+  Function for retrieving the data in the FireStore Database
+--------------------------------------------------------------
 export const getCategoriesAndDocuments = async () => {
   //fetching the data
   const collectionRef = collection(db, 'product-categories');
@@ -83,6 +85,23 @@ export const getCategoriesAndDocuments = async () => {
 
   //Return the catergory map
   return categoryMap;
+};
+
+*/
+
+
+//  Function for retrieving the data in the FireStore Database
+export const getCategoriesAndDocuments = async () => {
+  //fetching the data
+  const collectionRef = collection(db, 'product-categories');
+  const q = query(collectionRef);
+
+  //defining the data
+  const querySnapshot = await getDocs(q);
+
+  //manipulating the data into the format we want
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+
 };
 
 

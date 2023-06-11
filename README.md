@@ -930,3 +930,69 @@ Files touched in the process:
 
 Created a reducer utils folder with a very simple helper function making reading and writing slightly easier 
 
+
+##  Implementing Vanilla Redux 
+<hr/>
+
+I have been given the advice to learn redux the hard way and not use the redux toolkit until I fully understand Redux.  
+I have been told that to fully understand what redux is doing I should implement using the legacy Redux way. 
+
+So that's what I will do - I will first convert this website to manage the state using Redux, then later I will do the same with Redux Toolkit 
+
+
+<code>npm install redux react-redux and redux-logger</code>
+
+Creating a store folder to house all the redux related content
+-  Setting up the root reducer & store.js
+-  Creating the user store boiler plate code
+-  Creating the categories boiler plate code
+-  Creating the cart store boiler plate code
+-  Updating the App.jsx and Main.jsx to utilize redux - replacing usercontext.
+
+-  Hooking into and replacing references from useContext to useRedux 
+
+-  Updating Selectors for the cart state.
+
+
+###  Redux-Persist & Redux-Thunk
+<hr/>
+
+#### Persisting state with Redux Persist
+
+[redux persist documentation](https://www.npmjs.com/package/redux-persist)
+
+`npm i redux-persist`
+
+
+
+-  modifications to our store.js file to use Redux Persist - replaced the value of the reducer property in the store from userReducer to persistedReducer
+
+- modifcation to the main.jsx, wrapped root component with PersistGate. 
+This delays the rendering of your app's UI until your persisted state has been retrieved and saved to redux. 
+NOTE the PersistGate loading prop can be null, or any react instance, e.g. loading={<Loading />}
+
+-  included the Thunk middleware, which will intercept and stop non-serializable values in action before they get to the reducer
+
+-   passed our store as a parameter to persistStore, which is the function that persists and rehydrates the state. With this function, our store will be saved to the local storage, and even after a browser refresh, our data will still remain.
+
+- Specify how the incoming state is merged
+
+- Customize what’s persisted
+
+
+#### Redux Thunk
+
+[Redux-Thunk](https://www.npmjs.com/package/redux-thunk)
+
+If I was using the Redux Toolkit package, there would be nothing to install - RTK's configureStore API already adds the thunk middleware by default.
+But because I am using the basic Redux createStore API and need to set this up manually, I first need to add the redux-thunk package:
+
+`npm install redux-thunk`
+
+
+
+
+
+
+
+
