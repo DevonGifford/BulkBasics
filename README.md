@@ -1002,6 +1002,8 @@ But because I am using the basic Redux createStore API and need to set this up m
 
 ## Replacing Thunk with Redux-Saga
 
+<hr/>
+
 [Redux-Saga Documentation](https://redux-saga.js.org/)
 
 `npm install redux-saga`
@@ -1009,15 +1011,21 @@ But because I am using the basic Redux createStore API and need to set this up m
 -  Creating a `root-saga.js` file in the `store`
 -  Importing and setting up `createSagaMiddleware` and the `root-saga.js` into the store.
 
+Converting Categories State files into a Saga
+    -  Creating New Types
+    -  Creating New Actions 
+    -  Updating Selectors & Reducers
+    -  Creating the Saga file
+
 -  Setting up `cateforeis.saga.js` file 
 -  Importing into the `root-saga` file
 
 -  Converting fetchCategoriesAsynch Function (Redux-Thunk) into a a Saga
 -  Converting onAuthStateChanged Listener to Promise 
 
-
 - Creating a single check, opposed to a listener checking the state every time user state updates
--  Converting User Session files into Saga
+
+Converting User Session files into Saga
     -  Creating New Types
     -  Creating New Actions 
     -  Updating Selectors & Reducers
@@ -1025,3 +1033,60 @@ But because I am using the basic Redux createStore API and need to set this up m
 
 -  Updating the sign-in and sign-up component
 -  Updating the navigation componenet 
+
+## Migrating to Modern Redux 🎯🎯🎯
+<hr/>
+
+[Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+
+[Migrating to Modern Redux](https://redux.js.org/usage/migrating-to-modern-redux)
+
+
+
+##  Setting up Stripe API
+
+[STIPE API DOCUMENTATION](https://stripe.com/docs/stripe-js/react)
+
+[Stripe Elements](https://stripe.com/docs/stripe-js/react#available-element-components)
+
+[Stripe Test Cards](https://stripe.com/docs/testing#cards)
+
+<hr/>
+
+`npm install --save @stripe/react-stripe-js @stripe/stripe-js`
+
+-  Creating an Elements provider in the `main.jsx`
+
+-  Creating a `stripe.utils.js` file in the utils folder
+    -  importing loadStripe
+    -  passing the publishable key (hiddent)
+
+-  Creating a `.env` folder for the API keys
+
+-  Created a Local Neltify Development Server - for testing purpose 
+    -   `npm install netlify-cli -g`
+    -   [NETLIFY CLI](https://docs.netlify.com/cli/get-started/)
+
+-  Creating a payment-form component (basic)
+    -  Building the basic layout of the component
+    -  Creating and Importing styling
+    -  Imported `CardElement, useStripe, useElements` from `stripe`
+    -  Created payment handler 
+        -  preventDefault method 
+        -  ensure hooks are loaded before proceeded
+        -  Call to API through netlify functions
+        -  Alert for success of failure (temporary)
+    
+    -  Using selectors to get:
+        -   CartTotal (amount to pay)
+        -   User's name (else defaults to guest)
+
+    -  Used useState for Processing Payment Animation
+        -  Created loading animation on button 
+        -  Updated button component and styling 
+
+
+-  Rendering the componenet in the checkout section (temporary for testing)
+
+-  Creating Netlify Functions folder 
+
