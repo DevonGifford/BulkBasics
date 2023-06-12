@@ -24,17 +24,20 @@ export const fetchCategoriesFailure = (error) =>
 
 
 
-//THUNK ACTION
-export const fetchCategoriesStartAsync = () => {
-  return async (dispatch) => {
-    dispatch(fetchCategoriesStart());
+/*------------------------------
+    THUNK ACTION (replaced with redux-saga)
+---------------------------------*/
+
+// export const fetchCategoriesStartAsync = () => {
+//   return async (dispatch) => {
+//     dispatch(fetchCategoriesStart());
     
-    try {
-      const categoriesArray = await getCategoriesAndDocuments('categories');
-      dispatch(fetchCategoriesSuccess(categoriesArray));
-    } 
-    catch (error) {
-      dispatch(fetchCategoriesFailure(error));
-    }
-  };
-};
+//     try {
+//       const categoriesArray = await getCategoriesAndDocuments('categories');
+//       dispatch(fetchCategoriesSuccess(categoriesArray));
+//     } 
+//     catch (error) {
+//       dispatch(fetchCategoriesFailure(error));
+//     }
+//   };
+// };

@@ -931,7 +931,7 @@ Files touched in the process:
 Created a reducer utils folder with a very simple helper function making reading and writing slightly easier 
 
 
-##  Implementing Vanilla Redux 
+## Implementing Redux with Redux-Thunk
 <hr/>
 
 I have been given the advice to learn redux the hard way and not use the redux toolkit until I fully understand Redux.  
@@ -989,10 +989,39 @@ But because I am using the basic Redux createStore API and need to set this up m
 
 `npm install redux-thunk`
 
+-  updated the Redux store to use the MiddleWare
+-  Created a function that makes an AJAX call to FireBase Server
+-  Updating the `Main.jsx` 
+-  Creating a loading-spinner componenet 
+-  Updating the category actions and types types
+-  Rewriting the category reducer & updating selectors
+-  Implementing the loading animation in category componenets 
 
 
 
 
+## Replacing Thunk with Redux-Saga
+
+[Redux-Saga Documentation](https://redux-saga.js.org/)
+
+`npm install redux-saga`
+
+-  Creating a `root-saga.js` file in the `store`
+-  Importing and setting up `createSagaMiddleware` and the `root-saga.js` into the store.
+
+-  Setting up `cateforeis.saga.js` file 
+-  Importing into the `root-saga` file
+
+-  Converting fetchCategoriesAsynch Function (Redux-Thunk) into a a Saga
+-  Converting onAuthStateChanged Listener to Promise 
 
 
+- Creating a single check, opposed to a listener checking the state every time user state updates
+-  Converting User Session files into Saga
+    -  Creating New Types
+    -  Creating New Actions 
+    -  Updating Selectors & Reducers
+    -  Creating the Saga file
 
+-  Updating the sign-in and sign-up component
+-  Updating the navigation componenet 
