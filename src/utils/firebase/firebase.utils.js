@@ -14,6 +14,7 @@ import {
 import { 
   getFirestore,
   doc,
+  getDoc,
   getDocs,
   setDoc,
   collection,
@@ -34,16 +35,15 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-provider.setCustomParameters({
+googleProvider.setCustomParameters({
   prompt: 'select_account',
 });
 
-
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
-export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 export const db = getFirestore();
 
@@ -65,9 +65,8 @@ export const addCollectionAndDocuments = async ( collectionKey, objectsToAdd ) =
 };
 
 
-/*PRE-REDUX 
-  Function for retrieving the data in the FireStore Database
---------------------------------------------------------------
+/*   PRE-REDUX Function for retrieving the data in the FireStore Database
+-----------------------------------------------------------------------
 export const getCategoriesAndDocuments = async () => {
   //fetching the data
   const collectionRef = collection(db, 'product-categories');
@@ -114,7 +113,7 @@ export const createUserDocumentFromAuth = async (
 
   const userDocRef = doc(db, 'users', userAuth.uid);
 
-  const userSnapshot = await getDocs(userDocRef);
+  const userSnapshot = await getDoc(userDocRef);
 
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
@@ -132,7 +131,7 @@ export const createUserDocumentFromAuth = async (
     }
   }
 
-  return userDocRef;
+  return userSnapshot;
 };
 
 // SIGN-UP - Creating a user from the Email&Password sign-up
@@ -152,6 +151,21 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 // SIGN-OUT:
 export const signOutUser = async () => await signOut(auth);
 
-//Observer
+//Observer 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+
+//Creating a single check ( as opposed to a listener checking the state every tim user state updates)
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
+};
