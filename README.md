@@ -56,7 +56,7 @@ As well as a way for me to remember what I have done while building this project
 
 3.  #### In the `App.jsx
     - Importing { Routes, Route } from 'react-router-dom' ` 
-    - Wrapping everything in Routes 
+    - Wrapping everything in Routes
     - Creating a Route path to the Home page 
 
 4.  #### In the `Main.jsx`
@@ -1034,14 +1034,6 @@ Converting User Session files into Saga
 -  Updating the sign-in and sign-up component
 -  Updating the navigation componenet 
 
-## Migrating to Modern Redux 🎯🎯🎯
-<hr/>
-
-[Redux Toolkit Documentation](https://redux-toolkit.js.org/)
-
-[Migrating to Modern Redux](https://redux.js.org/usage/migrating-to-modern-redux)
-
-
 
 ##  Setting up Stripe API
 
@@ -1067,6 +1059,8 @@ Converting User Session files into Saga
     -   `npm install netlify-cli -g`
     -   [NETLIFY CLI](https://docs.netlify.com/cli/get-started/)
 
+-  Creating Netlify Functions folder 
+
 -  Creating a payment-form component (basic)
     -  Building the basic layout of the component
     -  Creating and Importing styling
@@ -1088,5 +1082,19 @@ Converting User Session files into Saga
 
 -  Rendering the componenet in the checkout section (temporary for testing)
 
--  Creating Netlify Functions folder 
 
+##  Running the project on Netlify 🎯 🎯 🎯
+
+<hr/>
+
+##  Converting the project from JavaScript to TypeScript 🎯 🎯 🎯
+
+<hr/>
+
+
+## Migrating to Modern Redux 🎯🎯🎯
+<hr/>
+
+[Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+
+[Migrating to Modern Redux](https://redux.js.org/usage/migrating-to-modern-redux)
