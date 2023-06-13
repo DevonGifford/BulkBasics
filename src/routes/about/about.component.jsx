@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import Button, { BUTTON_TYPE_CLASSES } from '../../Components/button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../../components/button/button.component';
 
 import { 
     SiFirebase, 
@@ -119,7 +119,7 @@ const About = () => {
                     <StyledIcon>
                         <SiStyledcomponents/>
                     </StyledIcon>
-                    Styled Components
+                    Styled components
                 </div>
 
                 <div>
