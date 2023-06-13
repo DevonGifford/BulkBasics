@@ -6,7 +6,7 @@ This is a full stack app (MERN stack) using Firebase.
 
 Firstly I am using this project to further familiarize myself with React Library - However there are a few new things I want to familiarize myself with, namely:
 
-<li> Style Components
+<li> Style components
 <li> Firebase
 <li> Stripe API & Context API
 <li> Redux & Redux Saga & Thunk
@@ -15,7 +15,7 @@ Firstly I am using this project to further familiarize myself with React Library
 
 Further there are a few things I want to do to simulate some real world practice.
 <li> Initially build this with Vanilla JavaScript and later convert it into a TypeScript Project
-<li> Initially style this project with Styled Components and then later convert to JS library
+<li> Initially style this project with Styled components and then later convert to JS library
 <li> I want to practice writing some tests for this project with Jest and Snapshot Testing
 
 
@@ -823,11 +823,11 @@ Simple solution:
 <br><br>
 
 
-## Switching from SASS to Styled-Components 
+## Switching from SASS to Styled-components 
 <hr>
 <br>
 
-[Styled-Components Documentation](https://styled-components.com/docs)
+[Styled-components Documentation](https://styled-components.com/docs)
 
 - Imported the library into the project
 
