@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import imageByIndex from './ImageByIndex';
+import imageByIndex from './imagebyindex';
 
 
 import { 
