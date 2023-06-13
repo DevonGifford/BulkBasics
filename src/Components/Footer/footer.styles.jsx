@@ -16,7 +16,7 @@ export const FooterContainer = styled.div`
 
 export const BigFooter = styled.div`
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 25px;
     grid-row-gap: 0px;
