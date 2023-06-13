@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-import {
-    BaseButton,
-  } from '../button/button.styles';
-
+import Button from '../button/button.component';
 
 
 
@@ -136,7 +133,7 @@ p {
 }
 
 
-${BaseButton} {
+Button {
     margin-top: auto;
     color: white;
     background-color: #2d4d2a;

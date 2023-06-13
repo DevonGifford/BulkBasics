@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import FrontSplash from '../../components/Front-splash/front-splash.component';
+import FrontSplash from '../../components/front-splash/front-splash.component';
 import Directory from "../../components/directory/directory.component";
-import Footer from '../../components/Footer/footer.component';
+import Footer from '../../components/footer/footer.component';
 
 import { HomeDiv } from './home.styles';
 
