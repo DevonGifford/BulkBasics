@@ -9,7 +9,7 @@ import {
   FaTruckMoving, 
   FaGift, 
   FaSearch 
-} from 'react-icons/Fa'
+} from 'react-icons/fa'
 
 import { 
   DirectoryContainer, 
