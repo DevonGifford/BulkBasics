@@ -3,8 +3,8 @@ import React, { Fragment } from "react"
 import { useNavigate } from 'react-router-dom'
 
 import { SiGithub } from "react-icons/si";
-import { BsLinkedin } from "react-icons/Bs";
-import { TiSocialTwitter, TiSocialInstagram } from "react-icons/Ti";
+import { BsLinkedin } from "react-icons/bs";
+import { TiSocialTwitter, TiSocialInstagram } from "react-icons/ti";
 import { FiMail } from "react-icons/fi"
 import { TbWorldWww } from "react-icons/tb"
 
