@@ -1420,9 +1420,13 @@ Converting User Session files into Saga
 <details>
 <summary> Click here to see more: </summary>
 <br/>
+<!-- INSERT TEXT HERE -->
+
+[How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
 
 
-<!-- CLOSING DIV -->
+
+<!-- END TEXT - CLOSING DIV -->
 </details>
 <br/><br/>
 
