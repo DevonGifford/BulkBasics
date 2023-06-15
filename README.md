@@ -1,35 +1,168 @@
-# Ecommerce_Showcase (in progress)
-This is one of my portfolio projects - a fully fledged ecommerce website.
-This is a full stack app (MERN stack) using Firebase.
+<!-- Logo -->
+<p align='center'>
+    <img src="src/assets/logo.png" alt="Demo" title="DemoImage" width="500" height="100"/>
+</p>
 
-## The Goal of this project
+<h4 align='center'>still in Progress... 🎯🎯🎯 </h4>
 
-Firstly I am using this project to further familiarize myself with React Library - However there are a few new things I want to familiarize myself with, namely:
-
-<li> Style components
-<li> Firebase
-<li> Stripe API & Context API
-<li> Redux & Redux Saga & Thunk
-<li> GraphQL & Apollo
-
-
-Further there are a few things I want to do to simulate some real world practice.
-<li> Initially build this with Vanilla JavaScript and later convert it into a TypeScript Project
-<li> Initially style this project with Styled components and then later convert to JS library
-<li> I want to practice writing some tests for this project with Jest and Snapshot Testing
+<br/>
 
 
 
+<!-- Introduction Heading -->
+<div align="center">
+    <h1>👋 Welcome to my e-commerce portfolio project 👋 </h1>
+        <h4>
+            Built with <a href="https://vitejs.dev/">Vite + React</a> &
+            Hosted by <a href="https://www.netlify.com/">Netlify</a> 
+        </h4>
+</div>
+</br>
 
-# How I built this:  
 
-This is supposed to be a sort of "Code with me - Diary".
-As well as a way for me to remember what I have done while building this project. 
 
-## Scaffolding the Vite/React Project
+<!-- Live Demo Link -->
+<div align="center">
+<a href="https://bulk-basics.netlify.app/">
+<h3>- click here for live Demo -</h3></a>
+
+<p>
+    
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/609d0724-3439-4ea9-b5b8-e303ca9d7117/deploy-status)](https://app.netlify.com/sites/bulk-basics/deploys)
+</p>
+</div>
+</br>
+
+
+
+
+
+<!-- Tech Used in this Project -->
+<h3 align='center'>Tech used in this project:</h3>
+
+<br/>
+
+<p align='center'>
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=vite,react,ts,styledcomponents" />
+    </a>
+    <br>
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=firebase,graphql,redux,apollo" />
+    </a>
+    <br>
+    <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=netlify,github,vscode,aiscript" />
+    </a>
+    <br><br>
+    <p align='center'>
+    You can see all tickets created & closed here  :   <a href="https://github.com/DevonGifford/Ecommerce_Showcase/issues?q=is%3Aissue+is%3Aclosed">Closed Tickets ✅</a>
+    </p>
+</p>
+
+
+<!-- 🎯🎯🎯 Demo Image 🎯🎯🎯-->
+<!-- <p align='center'>
+    <img src="public/assets/PortfolioDemoDevon.png" alt="Demo" title="DemoImage" width="650" height="650">
+</p> -->
+
+<br/><br/>
+
+
+
+<!-- TEXT -->
+
+<h1 align='center'> Welcome & Introductory </h1>
+
+
+### Introduction:
+
+<hr/>
+
+
+
+Welcome to my Ecommerce Project Repository, a portfolio project of mine!
+
+This project serves as a personal learning experience, allowing me to test my abilities in seeing a project through from start to finish. Rather than replicating existing stores, the focus is on developing robust business logic and integrating various technologies.
+My goal was to fully immerse myself in building an ecommerce application, exploring different topics and honing my implementation and integration skills. While efficiency could have been prioritized, the main objective was to gain comprehensive knowledge.
+<br><br>
+
+### Important points to note:
+
+
+<hr>
+<li> The project places less emphasis on creating visually stunning designs. Instead, it prioritizes building and refining business logic, implementing functionality, and exploring diverse technologies.
+<br>
+<li> The user interface and design maintain a minimalistic and functional approach, allowing a greater focus on learning and development.
+<br>
+<li> This project doesn't aim to create a real store with actual products. Instead, the focus is on building business logic and refining development skills, simulating real-world scenarios and mirroring professional work environments.
+You can see all tickets created & closed here  :   <a href="https://github.com/DevonGifford/Ecommerce_Showcase/issues?q=is%3Aissue+is%3Aclosed">Closed Tickets ✅</a>
+
+<br>
+
+
+### The Goals of this project:
+
 <hr>
 
-[Vite doc's](https://vitejs.dev/guide/)
+<li> Build the project initially using Vanilla JavaScript and later convert it into a TypeScript project.
+<li> Initially implement styling with SCSS and then convert it into Styled Components styling
+<li> Utilize Firebase for authentication and Firestore as the database
+
+<br/>
+
+<li> Begin with Context hooks and reducers, then transition to legacy Redux, 
+<li> Followed by integrating Redux Thunk and then convert it into Redux Saga, 
+<li> Finally convert the legacy Redux into modern Redux using Redux-Toolkit
+
+<br/>
+
+<li> Integrate GraphQL and Apollo into the project
+<li> Implement performance optimizations to ensure fast and smooth user experience
+<li> Enhance security by implementing Firebase Rule Security to protect user data
+<li> Write comprehensive tests for React components and functionality
+<li> Convert the project into a Progressive Web App (PWA) to provide a seamless and responsive experience across different devices
+
+<br/><br/><br/>
+
+
+<h1 align='center'> Development Journey</h1>
+
+
+
+<br/>
+
+In this section, I'll guide you through the step-by-step process of bringing this project to life. From initial concept to final implementation, I've documented my progress, highlighting the tools, technologies, and methodologies used along the way.
+
+Please note that this project was primarily a learning experience. While there may have been more efficient approaches, I intentionally explored specific topics and tested my abilities with various technologies and libraries.
+
+Join me on this behind-the-scenes adventure as I share exciting milestones, challenges, and valuable lessons learned as a solo developer. Experience the transformation of an idea into a fully functional ecommerce platform.
+
+<br>
+
+<p>
+You can see all tickets created & closed here  :   <a href="https://github.com/DevonGifford/Ecommerce_Showcase/issues?q=is%3Aissue+is%3Aclosed">Closed Tickets ✅</a>
+</p>
+
+<br/>
+
+<!-- Small container -->
+<details>
+<summary>  Click here to expand and see all the steps I took to build this project: </summary>
+
+<br/>
+
+
+
+
+## Scaffolding the Vite/React Project
+
+<hr/>
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+
+[VITE DOCUMENTATION](https://vitejs.dev/guide/)
 
 1.  #### Using Vite (pronounced 'Veet'🤔) 
     `npm create vite@latest`
@@ -41,10 +174,18 @@ As well as a way for me to remember what I have done while building this project
 
 4.  #### Setting up the most essential folder structure for components
 
+<!-- CLOSING DIV -->
+</details>
+
 <br><br>
+
 
 ## Setting up Routing with React-Router (v6.4)
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
 
 [React-Router Doc's](https://reactrouter.com/en/main)
 
@@ -64,9 +205,18 @@ As well as a way for me to remember what I have done while building this project
     - wrapping the "App" with `BrowserRouter`
 
 <br><br>
+<!-- CLOSING DIV -->
+</details>
+
+<br/><br/>
+
 
 ## Basic FireBase Setup 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
 
 [Cloud FireBase Doc's](https://firebase.google.com/docs/firestore)
 
@@ -96,10 +246,18 @@ As well as a way for me to remember what I have done while building this project
         -   import {signInWithGooglePopup, createUserProfileDocument} from 'firebase.utils';        
         -   Creating Async Sign-in Function/Method to get access token
 <br><br>    
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
 
 ## Setting up Firestore Data Model
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
 
 [Cloud Firestore Doc's](https://firebase.google.com/docs/firestore)
 Obviously we are just using FireBase for authentication.  To be able to store the users, I will need a database.
@@ -124,10 +282,19 @@ Enter Cloud FireStore.
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
 
 ## Experimenting with a Google Redirect Sign in 
 
 <hr> 
+
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
 
 1. #### Importing `GoogleRedirect` from `firebase/auth` into utils
 
@@ -135,8 +302,6 @@ Enter Cloud FireStore.
     -  Using `useEffect` Hook from `react`
     -  Using `getRedirectResult` from `firebase/auth`
     -  Amended the SignIn method to incorporate the above
-
-<br><br>
 
 ### Setting up email & password - sign-up & sign-in
 
@@ -223,11 +388,23 @@ Obviously once the user is signed in, they will need to be able to sign-out.
 
 <br><br>
 
-##  Just as I finished this I learned read about Observer's and onAuthStateChange
+<!-- CLOSING DIV -->
+</details>
+
+<br/><br/>
+
+
+##  Implementing Observer's and onAuthStateChange
 
 <hr>
 
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+
 [onAuthStateChanged](https://firebase.google.com/docs/auth/web/manage-users#get_the_currently_signed-in_user)
+
+Just as I finished this I learned read about Observer's and onAuthStateChange
 
 This is actually essential otherwise the user will have this unwanted persistent-signed-in-state - i.e. the user will remain signed-in, even if we refresh the page.
 
@@ -266,10 +443,20 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ##  Mocking Shop-Data and scaffolding the actual 'Shop' page
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1.  #####  Mocking Shop Data and building functionality 
     Created a simple JSON file with some simple clothing store items (just hats).  I will use this to mock having content for the store temporarily while I finish building some of the essential functionality, then later I will remove/replace the hard coded shop data. 
@@ -307,10 +494,20 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ##  Creating Cart-Icon with a DropDown Menu
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1.  #####  Created a Cart Icon
     -  Added SVG image to the assets folder
@@ -339,10 +536,20 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ##  Adding Basic Functionality to the Cart
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1.  #####  Create a CartItem Component 
     -  Created simple cart item that will return, using `destructuring` ;
@@ -392,9 +599,19 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 ##  Adding count to the Cart.Icon
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1.  #####  Initial Approach
     -  Created a simple count of the items 
@@ -430,10 +647,21 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ## Create a checkout page 
 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
 
 ####  Creating a route for the checkout page
 
@@ -530,15 +758,22 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 5.  #####  Other Minor Changes 
     -  Updating the CartIcon with changes made to Context 
 
-
 6.  #####  Created styling for all the new components 
 
 <br><br>
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 ## Storing the data on the backend - Setting up FireStoreDB
 <hr>
 
-<br>
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1. ####  Adding some new mock data
     -   As a test run I am going to add a bit more mock data with different types 
@@ -587,6 +822,8 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 3.  ####  Pulling our data from the FireBase DB  ;
 
+<!-- CLOSING DIV -->
+
 ##### In the `FireBase.utils`; 
 
 -   Bringing in the [querey](https://firebase.google.com/docs/reference/js/firestore_.query) method
@@ -609,11 +846,17 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
     -  Checking the console log if everything worked
 
 <br><br>
+</details>
+<br/><br/>
+
 
 ## Implementing new FireStore Database
 <hr>
 
-<br>
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 1. ####  Utilizing the `CategoryMap` data
 
@@ -637,6 +880,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br>
 
 2. ####  Updating the `shop.component` return structure
+
 -   updated to reflect name change of `ProductsContext`
 -   Created a method to map through data from FireStore db.
     -   Used `Fragment` to wrap the entire return
@@ -647,12 +891,19 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
         -   copy pasted the old mapping function for each product
             -   Updated naming convention to utilise `categoriesMap`
 
-<br><br>
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
 
 ## Updating the Category Preview Component 
+
 <hr>
-<br>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 ###  Created Category Preview Component :
 
@@ -823,9 +1074,19 @@ Simple solution:
 <br><br>
 
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 ## Switching from SASS to Styled-components 
 <hr>
 <br>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 [Styled-components Documentation](https://styled-components.com/docs)
 
@@ -880,16 +1141,27 @@ Strictly converted the scss files, some other features/updates required and upda
 <br><br>
 
 
-## Refactoring the UI
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
+
+## Refactoring the UI
 <hr>
 <br>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 ####  THE GOAL
 
 The objective is to create an aesthetically pleasing and user-friendly interface that aligns with contemporary design trends while enhancing usability and engagement.
 
 ###  Major UI Update 
+
+
 
 Refactored the user interface of the website 
 
@@ -915,10 +1187,18 @@ New Componenets added:
 
 - [x]  About Page
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
 ## Implementing useReducer instead of useState & useEffect
 
 <hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 Converted the cart to rather use reducers instead of useState and useEffect -  Cart and Sign-in 
 
@@ -930,9 +1210,20 @@ Files touched in the process:
 
 Created a reducer utils folder with a very simple helper function making reading and writing slightly easier 
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ## Implementing Redux with Redux-Thunk
+
 <hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 I have been given the advice to learn redux the hard way and not use the redux toolkit until I fully understand Redux.  
 I have been told that to fully understand what redux is doing I should implement using the legacy Redux way. 
@@ -955,7 +1246,6 @@ Creating a store folder to house all the redux related content
 
 
 ###  Redux-Persist & Redux-Thunk
-<hr/>
 
 #### Persisting state with Redux Persist
 
@@ -997,12 +1287,19 @@ But because I am using the basic Redux createStore API and need to set this up m
 -  Rewriting the category reducer & updating selectors
 -  Implementing the loading animation in category componenets 
 
-
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
 
 ## Replacing Thunk with Redux-Saga
 
 <hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 [Redux-Saga Documentation](https://redux-saga.js.org/)
 
@@ -1034,8 +1331,20 @@ Converting User Session files into Saga
 -  Updating the sign-in and sign-up component
 -  Updating the navigation componenet 
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ##  Setting up Stripe API
+
+<hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 [STIPE API DOCUMENTATION](https://stripe.com/docs/stripe-js/react)
 
@@ -1082,19 +1391,77 @@ Converting User Session files into Saga
 
 -  Rendering the componenet in the checkout section (temporary for testing)
 
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 
 ##  Running the project on Netlify 🎯 🎯 🎯
 
 <hr/>
 
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
 ##  Converting the project from JavaScript to TypeScript 🎯 🎯 🎯
 
 <hr/>
 
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
 
 ## Migrating to Modern Redux 🎯🎯🎯
+
 <hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
 
 [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
 
 [Migrating to Modern Redux](https://redux.js.org/usage/migrating-to-modern-redux)
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+## TEMPLATE
+
+<hr/>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
+<!-- FINAL CLOSING DIV -->
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
