@@ -1412,7 +1412,7 @@ Converting User Session files into Saga
 <br/><br/>
 
 
-##  Converting the project from JavaScript to TypeScript 🎯 🎯 🎯
+##  Converting a Vite JavaScript project into TypeScript 🍞
 
 <hr/>
 
@@ -1422,7 +1422,108 @@ Converting User Session files into Saga
 <br/>
 <!-- INSERT TEXT HERE -->
 
+
 [How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
+
+### Step 1/6
+
+
+Install dev dependencies
+
+```
+npm install -D typescript @types/react @types/react-dom
+```
+<br>
+
+### Step 2/6
+
+In packages.json, replace:
+
+`"build": "vite build"`
+
+With 👇
+
+`"build": "tsc && vite build"`
+
+<br>
+
+###  Step 3/6
+
+Rename vite.config.js and main.jsx to vite.config.ts and main.tsx
+
+<br>
+
+### Step 4/6
+Configure TypeScript by creating these two files in the root of your project:
+
+`tsconfig.json`
+
+```
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+`tsconfig.node.json`
+
+```
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+```
+
+<br>
+
+### Step 5/6
+
+Create a file named `vite-env.d.ts` inside the src/ folder and copy and paste this 
+
+(with the three slashes at the beginning):
+
+```
+
+/// <reference types="vite/client" />`
+
+```
+<br>
+
+### Step 6/6
+
+In your `index.html` you should change the name of your script from the old `main.jsx` to `main.tsx` like this:
+
+```
+
+<script type="module" src="/src/main.tsx"></script>
+
+```
+
+
+
+### Converting Components one by one
 
 
 
