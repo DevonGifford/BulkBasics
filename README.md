@@ -248,7 +248,8 @@ You can see all tickets created & closed here  :   <a href="https://github.com/D
 <br><br>    
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
+<br/>
 
 
 ## Setting up Firestore Data Model
@@ -1422,7 +1423,6 @@ Converting User Session files into Saga
 <br/>
 <!-- INSERT TEXT HERE -->
 
-
 [How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
 
 <!-- Small container -->
@@ -1567,32 +1567,41 @@ So coming accross an issue with `categoriesReducer` and `categories.actions` and
 Uncaught error:  The slice reducer for key 'categories' retunred underfined durin initialization.  If the state passsed to the reducer is undefined, you must acplicitly return the initial state.  The iniitial state may not be undefined.
 ```
 
-No error is being thrown , even if there is no default state
+Further note:  No error is being thrown , even if there is no default state
 
 **Solution : 😊**
 
-Need to extend the action creators so that they can be doing the sype checking for us - using the .match method 
+Need to extend the action creators so that they can be doing the type checking for us - using the .match method 
 
 Therefore in the `reducer.utils` file :
 
 - creating a "matcher" that will match the 'action creator' with the return type of the 'action' itself.
+  - using function overloading creating `withMatcher` functions 
+    - 1. 
+    - 2.
+    - 3.
+  - 
+
+In the `categories.actions` :
+-  Importing the `withMatcher` function and wrapping around each of the action creators
+-  updating the switch casae (now using classical if conditionals)
+
+
+<br>
+This has been a really intense way to write this app and I have been told that redux and typescript can be the most challenging part in the front-end world as it requires a good understanding of various methadologies.  For example 
+   -  TypeGuards 
+   -  .math method 
+   -  Magical Types
+   -  Type Predicate Functions 
+   -  Intersection and Return Types
+   -  Overloading Functions
+   -  etc...
+
+<br>
 
 
 
 
-
-
-Adding the following: 
-
--  TypeGuards 
-
--  .math method 
-
--  Magical Type
-
--  Type Predicate Functions 
-
--   Intersection and Return Types
 
 
 <!-- CLOSING DIV -->

@@ -5,7 +5,8 @@ type Matchable<AC extends () => AnyAction> = AC & {
     type: ReturnType<AC>['type']
     match(action: AnyAction): action is ReturnType<AC>
 }
-// This code defines a type called Matchable. Here's an explanation of each part:
+//Each  part explained 
+//This code defines a type called Matchable. Here's an explanation of each part:
 
 // type Matchable<AC extends () => AnyAction>: 
 //This declares a generic type Matchable that takes a type parameter AC. The AC parameter is a function that returns an AnyAction.
@@ -18,6 +19,7 @@ type Matchable<AC extends () => AnyAction> = AC & {
 
     // match(action: AnyAction): action is ReturnType<AC>: 
     //This adds a match method to the intersection type. It takes an action parameter of type AnyAction and returns a type predicate. The ReturnType<AC> is used again to get the return type of AC, and action is ReturnType<AC> specifies that the action parameter is of that specific return type.
+
 
 export function withMatcher<AC extends () => AnyAction & { type: string }>(actionCreator: AC): Matchable<AC>;
 //Each part explained
