@@ -1425,6 +1425,12 @@ Converting User Session files into Saga
 
 [How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
 
+<!-- Small container -->
+<details>
+<summary> Steps to convert an existing Vite + React project to use TypeScript </summary>
+<br/>
+<!-- INSERT TEXT HERE -->
+
 ### Step 1/6
 
 
@@ -1520,10 +1526,51 @@ In your `index.html` you should change the name of your script from the old `mai
 <script type="module" src="/src/main.tsx"></script>
 
 ```
+<!-- END TEXT - CLOSING DIV -->
+</details>
+<br><br>
 
+### Converting Redux to use TypeScript - *(documented for understanding)*
 
+<br>
 
-### Converting Components one by one
+#### Converting `reducer.utils`:
+-  Importing `AnyActon` from redux
+-  Creating 'types' for ActionWithPayload and Action (without payload)
+-  Using Function overloading:
+```
+allows a single function name to have multiple definitions with different parameter lists or return types. It enables you to create multiple versions of a function that can handle different argument types or numbers.
+``` 
+-  created the function createAction for the 
+    -  ActionWithPayload and 
+    -  Action *(without payload)*
+-  obviously have the function return `{ type, payload }`
+
+<br>
+
+#### Converting `Categories` Redux:
+-  Conveting the `categories.types` to `.ts`: 
+    -  using an enum type for the different action types
+    -  creating a categories array type 
+        -  requires custom CategoryItem type - as an array
+
+<br>
+
+- Converting `categories.action` to `.ts`:
+    -  Requires categories array type - created in & imported from the `categories.types` file
+    -  Import { CreateAction, Action and ActionWithPayload } from the `reducer.utils` file
+    -  Creating Types for the different ACTION_TYPES - depending on weather Action/ActionWithPayload
+    -  Updating the code to make use of the newly created Types
+    -  Reducer can only accept these Action_TYPES types 
+        - therefore created a union type with these three Action's 
+
+<br>
+
+-  Converting `categories.reducer` to `.ts`:
+    -  Importing in the CategoryAction (union) from the categories.action:
+    -  Discriminating union - [what is this?](https://css-tricks.com/typescript-discriminated-unions/)
+    -  
+
 
 
 

@@ -21,23 +21,25 @@ converted from useContext hooks to Redux
 
 import './index.scss';
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          {/* <UserProvider> */}
-            {/* <CategoriesProvider>  */}
-              {/* <CartProvider> */}
-                <Elements stripe={stripePromise}>
-                  <App />
-                </Elements>
-              {/* </CartProvider> */}
-            {/* </CategoriesProvider> */}
-          {/* </UserProvider> */}
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
-)
+const rootElement = document.getElementById('root') as Element | null;
+if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            {/* <UserProvider> */}
+              {/* <CategoriesProvider>  */}
+                {/* <CartProvider> */}
+                  <Elements stripe={stripePromise}>
+                    <App />
+                  </Elements>
+                {/* </CartProvider> */}
+              {/* </CategoriesProvider> */}
+            {/* </UserProvider> */}
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>,
+  );
+}
