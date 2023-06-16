@@ -1,9 +1,16 @@
 import { createSelector } from 'reselect';
+import { CategoriesState } from './categories.reducer';
+import { CategoryMap } from './categories.types';
 
-const selectCategoryReducer = (state) => {
-  //console.log('selector 1 fired');
+
+//ROOT ISSUE thus linter is throwing error on state - will solve later👇
+
+const selectCategoryReducer = (state): CategoriesState =>  {
+  // console.log('selector 1 fired');
   return state.categoreis;
 };
+
+
 
 export const selectCategories = createSelector(
   [selectCategoryReducer],
@@ -17,17 +24,17 @@ export const selectCategories = createSelector(
 
 export const selectCategoriesMap = createSelector(
   [selectCategories],
-  (categories) => {
+  (categories): CategoryMap => {
     //console.log('selector 3 fired');
     return categories.reduce((acc, category) => {
       const { title, items } = category;
       acc[title.toLowerCase()] = items;
       return acc;
-    }, {})
+    }, {} as CategoryMap)
   }
 );
 
-//Spinng Loading Animation Selector
+//Spinng Loading Animation Selector 💫
 export const selectIsLoading = createSelector(
   [selectCategoryReducer],
   (categoriesSlice) => categoriesSlice.isLoading
@@ -36,25 +43,9 @@ export const selectIsLoading = createSelector(
 
 
 
-/* Managing the Back end Spelling Mistake
+/* --------------------------------------------------- 
+  NB:  Managing the Back-End FireStore Spelling Mistake 
 -----------------------------------------------------
-state.categoreis.categories
+        state.categoreis.categories
 
-*/
-
-
-/*  OLD REDUX METHOD BEFORE RESELECT
--------------------------------------------
-
-export const selectCategoriesMap = (state) => {
-  console.log('selector fired');
-  return state.categoreis.categories
-    .reduce((acc, category) => {
-      const { title, items } = category;
-      acc[title.toLowerCase()] = items;
-      return acc;
-    }, {});
-  
-//   };
-  
 */

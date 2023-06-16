@@ -1534,7 +1534,18 @@ In your `index.html` you should change the name of your script from the old `mai
 
 <br>
 
+
+
+
 #### Converting `reducer.utils`:
+
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+
 -  Importing `AnyActon` from redux
 -  Creating 'types' for ActionWithPayload and Action (without payload)
 -  Using Function overloading:
@@ -1548,7 +1559,58 @@ allows a single function name to have multiple definitions with different parame
 
 <br>
 
+**TYPE PROBLEM / BUG 🙈**
+
+So coming accross an issue with `categoriesReducer` and `categories.actions` and that is that this is actually not 'type safe'.  
+
+```
+Uncaught error:  The slice reducer for key 'categories' retunred underfined durin initialization.  If the state passsed to the reducer is undefined, you must acplicitly return the initial state.  The iniitial state may not be undefined.
+```
+
+No error is being thrown , even if there is no default state
+
+**Solution : 😊**
+
+Need to extend the action creators so that they can be doing the sype checking for us - using the .match method 
+
+Therefore in the `reducer.utils` file :
+
+- creating a "matcher" that will match the 'action creator' with the return type of the 'action' itself.
+
+
+
+
+
+
+Adding the following: 
+
+-  TypeGuards 
+
+-  .math method 
+
+-  Magical Type
+
+-  Type Predicate Functions 
+
+-   Intersection and Return Types
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
+<br>
+
 #### Converting `Categories` Redux:
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+
+
 -  Conveting the `categories.types` to `.ts`: 
     -  using an enum type for the different action types
     -  creating a categories array type 
@@ -1569,9 +1631,28 @@ allows a single function name to have multiple definitions with different parame
 -  Converting `categories.reducer` to `.ts`:
     -  Importing in the CategoryAction (union) from the categories.action:
     -  Discriminating union - [what is this?](https://css-tricks.com/typescript-discriminated-unions/)
-    -  
+    -  Typing our the Categories state
+    -  amending on what the switch case key is 
 
+<br>
 
+-  Converting `categories.selector` to `.ts`:
+    -  importing `CategoriesState` from `reducer`, shape of the state reffering to category state.
+    -  TypeScrip will then infer the rest of the state calls
+    -  Creating type for `CategoryMap` in `category.types` and importing
+    -  For the `selectCategoriesMap`:
+        -  Type the `categories` to use the `CategoryMap` type
+        -  use `as CategoryMap` as a type assertion for the final resulting object
+
+<br>
+
+I will convert the sagas at the end - this looks complicated.  
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+### NEXT HEDING
 
 
 <!-- END TEXT - CLOSING DIV -->

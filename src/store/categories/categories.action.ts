@@ -8,6 +8,7 @@ export type FetchCategoriesSuccess = ActionWithPayload<CATEGORIES_ACTION_TYPES.F
 
 export type FetchCategoriesFailure = ActionWithPayload<CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, Error>
 
+
 export type CategoryAction = FetchCategoriesStart | FetchCategoriesSuccess | FetchCategoriesFailure
 
 
