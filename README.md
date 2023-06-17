@@ -1641,7 +1641,7 @@ This has been a really intense way to write this app and I have been told that r
     -  Importing in the CategoryAction (union) from the categories.action:
     -  Discriminating union - [what is this?](https://css-tricks.com/typescript-discriminated-unions/)
     -  Typing our the Categories state
-    -  amending on what the switch case key is 
+    -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
 
 <br>
 
@@ -1661,10 +1661,47 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/><br/>
 
-### NEXT HEDING
+#### Converting `Cart` Redux 
 
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
-<!-- END TEXT - CLOSING DIV -->
+-  Conveting the `cart.types` to `.ts`: 
+    -  using an enum type for the different action types
+    -  creating a custom CartItem Type (extended from the CategoryITem from the categories.types)
+
+<br>
+
+-  Conveting the `cart.actions` to `.ts`: 
+   -  Updating the helper functions - typing 
+   -  Creating types for the `setIsCartOpen` & `SetCartItems`
+   -  Creating withMatch for `setIsCartOpen` & `setCartItems`
+   -  Typing the variables in the Adding, Removing and Clearing Cart Items
+
+<br>
+
+-  Conveting the `cart.reducer` to `.ts`: 
+   -  Importing relevant files `AnyAction`, `CartItem` and the `setCartItems, setIsCartOpen`
+   -  Typing out the `CartState`
+   -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
+
+<br>
+
+-  Conveting the `cart.actions` to `.ts`: 
+   -  importing the `CartState` form the `CartReducer`
+   -  Making minor amendments tot the createSelectors:  "type"
+
+<br>
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+Converting 
+
+<!-- END SECTION - CLOSING DIV -->
 </details>
 <br/><br/>
 
@@ -1703,7 +1740,6 @@ I will convert the sagas at the end - this looks complicated.
 
 
 <!-- FINAL CLOSING DIV -->
-
 <!-- CLOSING DIV -->
 </details>
 <br/><br/>

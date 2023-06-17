@@ -1,14 +1,22 @@
-import CART_ACTION_TYPES from './cart.types';
-import { createAction } from '../../utils/reducer/reducer.utils';
+import { CategoryItem } from '../categories/categories.types';
+import { CART_ACTION_TYPES, CartItem } from './cart.types';
+
+import { 
+  createAction,
+  ActionWithPayload,
+  withMatcher, 
+} from '../../utils/reducer/reducer.utils';
 
 
 /*------------------------------------
 HELPER FUNCTIONS 
 ------------------------------------*/
 
-
 // Adding single Item to the Cart - (empty cart create cart) 
-const addCartItem = (cartItems, productToAdd) => {
+const addCartItem = (
+  cartItems: CartItem[], 
+  productToAdd: CategoryItem
+  ): CartItem[] => {
 
     //find if cartItems contaiins productToAdd
     const existingCartItem = cartItems.find(
@@ -26,10 +34,14 @@ const addCartItem = (cartItems, productToAdd) => {
   
     //If it's a new item - Return new array with modified cartItems / new cart item
     return [...cartItems, { ...productToAdd, quantity: 1 }];
-  };
+};
+
 
 //Removing Single Item from the Cart
-const removeCartItem = (cartItems, cartItemToRemove) => {
+const removeCartItem = (
+  cartItems: CartItem[], 
+  cartItemToRemove: CategoryItem
+  ): CartItem[] => {
 
 // find cart item to remove
 const existingCartItem = cartItems.find(
@@ -37,7 +49,7 @@ const existingCartItem = cartItems.find(
 );;
 
 //check if this is the last item - if so remove entire item from cart
-if (existingCartItem.quantity === 1) {
+if (existingCartItem && existingCartItem.quantity === 1) {
     return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
 }
 
@@ -50,10 +62,13 @@ return cartItems.map((cartItem) =>
 
 };
 
-// Remove entire Item from the cart
-const clearCartItem = (cartItems, cartItemToClear) => 
-cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
+// Remove entire Item from the cart
+const clearCartItem = (
+  cartItems: CartItem[], 
+  cartItemToClear: CategoryItem
+  ): CartItem[] => 
+cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
 
 
@@ -61,33 +76,51 @@ cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 /*------------------------------------
 ACTION CREATORS
 ------------------------------------*/
-
-
 //Setting the Cart UI Open/Close
-export const setIsCartOpen = (boolean) => {
-    return createAction ( CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean );
-};
+export type SetCartIsOpen = ActionWithPayload<
+  CART_ACTION_TYPES.SET_IS_CART_OPEN,
+  boolean
+>;
 
+export const setIsCartOpen = withMatcher((boolean: boolean) => 
+  createAction ( CART_ACTION_TYPES.SET_IS_CART_OPEN, boolean )
+);
+
+
+
+//Adding Removing and Clearing Cart Items
+export type SetCartItems = ActionWithPayload<
+  CART_ACTION_TYPES.SET_CART_ITEMS,
+  CartItem[]
+>;
+
+export const setCartItems = withMatcher((cartItems: CartItem[]): SetCartItems =>
+  createAction ( CART_ACTION_TYPES.SET_CART_ITEMS, cartItems)
+);
 
 //  Adding items to the cart
-export const addItemToCart = (cartItems, productToAdd) => {
+export const addItemToCart = (
+  cartItems: CartItem[],
+  productToAdd: CategoryItem
+  ) => {
     const newCartItems = addCartItem(cartItems, productToAdd);
-    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-
+    return setCartItems(newCartItems);
 };
-
 
 //  Removing items from the cart
-export const removeItemToCart = (cartItems, cartItemToRemove) => {
+export const removeItemToCart = (
+  cartItems: CartItem[], 
+  cartItemToRemove: CartItem,
+  ) => {
     const newCartItems = removeCartItem(cartItems, cartItemToRemove);
-    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-
+    return setCartItems(newCartItems);
 };
 
-
 //Clearing items from the cart
-export const clearItemFromCart = (cartItems, cartItemToClear) => {
+export const clearItemFromCart = (
+  cartItems: CartItem[], 
+  cartItemToClear: CartItem, 
+  ) => {
     const newCartItems = clearCartItem(cartItems, cartItemToClear);
-    return createAction(CART_ACTION_TYPES.SET_CART_ITEMS, newCartItems);
-
+    return setCartItems(newCartItems);
 };
