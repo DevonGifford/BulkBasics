@@ -1689,7 +1689,7 @@ I will convert the sagas at the end - this looks complicated.
 
 <br>
 
--  Conveting the `cart.actions` to `.ts`: 
+-  Conveting the `cart.selector` to `.ts`: 
    -  importing the `CartState` form the `CartReducer`
    -  Making minor amendments tot the createSelectors:  "type"
 
@@ -1699,7 +1699,122 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/><br/>
 
-Converting 
+### Converting Firebase (pre-user redux) 
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+-  updating `addCollectionAndDocuments`:
+   -  Typing out the function
+   -  Becuase `objectToAdd` could be an array of almost anything
+      -  creating a `ObjectToAdd` type with the one known item which is a title (as string)
+      -  then adding `<T extends ObjectToAdd>`
+      -  thus making our `objectToAdd` as `T[]`
+      -  becuase this will be a promise that returns nothing giving it a type `promise<void>`
+  
+
+<br>
+
+- updating the `getCategoriesAndDocuments`:
+  - Typing out the function 
+  - This function is returning our Category Data 
+    -  we have already created a type for this `Category`
+    -  importing this type from `category.types` file 
+    -  Because this is a promise the type we get back will be `Promise<Category[]>` 
+    -  While I know what data we are getting back from this 3rd-party-API (firebase)- TypeScript does not 
+      -  Therefore need cast the value
+         -  return statement need to tell TS that returning a `Category`
+
+
+<br>
+
+-  updating the `createUserDocumentFormAuth`
+   -  for the `userAuth` so firebase actually gives us a type here called `user` 
+      -  import the `User` from firebase
+      -  `userAuth: User`
+
+   -  `additionalInformation` which in this website's current state is just a display name
+      -  creating a type `AdditionalInformation`
+         -  because displayname can be optional will use a `?`
+         -  `displayname? : string;`
+   -  This function is returning all the usersData OR nothing (logging out)
+
+   -  Firestore has/provides a typed `QueryDocumentSnapshot`
+      -  importing this type 
+      -  requires `<our custom Data Set>`
+
+    -  Creating `UserData` type
+         -  createdAt, displayName, email 
+
+    -  funciton will be return a promise of this data or nothing
+      -  include in the top `Promise<void | QueryDocumentsSnapshot<UserData>>` 
+      -  and casting the return of `userSnapshot as QueryDocumentSnapshot<UserData>`
+  
+   -  Handleing the catch.error
+      -  cannot get the error.message without typing our the error.
+      -  path of least resistance would just have the whole error printed out
+
+
+<br>
+
+- For the `createAuthUserWithEmailAndPassword` & `signInAuthUserWithEmailAndPassword` functions
+  - typing the inputs
+  - because this is returning a firebase type it already infers the type 
+    - `Promise<UserCredential>` auto completed by firebase
+
+<br>
+
+- For the `SignOutUser` the same as the above it is inferred by Firebase
+  - `signOut(auth: Auth): Promise<void>`
+
+<br>
+
+-  For the `onAuthStateChangedListener` which is an observer function 
+   -  Once again Firebase provides a type for this callback being `NextOrObserver` - *Type definition for an event callback*
+      -  import from firebase
+      -  type the callback as this `NextOrObserver<User>`
+      -  our event being calledback is obviously the `<User>`
+
+<br>
+
+- For the `getCurrentUser` fucntion that returns our user or nothing at all
+  - fucntion returns `: Promise<User | null>`
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+### Converting `user` Redux 
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+-  Conveting the `user.types` to `.ts`: 
+   -  
+
+<br>
+
+-  Conveting the `user.actions` to `.ts`: 
+   -  
+
+<br>
+
+-  Conveting the `user.reducer` to `.ts`: 
+   -  
+
+<br>
+
+-  Conveting the `user.selector` to `.ts`: 
+   -  
+
+<br>
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
 <!-- END SECTION - CLOSING DIV -->
 </details>
