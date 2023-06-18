@@ -1413,25 +1413,32 @@ Converting User Session files into Saga
 <br/><br/>
 
 
-##  Converting a Vite JavaScript project into TypeScript 🍞
+##  Converting to TypeScript 🍞
 
 <hr/>
 
-<!-- Small container -->
+<!-- TYPESCRIPT SECTION container -->
 <details>
 <summary> Click here to see more: </summary>
+<hr>
+<!-- INSERT TEXT HERE -->
+
+<br/>
+
+### Convert an existing **[Vite + React + JavaScript]** --> **TypeScript**
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
 <br/>
 <!-- INSERT TEXT HERE -->
 
 [How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
 
-<!-- Small container -->
-<details>
-<summary> Steps to convert an existing Vite + React project to use TypeScript </summary>
-<br/>
-<!-- INSERT TEXT HERE -->
+<hr>
 
-### Step 1/6
+
+#### **Step 1/6**
 
 
 Install dev dependencies
@@ -1441,7 +1448,7 @@ npm install -D typescript @types/react @types/react-dom
 ```
 <br>
 
-### Step 2/6
+#### **Step 2/6**
 
 In packages.json, replace:
 
@@ -1453,13 +1460,13 @@ With 👇
 
 <br>
 
-###  Step 3/6
+#### **Step 3/6**
 
 Rename vite.config.js and main.jsx to vite.config.ts and main.tsx
 
 <br>
 
-### Step 4/6
+#### **Step 4/6**
 Configure TypeScript by creating these two files in the root of your project:
 
 `tsconfig.json`
@@ -1504,7 +1511,7 @@ Configure TypeScript by creating these two files in the root of your project:
 
 <br>
 
-### Step 5/6
+#### **Step 5/6**
 
 Create a file named `vite-env.d.ts` inside the src/ folder and copy and paste this 
 
@@ -1517,7 +1524,7 @@ Create a file named `vite-env.d.ts` inside the src/ folder and copy and paste th
 ```
 <br>
 
-### Step 6/6
+#### **Step 6/6**
 
 In your `index.html` you should change the name of your script from the old `main.jsx` to `main.tsx` like this:
 
@@ -1532,13 +1539,16 @@ In your `index.html` you should change the name of your script from the old `mai
 
 ### Converting Redux to use TypeScript - *(documented for understanding)*
 
-<br>
+<details>
+<summary> Expand: </summary>
+<br/>
+
+[How to Migrate a React App to TypeScript](https://www.sitepoint.com/how-to-migrate-a-react-app-to-typescript/)
 
 
-
+<hr>
 
 #### Converting `reducer.utils`:
-
 
 <!-- Small container -->
 <details>
@@ -1597,7 +1607,6 @@ This has been a really intense way to write this app and I have been told that r
    -  Overloading Functions
    -  etc...
 
-<br>
 
 
 
@@ -1606,10 +1615,7 @@ This has been a really intense way to write this app and I have been told that r
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
-
-
-<br>
+<br/>
 
 #### Converting `Categories` Redux:
 
@@ -1659,7 +1665,7 @@ I will convert the sagas at the end - this looks complicated.
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
 
 #### Converting `Cart` Redux 
 
@@ -1697,9 +1703,9 @@ I will convert the sagas at the end - this looks complicated.
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
 
-### Converting Firebase (pre-user redux) 
+#### Converting `Firebase` (prerequisite to user-redux) 
 <!-- Small container -->
 <details>
 <summary> Click here to see more: </summary>
@@ -1783,9 +1789,9 @@ I will convert the sagas at the end - this looks complicated.
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
 
-### Converting `user` Redux 
+#### Converting `user` Redux 
 
 <!-- Small container -->
 <details>
@@ -1793,22 +1799,31 @@ I will convert the sagas at the end - this looks complicated.
 <br/>
 
 -  Conveting the `user.types` to `.ts`: 
-   -  
+   -  creating an enum for all the different action type names
 
 <br>
 
 -  Conveting the `user.actions` to `.ts`: 
-   -  
+   -  Importing `AdditionalInformation` & `UserData`
+   -  Importing `createAction` & `Action` & `ActionWithPayload` & `withMatch` 
+   -  now converting all the various actions 
+      -  typing the return statement
+      -  typing params 
+      -  using withMatcher 
 
 <br>
 
 -  Conveting the `user.reducer` to `.ts`: 
-   -  
+   - Importing relevant actions 
+   -  Typing out the `UserState`
+   -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
 
 <br>
 
 -  Conveting the `user.selector` to `.ts`: 
-   -  
+   -  importing the `CreateSelector` and `UserState`
+   -  Adding the type state to the reducer and amending fixing the return to work with typescript
+   -  Creating a `selectCurrentUser` Selector. 
 
 <br>
 
@@ -1816,9 +1831,19 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/><br/>
 
-<!-- END SECTION - CLOSING DIV -->
+
+
+
+
+
+<!-- END  REDUX SECTION - CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
+
+
+<!-- END  TYPESCRIPT SECTION - CLOSING DIV -->
+</details>
+<br/>
 
 
 ## Migrating to Modern Redux 🎯🎯🎯
