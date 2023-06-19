@@ -1,13 +1,13 @@
 import { createSelector } from "reselect";
 import { CartState } from "./cart.reducer";
+import { RootState } from "../store";
 
 
 
 /* ---------------------------------
     BASIC INPUT SELECTOR
 -------------------------------------*/ 
-
-const selectCartReducer = (state): CartState => {
+const selectCartReducer = (state: RootState): CartState => {
     return state.cart;
 }
 

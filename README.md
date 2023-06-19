@@ -1548,7 +1548,7 @@ In your `index.html` you should change the name of your script from the old `mai
 
 <hr>
 
-#### Converting `reducer.utils`:
+#### Converting `reducer.utils` :
 
 <!-- Small container -->
 <details>
@@ -1617,7 +1617,7 @@ This has been a really intense way to write this app and I have been told that r
 </details>
 <br/>
 
-#### Converting `Categories` Redux:
+#### Converting `Categories` :
 
 <!-- Small container -->
 <details>
@@ -1667,11 +1667,11 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/>
 
-#### Converting `Cart` Redux 
+#### Converting `Cart` :
 
 <!-- Small container -->
 <details>
-<summary> Click here to see more: </summary>
+<summary> Expand: </summary>
 <br/>
 
 -  Conveting the `cart.types` to `.ts`: 
@@ -1705,10 +1705,10 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/>
 
-#### Converting `Firebase` (prerequisite to user-redux) 
+#### Converting `Firebase` *(prerequisite to user-redux)* : 
 <!-- Small container -->
 <details>
-<summary> Click here to see more: </summary>
+<summary> Expand: </summary>
 <br/>
 
 -  updating `addCollectionAndDocuments`:
@@ -1791,11 +1791,11 @@ I will convert the sagas at the end - this looks complicated.
 </details>
 <br/>
 
-#### Converting `user` Redux 
+#### Converting `user` : 
 
 <!-- Small container -->
 <details>
-<summary> Click here to see more: </summary>
+<summary> Expand: </summary>
 <br/>
 
 -  Conveting the `user.types` to `.ts`: 
@@ -1829,8 +1829,62 @@ I will convert the sagas at the end - this looks complicated.
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
 
+
+#### Typing the `RootReducer`, `Root-State` and `Custom-Middleware`:
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+`Root-reducer.js` --> **TypeScript** 
+-  Very simple to do as everything is already typed 
+-  Converting the file extention to `.ts`
+
+<br>
+
+`store.js` -->  **TypeScript**
+-  typing out the rootstate
+   -  using `ReturnType<typeof rootReducer>`
+      -  `ReturnType` is because each one of these reducers are just functions
+      -  We cant simply just pass the `rootReducer` as this will result in an error
+         -  instead we need to get the type and if we look at the type of rootReducer its actually a combination of all the different reducers.
+
+
+-  Now we can export this RootState to all our other reducers (in the various selectors where we called state) and our `state` type will now be the new `RootState` type.
+   -  importing the RootState type to the following:
+      -  store
+      -  cart
+      -  user 
+
+
+- Getting a type error `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
+  - This happening because we are extending on the window type
+    - declare global with interface window withour extention `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
+      - This is an optional key so using a `?` in the statement
+      - This is a type of compose and therefore `typeof compose`
+
+
+<br>
+
+`middleware` -->  **TypeScript**
+
+- Import warning on 3rd party redux-logger
+  - Need to import the @types for the 3rd party redux-logger - 
+    - `npm install @types/redux-logger`
+
+
+- Typing out the Custom Middleware 
+  - `import { Middleware } from "redux"` - > empty object in this case
+  - `import { RootState } from '../store'`
+    - Simply add a type to the Middleware using the newly imported states
+
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
 
 

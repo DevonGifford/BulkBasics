@@ -12,6 +12,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
+    "@types/redux-logger": "^3.0.9",
     "dotenv": "^16.1.4",
     "embla-carousel-autoplay": "^8.0.0-rc06",
     "embla-carousel-react": "^8.0.0-rc06",

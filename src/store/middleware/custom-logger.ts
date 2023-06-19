@@ -1,8 +1,12 @@
 //CREATING MY OWN MIDDLE WARE - EXPERIMENT
 //------------------------------------------------------------
 
+import { Middleware } from "redux";
 
-export const customLoggerMiddleware = (store) => (next) => (action) => {
+import { RootState } from '../store'
+
+
+export const customLoggerMiddleware: Middleware<{}, RootState > = (store) => (next) => (action) => {
   if (!action.type) {
     return next(action);
   }

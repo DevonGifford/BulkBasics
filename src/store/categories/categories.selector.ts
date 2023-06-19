@@ -1,11 +1,12 @@
 import { createSelector } from 'reselect';
 import { CategoriesState } from './categories.reducer';
 import { CategoryMap } from './categories.types';
+import { RootState } from '../store';
 
 
 //ROOT ISSUE thus linter is throwing error on state - will solve later👇
 
-const selectCategoryReducer = (state): CategoriesState =>  {
+const selectCategoryReducer = (state: RootState): CategoriesState =>  {
   // console.log('selector 1 fired');
   return state.categoreis;
 };
