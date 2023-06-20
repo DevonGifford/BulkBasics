@@ -13,6 +13,7 @@
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.54.0",
     "@types/redux-logger": "^3.0.9",
+    "babel-plugin-macros": "^3.1.0",
     "dotenv": "^16.1.4",
     "embla-carousel-autoplay": "^8.0.0-rc06",
     "embla-carousel-react": "^8.0.0-rc06",
@@ -34,6 +35,7 @@
     "sort-by": "^0.0.2",
     "stripe": "^12.9.0",
     "styled-components": "^5.3.11",
+    "typed-redux-saga": "^1.5.0",
     "vite-plugin-svgr": "^3.2.0"
   },
   "devDependencies": {

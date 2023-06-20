@@ -1537,7 +1537,8 @@ In your `index.html` you should change the name of your script from the old `mai
 </details>
 <br><br>
 
-### Converting Redux to use TypeScript - *(documented for understanding)*
+### Converting Redux --> **TypeScript** 
+
 
 <details>
 <summary> Expand: </summary>
@@ -1832,7 +1833,7 @@ I will convert the sagas at the end - this looks complicated.
 <br/>
 
 
-#### Typing the `RootReducer`, `Root-State` and `Custom-Middleware`:
+#### Typing `RootReducer`, `Root-State` & `Custom-Middleware` :
 <!-- Small container -->
 <details>
 <summary> Expand: </summary>
@@ -1881,13 +1882,52 @@ I will convert the sagas at the end - this looks complicated.
     - Simply add a type to the Middleware using the newly imported states
 
 
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+#### Typing `Redux-Saga` :
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+This was rather challenging at first but these two resources helped significantly:
+
+[TypeScript and Redux Sagas](https://understandable.dev/deep-dives/typescript-and-redux-sagas/)
+[Implement Redux-Saga in your React TypeScript Project](https://medium.com/edonec/implement-redux-saga-in-your-react-typescript-project-1d79c4a2d726)
+
+**Importing** `typed-redux-saga` & `babel-plugin-macros` 
+- `npm install --dev babel-plugin-macros`
+- `npm install @types/redux-logger`
+
+-  Fixing linting issues - *got some help with this*:
+   - In the `tsconfig.json`, under 'compiler' settings, adding the following to help handle error warnings:
+     - ` "downlevelIteration" : true, `
+     - [downlevelIteration explained](https://www.typescriptlang.org/tsconfig#downlevelIteration)
+
+<br>
+
+`categories.saga.js` --> **TypeScript**
+- Using `yield*` instead of the yield -  [How yield* works](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*)
+- typing my `errors as Erros`
+
+<br>
+
+`user.saga.js` --> **TypeScript**
+- Using `yield*` same as above
+- Importing variouse `action`(types) and types from the `firebase.utils`
+- Involved quite a bit of typing and 
+- Had to add some conditionals to get everything to be type safe
+- typing my `errors as Erros`
+
+<br>
+
+Futher I found some missing types in my `firebase.utils` and `user.actions`, so had to fix those to get things working 
 
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
-
-
-
+<br/>
 
 
 <!-- END  REDUX SECTION - CLOSING DIV -->

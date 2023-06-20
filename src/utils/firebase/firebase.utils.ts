@@ -12,6 +12,7 @@ import {
   onAuthStateChanged,
   User,
   NextOrObserver,
+  UserCredential,
 } from 'firebase/auth';
 
 import { 
@@ -64,8 +65,8 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd> (
   collectionKey: string, 
   objectsToAdd: T[]
   ): Promise<void> => {
-  const batch = writeBatch(db);
   const collectionRef = collection(db, collectionKey);
+  const batch = writeBatch(db);
   
   //creating the batches to fire off - key is the title, the object is the object itself
   objectsToAdd.forEach((object) => {
@@ -75,7 +76,7 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd> (
 
   //waiting for the commit - thus we know it's been successfully pushed to the db
   await batch.commit();
-  console.log('done');
+  console.log('upload complete');
 };
 
 
@@ -109,8 +110,8 @@ export type UserData= {
 
 export const createUserDocumentFromAuth = async (
   userAuth: User,  //type comes from Firbase
-  additionalInformation = {} as AdditionalInformation
-): Promise<void | QueryDocumentSnapshot<UserData>> => {
+  additionalInformation: AdditionalInformation = {} as AdditionalInformation
+): Promise<QueryDocumentSnapshot<UserData> | void > => {
   if (!userAuth) return;
 
   const userDocRef = doc(db, 'users', userAuth.uid);
@@ -139,7 +140,7 @@ export const createUserDocumentFromAuth = async (
 
 
 // SIGN-UP - Creating a user from the Email&Password sign-up
-export const createAuthUserWithEmailAndPassword = async (email: string, password: string) => {
+export const createAuthUserWithEmailAndPassword = async (email: string, password: string): Promise<UserCredential | void> => {
   if (!email || !password) return;
 
   return await createUserWithEmailAndPassword(auth, email, password);
@@ -148,7 +149,7 @@ export const createAuthUserWithEmailAndPassword = async (email: string, password
 
 
 // SIGN-IN:  Signing a user in with existing Email&Password
-export const signInAuthUserWithEmailAndPassword = async (email: string, password: string) => {
+export const signInAuthUserWithEmailAndPassword = async (email: string, password: string): Promise<UserCredential | void> => {
   if (!email || !password) return;
 
   return await signInWithEmailAndPassword(auth, email, password);
@@ -157,7 +158,7 @@ export const signInAuthUserWithEmailAndPassword = async (email: string, password
 
 
 // SIGN-OUT:
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async (): Promise<void> => await signOut(auth);
 
 
 
@@ -167,7 +168,7 @@ export const onAuthStateChangedListener = (callback: NextOrObserver<User> ) =>
 
 
 //Creating a single check ( as opposed to a listener checking the state every tim user state updates)
-export const getCurrentUser = () => {
+export const getCurrentUser = (): Promise<User | null> => {
   return new Promise((resolve, reject) => {
     const unsubscribe = onAuthStateChanged(
       auth,
