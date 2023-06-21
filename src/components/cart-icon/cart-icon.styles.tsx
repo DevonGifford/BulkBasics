@@ -22,9 +22,7 @@ export const CartIconContainer = styled.div`
       width: 50px;
       height: 50px;
     }
-
   }
-
 `;
 
 export const ItemCount = styled.span`

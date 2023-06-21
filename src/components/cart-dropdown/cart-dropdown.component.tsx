@@ -1,8 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-// import { useContext } from 'react';   - converted to redux
-// import { CartContext } from '../../contexts/cart.context';   - converted to redux
-
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
 

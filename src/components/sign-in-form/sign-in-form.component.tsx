@@ -1,14 +1,9 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
+import { AuthError, AuthErrorCodes } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
 import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
-
-// import {
-//   signInWithGooglePopup,
-//   signInAuthUserWithEmailAndPassword,
-//   createUserDocumentFromAuth
-// } from '../../utils/firebase/firebase.utils';
 
 import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
 
@@ -17,12 +12,10 @@ import { SignInContainer, ButtonsContainer, TitleWrapper } from './sign-in-form.
 /*------------------------------------------------------------
 //Setting Default Form Fields
 ------------------------------------------------------------*/
-
 const defaultFormFields = {
   email: '',
   password: '',
 };
-
 /*------------------------------------------------------------
   Handle the Sign in 
 ------------------------------------------------------------*/
@@ -36,43 +29,34 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-
   /*Handle Google Sign in
   -------------------------*/ 
   const signInWithGoogle = async () => {
     dispatch(googleSignInStart());
   };
 
-  
   /*Handle Email+Password  (submit & sign-in)
   -------------------------*/ 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
-      // const { user } = await signInAuthUserWithEmailAndPassword(
-      //   email,
-      //   password
-      // );
       dispatch(emailSignInStart(email, password));
       resetFormFields();
   
     } catch (error) {
-      switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
-          break;
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
-          break;
-        default:
-          console.log(error);
+      if ((error as AuthError).code === AuthErrorCodes.CREDENTIAL_MISMATCH) {
+        // Handle the "user not found" error
+        alert('No user associated with this email');
+      } else {
+        // Handle other errors
+        console.log(error);
       }
     }
   };
 
   //Handle Changes made to the form 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     setFormFields({ ...formFields, [name]: value });
