@@ -2012,24 +2012,24 @@ In order of completion:
 - [x]  carticon 
 - [x]  cartdropdown 
 - [x]  cartitem 
+- [x]  product-card 
+- [x]  spinner
+- [x]  footer 
+- [ ]  payment-form 
 - [ ]  categorypreview 
 - [ ]  checkoutitem 
 - [ ]  directory 
 - [ ]  directoryitem 
 - [ ]  front-splash 
-- [ ]  payment-form 
-- [ ]  product-card 
-- [ ]  spinner
-- [ ]  footer 
 - [ ]  carousel 
 
 **List of Routes to Convert**
 
 - [x] navigation 
+- [x] category 
 - [ ] about 
 - [ ] authentication 
 - [ ] categories-preview
-- [ ] category 
 - [ ] checkout 
 - [ ] home 
 - [ ] shop

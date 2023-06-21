@@ -1,5 +1,5 @@
-// import { useContext } from 'react';
-// import { CartContext } from '../../contexts/cart.context';
+import { FC } from 'react';
+import { CategoryItem } from '../../store/categories/categories.types';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
@@ -14,7 +14,11 @@ import {
   Price,
 } from './product-card.styles';
 
-const ProductCard = ({ product }) => {
+type ProductCardProps = {
+  product: CategoryItem;
+};
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
   
   const { name, price, imageUrl } = product;
   
