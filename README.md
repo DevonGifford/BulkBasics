@@ -1458,7 +1458,6 @@ Converting User Session files into Saga
 </details>
 <br/><br/>
 
-## 
 
 ## 6. Converting to TypeScript 🍞
 
@@ -2015,32 +2014,30 @@ In order of completion:
 - [x]  product-card 
 - [x]  spinner
 - [x]  footer 
-- [ ]  payment-form 
-- [ ]  categorypreview 
-- [ ]  checkoutitem 
-- [ ]  directory 
-- [ ]  directoryitem 
-- [ ]  front-splash 
-- [ ]  carousel 
+- [x]  payment-form 
+- [x]  categorypreview 
+- [x]  checkoutitem 
+- [x]  directory 
+- [x]  directoryitem 
+- [x]  front-splash 
+- [x]  carousel 
 
 **List of Routes to Convert**
 
 - [x] navigation 
 - [x] category 
-- [ ] about 
-- [ ] authentication 
-- [ ] categories-preview
-- [ ] checkout 
-- [ ] home 
-- [ ] shop
+- [x] about 
+- [x] authentication 
+- [x] categories-preview
+- [x] checkout 
+- [x] home 
+- [x] shop
 
 
 <!-- CLOSING DIV -->
 </details>
 <br/><br/>
 
-
-### Converting STRIPE API --> **TypeScript** 
 
 <!-- END  TYPESCRIPT SECTION - CLOSING DIV -->
 </details>
