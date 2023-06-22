@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 
-export const BackgroundImage = styled.div`
+type BackgroundImageProps = {
+  imageUrl: string;
+}
+
+export const BackgroundImage = styled.div<BackgroundImageProps>`
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
-
-  /* @media (max-width: 768px) {
-    background-position: top ;
-  } */
-
 `;
 
 export const Body = styled.div`
@@ -24,8 +23,6 @@ export const Body = styled.div`
   background-color: #837e7ed1;
   opacity: 0.7;
   position: absolute;
-  
-  
 
   h2 {
     font-weight: bold;
@@ -39,7 +36,6 @@ export const Body = styled.div`
     font-weight: lighter;
     font-size: 16px;
   }
-
 `;
 
 export const DirectoryItemContainer = styled.div`
@@ -61,7 +57,6 @@ export const DirectoryItemContainer = styled.div`
     height: 160px;
   }
 
-
   &:first-child {
     margin-right: 7.5px;
   }
@@ -72,15 +67,12 @@ export const DirectoryItemContainer = styled.div`
 
   &:hover {
     cursor: pointer;
-
     ${BackgroundImage} {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
-
     ${Body} {
       opacity: 0.9;
     }
   }
-
 `;

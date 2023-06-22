@@ -28,8 +28,7 @@ import { FiMail } from "react-icons/fi"
 import { TbWorldWww } from "react-icons/tb"
 
 import { 
-    AboutMeContainer, 
-    AboutMeContent, 
+    AboutMeContainer,  
     AboutProjectContainer, 
     BigHeading, 
     BiggestHeading, 
@@ -242,6 +241,7 @@ const About = () => {
                             <a 
                               href="mailto:devongifford@outlook.com" 
                               target='_blank'
+                              rel="noreferrer"
                             >
                                 <StyledWebandMailIcon> 
                                     <FiMail/>
@@ -260,7 +260,11 @@ const About = () => {
                 <IconContainer>
 
                     <div>
-                        <a href="https://www.linkedin.com/in/dbgifford/" target='_blank'>
+                        <a 
+                            href="https://www.linkedin.com/in/dbgifford/" 
+                            target='_blank'
+                            rel="noreferrer"
+                        >
                             <StyledIcon>
                                 <SiLinkedin/>
                             </StyledIcon>
@@ -271,6 +275,7 @@ const About = () => {
                         <a 
                           href="https://github.com/DevonGifford" 
                           target='_blank'
+                          rel="noreferrer"
                         >
                         <StyledIcon>
                             <SiGithub/>
@@ -279,7 +284,11 @@ const About = () => {
                     </div>
 
                     <div>
-                        <a href="https://twitter.com/devon_gifford" target='_blank'>
+                        <a 
+                            href="https://twitter.com/devon_gifford" 
+                            target='_blank'
+                            rel="noreferrer"
+                        >
                             <StyledIcon>
                                 <SiTwitter/>
                             </StyledIcon>
@@ -287,7 +296,7 @@ const About = () => {
                     </div>
 
                     <div>
-                        <a href="https://discordapp.com/users/DevonGifford#7738" target='_blank'>
+                        <a href="https://discordapp.com/users/DevonGifford#7738" target='_blank' rel="noreferrer">
                             <StyledIcon>
                                 <SiDiscord/>
                             </StyledIcon>
@@ -295,7 +304,7 @@ const About = () => {
                     </div>
 
                     <div>
-                        <a href="https://www.instagram.com/princedevon_za/" target='_blank'>
+                        <a href="https://www.instagram.com/princedevon_za/" target='_blank' rel="noreferrer">
                             <StyledIcon>
                                 <SiInstagram/>
                             </StyledIcon>
@@ -303,7 +312,7 @@ const About = () => {
                     </div>
 
                     <div>
-                        <a href="https://www.facebook.com/GiffordDevon/" target='_blank'>
+                        <a href="https://www.facebook.com/GiffordDevon/" target='_blank' rel="noreferrer">
                             <StyledIcon>
                                 <SiFacebook/>
                             </StyledIcon>

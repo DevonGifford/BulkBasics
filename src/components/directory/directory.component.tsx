@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, Key } from 'react';
 
 import { useNavigate } from 'react-router-dom'
 
@@ -18,8 +18,14 @@ import {
   StyledIcon  
 } from './directory.styles';
 
+export type DirectoryCategory = {
+  id: Key;
+  title: string;
+  imageUrl: string;
+  route: string;
+};
 
-const categories = [
+const categories: DirectoryCategory[] = [
   {
     id: 1,
     title: 'accessories',
@@ -68,6 +74,7 @@ const Directory = () => {
 
       <QuickLinkContainer>
 
+          {/* SHIPPING */}
         <QuickLink onClick={onNavigateHandler}>
           <StyledIcon>
             <FaTruckMoving />
@@ -76,6 +83,7 @@ const Directory = () => {
           <p>Save time and money with same day delivery</p>
         </QuickLink>
 
+          {/* LIVE TRACK */}
         <QuickLink onClick={onNavigateHandler}>
           <StyledIcon>
             <FaSearch />
@@ -84,6 +92,7 @@ const Directory = () => {
           <p>Follow your order from our warehouse to your front door</p>
         </QuickLink>
 
+          {/* GIFT CARD */}
         <QuickLink onClick={onNavigateHandler}>
           <StyledIcon>
             <FaGift />
@@ -92,6 +101,7 @@ const Directory = () => {
           <p>Give them exactly what they want with a Gift Card</p>
         </QuickLink>
 
+          {/* CONTACT US */}
         <QuickLink onClick={onNavigateHandler}>
           <StyledIcon>
             <FaComment />

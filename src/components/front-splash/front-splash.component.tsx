@@ -118,12 +118,9 @@ const FrontSplash = () => {
             </HeadingContainer>
 
 
-
             <SloganContainer> 
                 - When it comes to gym and sports clothes, we provide what you need – nothing more & nothing less.
             </SloganContainer>
-
-
 
 
         </FrontSplashContainer>

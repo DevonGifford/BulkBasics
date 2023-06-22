@@ -13,7 +13,7 @@ export const CategoryPreviewContainer = styled.div`
 `;
 
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;

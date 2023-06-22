@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { ReactNode } from 'react'
+import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 
-import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import imageByIndex from './imagebyindex';
 
@@ -16,18 +16,21 @@ import {
 } from './carousel.styles'
 
 
+// import Autoplay, {
+//   AutoplayType,
+//   AutoplayOptionsType,
+// } from 'embla-carousel-autoplay'
 
-export const EmblaCarousel = (props) => {
+type PropType = {
+  options?: EmblaOptionsType
+  slides: ReactNode[]
+}
+
+
+
+export const EmblaCarousel = (props: PropType) => {
   const { slides, options } = props
   const [emblaRef] = useEmblaCarousel(options, [Autoplay()])
-
-  // const scrollPrev = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollPrev()
-  // }, [emblaApi])
-
-  // const scrollNext = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollNext()
-  // }, [emblaApi])
 
   return (
     <Embla >
@@ -35,23 +38,22 @@ export const EmblaCarousel = (props) => {
       <EmblaViewPort ref={emblaRef} >
 
         <EmblaContainer>
-          {slides.map((index) => (
+          {slides.map((slide, index) => (
 
-            <EmblaSlide  key={index}>
+            <EmblaSlide key={index}>
 
 
               <EmblaSlideImage
                 src={imageByIndex(index)}
                 alt="scrolling image"
-                >
-
-
-                </EmblaSlideImage>
+              >
+              </EmblaSlideImage>
 
 
               <EmblaSlideOverlay>
                 UNLOCK YOUR POTENTIAL 
               </EmblaSlideOverlay>
+
               <EmblaSlideOverlay2>
                 ESSENTIALS MEN'S COLLECTION
               </EmblaSlideOverlay2>
@@ -60,13 +62,6 @@ export const EmblaCarousel = (props) => {
             
             ))}
         </EmblaContainer>
-
-        {/* <button onClick={scrollPrev}>
-          Prev
-          </button>
-          <button onClick={scrollNext}>
-          Next
-        </button> */}
 
       </EmblaViewPort>
 

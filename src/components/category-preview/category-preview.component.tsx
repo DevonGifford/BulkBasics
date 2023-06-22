@@ -1,6 +1,8 @@
-import ProductCard from '../product-card/product-card.component';
-import { GrMore } from 'react-icons/gr'
+import { FC } from 'react';
 
+import { CategoryItem } from '../../store/categories/categories.types';
+
+import ProductCard from '../product-card/product-card.component';
 
 import {
   CategoryPreviewContainer,
@@ -10,10 +12,15 @@ import {
   SeeMore,
   StyledIconLink,
   StyledGrMore,
-} from './category-preview.styles/'
+} from './category-preview.styles';
+
+type CategoryPreviewProps = {
+  title: string;
+  products: CategoryItem[];
+}
 
 
-const CategoryPreview = ({ title, products }) => {
+const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
       
