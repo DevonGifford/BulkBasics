@@ -2,12 +2,11 @@
 <p align='center'>
     <img src="src/assets/logo.png" alt="Demo" title="DemoImage" width="500" height="100"/>
 </p>
-<h4 align='center'>still in Progress... 🎯🎯🎯 </h4>
 <br/>
 
 <!-- Introduction Heading -->
 <div align="center">
-    <h1>👋 Welcome to my e-commerce portfolio project 👋 </h1>
+    <h1>E-commerce portfolio project </h1>
         <h4>
             Built with <a href="https://vitejs.dev/">Vite + React</a> &
             Hosted by <a href="https://www.netlify.com/">Netlify</a> 
@@ -36,7 +35,7 @@
     </a>
     <br>
     <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=firebase,graphql,redux,apollo" />
+        <img src="https://skillicons.dev/icons?i=firebase,redux,graphql,apollo" />
     </a>
     <br>
     <a href="https://skillicons.dev">
