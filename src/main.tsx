@@ -11,13 +11,6 @@ import App from './App.jsx'
 import { Provider } from 'react-redux';
 import { store, persistor } from './store/store.js';
 
-/*------------------------------------------
-converted from useContext hooks to Redux
-------------------------------------------*/
-//import { UserProvider } from './contexts/user.context.jsx';
-//import { CategoriesProvider } from './contexts/categories.context.jsx';
-//import { CartProvider } from './contexts/cart.context.jsx'
-
 
 import './index.scss';
 
@@ -28,15 +21,9 @@ if (rootElement) {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
-            {/* <UserProvider> */}
-              {/* <CategoriesProvider>  */}
-                {/* <CartProvider> */}
-                  <Elements stripe={stripePromise}>
-                    <App />
-                  </Elements>
-                {/* </CartProvider> */}
-              {/* </CategoriesProvider> */}
-            {/* </UserProvider> */}
+            <Elements stripe={stripePromise}>
+              <App />
+            </Elements>
           </BrowserRouter>
         </PersistGate>
       </Provider>

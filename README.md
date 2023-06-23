@@ -15,8 +15,9 @@
 
 <!-- Live Demo Link -->
 <div align="center">
-<a href="https://bulk-basics.netlify.app/">
-<h3>- click me for live demo -</h3></a>
+<a href="https://bulk-basics.netlify.app/" target='_blank'>
+    click me for live demo inter
+</a>
 <p>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/609d0724-3439-4ea9-b5b8-e303ca9d7117/deploy-status)](https://bulk-basics.netlify.app/)
@@ -2043,9 +2044,15 @@ In order of completion:
 <br/>
 
 
-## 
+## 7. Simple Perormance Optimizations
 
-## 7. Migrating to Modern Redux 🎯🎯🎯
+-  Using useCallback
+-  Using useMemo
+-  Creating Dynamic Imports with: Suspense and Lazy 
+
+##
+
+## 8. Migrating to Modern Redux 🎯🎯🎯
 
 <hr/>
 
@@ -2066,7 +2073,7 @@ In order of completion:
 
 ## 
 
-## 8. Running the project on Netlify 🎯 🎯 🎯
+## 9. Running the project on Netlify 🎯 🎯 🎯
 
 <hr/>
 
