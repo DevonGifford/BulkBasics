@@ -2,7 +2,6 @@
 <p align='center'>
     <img src="src/assets/logo.png" alt="Demo" title="DemoImage" width="500" height="100"/>
 </p>
-<br/>
 
 <!-- Introduction Heading -->
 <div align="center">
