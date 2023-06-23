@@ -2,16 +2,11 @@
 <p align='center'>
     <img src="src/assets/logo.png" alt="Demo" title="DemoImage" width="500" height="100"/>
 </p>
-
-<h4 align='center'>still in Progress... 🎯🎯🎯 </h4>
-
 <br/>
-
-
 
 <!-- Introduction Heading -->
 <div align="center">
-    <h1>👋 Welcome to my e-commerce portfolio project 👋 </h1>
+    <h1>E-commerce portfolio project </h1>
         <h4>
             Built with <a href="https://vitejs.dev/">Vite + React</a> &
             Hosted by <a href="https://www.netlify.com/">Netlify</a> 
@@ -19,36 +14,28 @@
 </div>
 </br>
 
-
-
 <!-- Live Demo Link -->
 <div align="center">
 <a href="https://bulk-basics.netlify.app/">
-<h3>- click here for live Demo -</h3></a>
-
+<h3>- click me for live demo -</h3></a>
 <p>
-    
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/609d0724-3439-4ea9-b5b8-e303ca9d7117/deploy-status)](https://app.netlify.com/sites/bulk-basics/deploys)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/609d0724-3439-4ea9-b5b8-e303ca9d7117/deploy-status)](https://bulk-basics.netlify.app/)
 </p>
 </div>
 </br>
 
 
-
-
-
 <!-- Tech Used in this Project -->
 <h3 align='center'>Tech used in this project:</h3>
-
 <br/>
-
 <p align='center'>
     <a href="https://skillicons.dev">
         <img src="https://skillicons.dev/icons?i=vite,react,ts,styledcomponents" />
     </a>
     <br>
     <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=firebase,graphql,redux,apollo" />
+        <img src="https://skillicons.dev/icons?i=firebase,redux,graphql,apollo" />
     </a>
     <br>
     <a href="https://skillicons.dev">
@@ -61,21 +48,16 @@
 </p>
 
 
-<!-- 🎯🎯🎯 Demo Image 🎯🎯🎯-->
+<!--  Demo Image 🎯-->
 <!-- <p align='center'>
     <img src="public/assets/PortfolioDemoDevon.png" alt="Demo" title="DemoImage" width="650" height="650">
 </p> -->
-
 <br/><br/>
 
-
-
-<!-- TEXT -->
-
+<!-- TEXT PORTION -->
 <h1 align='center'> Welcome & Introductory </h1>
 
-
-### Introduction:
+### Brief Introduction:
 
 <hr/>
 
@@ -84,45 +66,52 @@
 Welcome to my Ecommerce Project Repository, a portfolio project of mine!
 
 This project serves as a personal learning experience, allowing me to test my abilities in seeing a project through from start to finish. Rather than replicating existing stores, the focus is on developing robust business logic and integrating various technologies.
+
 My goal was to fully immerse myself in building an ecommerce application, exploring different topics and honing my implementation and integration skills. While efficiency could have been prioritized, the main objective was to gain comprehensive knowledge.
-<br><br>
+<br><br><br/>
 
 ### Important points to note:
 
 
 <hr>
 <li> The project places less emphasis on creating visually stunning designs. Instead, it prioritizes building and refining business logic, implementing functionality, and exploring diverse technologies.
-<br>
+<br><br>
 <li> The user interface and design maintain a minimalistic and functional approach, allowing a greater focus on learning and development.
-<br>
+<br><br>
 <li> This project doesn't aim to create a real store with actual products. Instead, the focus is on building business logic and refining development skills, simulating real-world scenarios and mirroring professional work environments.
+<br><br>
 You can see all tickets created & closed here  :   <a href="https://github.com/DevonGifford/Ecommerce_Showcase/issues?q=is%3Aissue+is%3Aclosed">Closed Tickets ✅</a>
 
-<br>
+<br><br/>
 
 
 ### The Goals of this project:
 
 <hr>
 
-<li> Build the project initially using Vanilla JavaScript and later convert it into a TypeScript project.
-<li> Initially implement styling with SCSS and then convert it into Styled Components styling
-<li> Utilize Firebase for authentication and Firestore as the database
-
+<!-- Small container -->
+<details>
+<summary> Click here to see all the goals: </summary>
 <br/>
 
-<li> Begin with Context hooks and reducers, then transition to legacy Redux, 
-<li> Followed by integrating Redux Thunk and then convert it into Redux Saga, 
-<li> Finally convert the legacy Redux into modern Redux using Redux-Toolkit
+<div>
+    <ul>
+        <li> Build the project initially using Vanilla JavaScript and later convert it into a TypeScript project.<br><br>
+        <li> Initially implement styling with SCSS and then convert it into Styled Components styling<br><br>
+        <li> Utilize Firebase for authentication and Firestore as the database<br/><br>
+        <li> Begin with Context hooks and reducers, then transition to legacy Redux, <br><br>
+        <li> Followed by integrating Redux Thunk and then convert it into Redux Saga, <br><br>
+        <li> Finally convert the legacy Redux into modern Redux using Redux-Toolkit<br><br>
+        <li> Integrate GraphQL and Apollo into the project<br><br>
+        <li> Implement performance optimizations to ensure fast and smooth user experience<br><br>
+        <li> Enhance security by implementing Firebase Rule Security to protect user data<br><br>
+        <li> Write comprehensive tests for React components and functionality<br><br>
+        <li> Convert the project into a Progressive Web App (PWA) to provide a seamless and responsive experience across different devices<br><br>
+    </ul> 
+</div>
 
-<br/>
-
-<li> Integrate GraphQL and Apollo into the project
-<li> Implement performance optimizations to ensure fast and smooth user experience
-<li> Enhance security by implementing Firebase Rule Security to protect user data
-<li> Write comprehensive tests for React components and functionality
-<li> Convert the project into a Progressive Web App (PWA) to provide a seamless and responsive experience across different devices
-
+<!-- CLOSING DIV -->
+</details>
 <br/><br/><br/>
 
 
@@ -139,10 +128,7 @@ Please note that this project was primarily a learning experience. While there m
 Join me on this behind-the-scenes adventure as I share exciting milestones, challenges, and valuable lessons learned as a solo developer. Experience the transformation of an idea into a fully functional ecommerce platform.
 
 <br>
-
-<p>
-You can see all tickets created & closed here  :   <a href="https://github.com/DevonGifford/Ecommerce_Showcase/issues?q=is%3Aissue+is%3Aclosed">Closed Tickets ✅</a>
-</p>
+<hr>
 
 <br/>
 
@@ -151,36 +137,44 @@ You can see all tickets created & closed here  :   <a href="https://github.com/D
 <summary>  Click here to expand and see all the steps I took to build this project: </summary>
 
 <br/>
+<br/>
+
+## 
+
+## 1. Scaffolding the Vite/React Project with FireBase
+<hr>
+
+<!-- SECTION container -->
+<details>
+<summary> Click here to see more: </summary>
+<br>
 
 
-
-
-## Scaffolding the Vite/React Project
+### 1.1 Initializing the project with Vite & React
 
 <hr/>
 <!-- Small container -->
 <details>
 <summary> Click here to see more: </summary>
+<br>
 
 [VITE DOCUMENTATION](https://vitejs.dev/guide/)
 
-1.  #### Using Vite (pronounced 'Veet'🤔) 
+1. Using Vite (pronounced 'Veet'🤔) 
     `npm create vite@latest`
 
-2.  #### Clearing up some of the unnecessary and boiler plate code
+2. Clearing up some of the unnecessary and boiler plate code
 
-3.  #### Adding and setting up SASS - Syntactically Awesome Style Sheets
+3. Adding and setting up SASS - Syntactically Awesome Style Sheets
     `npm install sass`
 
-4.  #### Setting up the most essential folder structure for components
+4. Setting up the most essential folder structure for components
 
 <!-- CLOSING DIV -->
 </details>
+<br/><br/>
 
-<br><br>
-
-
-## Setting up Routing with React-Router (v6.4)
+### 1.2 Setting up Routing with React-Router (v6.4)
 <hr>
 
 <!-- Small container -->
@@ -193,25 +187,25 @@ You can see all tickets created & closed here  :   <a href="https://github.com/D
         -  `npm install react-router-dom localforage match-sorter sort-by`
         -   fixing any conflicts from `npm` audit
 
-2.  #### Creating a Routes Folder and transferring the 'home' 
+2. #### Creating a Routes Folder and transferring the 'home' 
 
-3.  #### In the `App.jsx
+3. #### In the `App.jsx
     - Importing { Routes, Route } from 'react-router-dom' ` 
     - Wrapping everything in Routes
     - Creating a Route path to the Home page 
 
-4.  #### In the `Main.jsx`
+4. #### In the `Main.jsx`
     - Importing `{ BrowserRouter } from 'react-router-dom'`
     - wrapping the "App" with `BrowserRouter`
 
-<br><br>
+
 <!-- CLOSING DIV -->
 </details>
+<br/>
+<br/>
 
-<br/><br/>
 
-
-## Basic FireBase Setup 
+### 1.3 Basic FireBase Setup 
 <hr>
 
 <!-- Small container -->
@@ -220,15 +214,15 @@ You can see all tickets created & closed here  :   <a href="https://github.com/D
 
 [Cloud FireBase Doc's](https://firebase.google.com/docs/firestore)
 
-1.  ### Created a Firebase project 
+1.  #### Created a Firebase project 
     registered the Ecommerce-projec/app in the FireBase web-console
 
-2.  ### Installed the SDK and initialized Firebase
+2.  #### Installed the SDK and initialized Firebase
         -   npm install firebase
         -   Added a `Utils` Folder with `FireBase folder` 
         -   Added file called `firebase.utils`
 
-3.  ### Created access for Firebase in the app - via  `firebase.utils`
+3.  #### Created access for Firebase in the app - via  `firebase.utils`
         -   import { initializeApp } from 'firebase/app';
         -   Setting up authentication
             Import {} from `firebase/auth`;
@@ -242,16 +236,17 @@ You can see all tickets created & closed here  :   <a href="https://github.com/D
         -   Enforcing account selection 
         -   In the Firebase console - enabled the Google Sign in method
 
-4.  ### Setting up the `sign-in route` page                              
+4.  #### Setting up the `sign-in route` page                              
         -   import {signInWithGooglePopup, createUserProfileDocument} from 'firebase.utils';        
         -   Creating Async Sign-in Function/Method to get access token
 <br><br>    
 <!-- CLOSING DIV -->
 </details>
-<br/><br/>
+<br/>
+<br/>
 
 
-## Setting up Firestore Data Model
+### 1.4 Setting up Firestore Data Model
 
 <hr>
 
@@ -287,7 +282,7 @@ Enter Cloud FireStore.
 <br/><br/>
 
 
-## Experimenting with a Google Redirect Sign in 
+### 1.5 Experimenting with a Google Redirect Sign in 
 
 <hr> 
 
@@ -303,7 +298,7 @@ Enter Cloud FireStore.
     -  Using `getRedirectResult` from `firebase/auth`
     -  Amended the SignIn method to incorporate the above
 
-### Setting up email & password - sign-up & sign-in
+### 1.6 Setting up email & password - sign-up & sign-in
 
 <hr>
 
@@ -321,7 +316,7 @@ Enter Cloud FireStore.
 
 <br><br>
 
-### Adding Context - using react-context
+### 1.7 Adding Context - using react-context
 
 <hr>
 
@@ -364,7 +359,7 @@ Will require having to have access to the 'user' context through out the app
 
 <br><br>
 
-### Adding Sign-Out Functionality 
+### 1.8 Adding Sign-Out Functionality 
 
 <hr>
 
@@ -394,7 +389,7 @@ Obviously once the user is signed in, they will need to be able to sign-out.
 <br/><br/>
 
 
-##  Implementing Observer's and onAuthStateChange
+### 1.9 Implementing Observer's and onAuthStateChange
 
 <hr>
 
@@ -449,7 +444,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 
-##  Mocking Shop-Data and scaffolding the actual 'Shop' page
+### 1.10 Mocking Shop-Data and scaffolding the actual 'Shop' page
 
 <hr>
 
@@ -500,7 +495,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 
-##  Creating Cart-Icon with a DropDown Menu
+### 1.11 Creating Cart-Icon with a DropDown Menu
 
 <hr>
 
@@ -542,7 +537,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 
-##  Adding Basic Functionality to the Cart
+### 1.12 Adding Basic Functionality to the Cart
 
 <hr>
 
@@ -604,7 +599,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br/><br/>
 
 
-##  Adding count to the Cart.Icon
+### 1.13 Adding count to the Cart.Icon
 
 <hr>
 
@@ -653,7 +648,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 
 
 
-## Create a checkout page 
+### 1.14 Create a checkout page 
 
 <hr>
 
@@ -767,7 +762,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br/><br/>
 
 
-## Storing the data on the backend - Setting up FireStoreDB
+### 1.15 Storing the data on the backend - Setting up FireStoreDB
 <hr>
 
 <!-- Small container -->
@@ -850,7 +845,7 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br/><br/>
 
 
-## Implementing new FireStore Database
+### 1.16 Implementing new FireStore Database
 <hr>
 
 <!-- Small container -->
@@ -896,8 +891,8 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <br/><br/>
 
 
-## Updating the Category Preview Component 
 
+### 1.17 Created Category Preview Component :
 <hr>
 
 <!-- Small container -->
@@ -905,9 +900,8 @@ Ultimatly saving some computing power.  Wish I read about this before coding all
 <summary> Click here to see more: </summary>
 <br/>
 
-###  Created Category Preview Component :
 
-<br>
+
 
 This is how I will have the shop page display all the categories with a limited number of items ...
 
@@ -932,7 +926,7 @@ This is how I will have the shop page display all the categories with a limited 
 
 <br><br>
 
-###  Created Nested Routes in the shop :
+####  Created Nested Routes in the shop :
 
 <br>
 
@@ -1002,9 +996,21 @@ Finally,
 
 <br>
 
-### Bug-fix - Creating a safegaurd for the products.map
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
+
+
+
+
+
+### [BUGFIX] - Creating a safegaurd for the products.map
 <hr>
-<br>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
 
 The error:   
 
@@ -1030,10 +1036,21 @@ Luckily this was an easy fix after I figured out the issue,
 `(categoriesMap[category])`
 
 
-<br><br>
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
-### Bug-fix - Clashing Styling 
+### [BUGFIX] - Clashing Styling 
 <hr>
+
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+
+
+
 The error:  
 
 <code> cannot read properties of undefined (reading 'map') in `catergory.components`</code>
@@ -1052,10 +1069,19 @@ Simple solution:
 -  Updated corresponding references.  
 
 
-<br><br>
+<!-- CLOSING DIV -->
+</details>
+<br/><br/>
 
-### Bug-fix - Clickable Category Headings
+### [BUGFIX] - Clickable Category Headings
 <hr>
+<!-- Small container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+
+
 <br>
 The problem:
 <br>
@@ -1069,36 +1095,36 @@ Simple solution:
 -  Passing in the title with backticks 
 -  Minor updates to classnames and styling to prevent clashing
 
-
-
-<br><br>
-
-
 <!-- CLOSING DIV -->
 </details>
 <br/><br/>
 
+<!-- CLOSING DIV -->
+</details>
+<br/>
+<br/>
 
-## Switching from SASS to Styled-components 
+
+
+## 2. Switching from SASS to Styled-components 
 <hr>
-<br>
 
 <!-- Small container -->
 <details>
 <summary> Click here to see more: </summary>
 <br/>
 
+### Imported the library into the project
+
 [Styled-components Documentation](https://styled-components.com/docs)
 
-- Imported the library into the project
+`npm install styled-components` 
 
-    <code> npm install styled-components</code>
 
-<br>
 
-Now comes the fun of converting all the previouse scss files ....
+*Now comes the fun of converting all the previouse scss files ....*
 
-<br>
+
 
 ### COMPONENTS
 
@@ -1135,8 +1161,17 @@ Now comes the fun of converting all the previouse scss files ....
 
 <br>
 
-This took way too long lol
-Strictly converted the scss files, some other features/updates required and updates to styling will be updated accordingly.
+This took way too long, however it served its purpose and now I have a very solid understanding of both SASS and Styled-Components and feel very comofortable using either or.
+
+I still think tailwind might be my personal choice, especially in terms of time spent on implementation.
+
+
+However, styled-components do have their advantages, particularly in providing more styling customization, that being said Tailwind does more than enough.
+
+
+-  Strictly converted the exisiting `.scss` files 
+-  Some other features/updates required *(reffering to new components)* 
+-  Future updates to styling will be updated according to styled-components.
 
 <br><br>
 
@@ -1146,22 +1181,21 @@ Strictly converted the scss files, some other features/updates required and upda
 <br/><br/>
 
 
-## Refactoring the UI
+## 3. Refactoring the UI
 <hr>
-<br>
 
 <!-- Small container -->
 <details>
 <summary> Click here to see more: </summary>
 <br/>
 
-####  THE GOAL
+**THE GOAL**
 
 The objective is to create an aesthetically pleasing and user-friendly interface that aligns with contemporary design trends while enhancing usability and engagement.
 
-###  Major UI Update 
+<br>
 
-
+**Major UI Update** 
 
 Refactored the user interface of the website 
 
@@ -1191,7 +1225,31 @@ New Componenets added:
 </details>
 <br/><br/>
 
-## Implementing useReducer instead of useState & useEffect
+
+
+## 4. State Management Methods
+<hr/> 
+
+<!-- STATE container -->
+<details>
+<summary> Click here to see more: </summary>
+<br/>
+
+**THE GOAL**
+
+I really wanted to get a firm grasp on different state management techniques in React - Therefore I have gone through the steps of using and converting the following: 
+
+- useState & useEffect hooks
+- useReducer's
+- Redux-thunk
+- Redux-saga
+
+Next I will convert this enitre app (and Redux-Saga to use TypeScript)
+
+<br>
+
+
+### 4.1 - Implementing useReducer instead of useState & useEffect
 
 <hr/>
 
@@ -1216,7 +1274,7 @@ Created a reducer utils folder with a very simple helper function making reading
 
 
 
-## Implementing Redux with Redux-Thunk
+### 4.2 - Implementing Redux with Redux-Thunk
 
 <hr/>
 
@@ -1245,9 +1303,9 @@ Creating a store folder to house all the redux related content
 -  Updating Selectors for the cart state.
 
 
-###  Redux-Persist & Redux-Thunk
+####  Redux-Persist & Redux-Thunk
 
-#### Persisting state with Redux Persist
+##### Persisting state with Redux Persist
 
 [redux persist documentation](https://www.npmjs.com/package/redux-persist)
 
@@ -1292,7 +1350,7 @@ But because I am using the basic Redux createStore API and need to set this up m
 <br/><br/>
 
 
-## Replacing Thunk with Redux-Saga
+### 4.3 - Replacing Redux-Thunk with Redux-Saga
 
 <hr/>
 
@@ -1335,9 +1393,13 @@ Converting User Session files into Saga
 </details>
 <br/><br/>
 
+<!-- CLOSING STATE DIV -->
+</details>
+<br/><br/>
 
 
-##  Setting up Stripe API
+
+## 5. Setting up Stripe API
 
 <hr/>
 
@@ -1396,15 +1458,579 @@ Converting User Session files into Saga
 <br/><br/>
 
 
-
-##  Running the project on Netlify 🎯 🎯 🎯
+## 6. Converting to TypeScript 🍞
 
 <hr/>
 
-<!-- Small container -->
+<!-- TYPESCRIPT SECTION container -->
 <details>
 <summary> Click here to see more: </summary>
+<hr>
+<!-- INSERT TEXT HERE -->
+
 <br/>
+
+### Convert an existing **[Vite + React + JavaScript]** --> **TypeScript**
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+<!-- INSERT TEXT HERE -->
+
+[How to add typescript to an existing vite react app](https://github.com/vitejs/vite/discussions/6799#discussioncomment-5393727)
+
+<hr>
+
+
+#### **Step 1/6**
+
+
+Install dev dependencies
+
+```
+npm install -D typescript @types/react @types/react-dom
+```
+<br>
+
+#### **Step 2/6**
+
+In packages.json, replace:
+
+`"build": "vite build"`
+
+With 👇
+
+`"build": "tsc && vite build"`
+
+<br>
+
+#### **Step 3/6**
+
+Rename vite.config.js and main.jsx to vite.config.ts and main.tsx
+
+<br>
+
+#### **Step 4/6**
+Configure TypeScript by creating these two files in the root of your project:
+
+`tsconfig.json`
+
+```
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+`tsconfig.node.json`
+
+```
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+```
+
+<br>
+
+#### **Step 5/6**
+
+Create a file named `vite-env.d.ts` inside the src/ folder and copy and paste this 
+
+(with the three slashes at the beginning):
+
+```
+
+/// <reference types="vite/client" />`
+
+```
+<br>
+
+#### **Step 6/6**
+
+In your `index.html` you should change the name of your script from the old `main.jsx` to `main.tsx` like this:
+
+```
+
+<script type="module" src="/src/main.tsx"></script>
+
+```
+<!-- END TEXT - CLOSING DIV -->
+</details>
+<br><br>
+
+### Converting Redux --> **TypeScript** 
+
+
+<details>
+<summary> Expand: </summary>
+<br/>
+
+[How to Migrate a React App to TypeScript](https://www.sitepoint.com/how-to-migrate-a-react-app-to-typescript/)
+
+
+<hr>
+
+#### Converting `reducer.utils` :
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+
+-  Importing `AnyActon` from redux
+-  Creating 'types' for ActionWithPayload and Action (without payload)
+-  Using Function overloading:
+```
+allows a single function name to have multiple definitions with different parameter lists or return types. It enables you to create multiple versions of a function that can handle different argument types or numbers.
+``` 
+-  created the function createAction for the 
+    -  ActionWithPayload and 
+    -  Action *(without payload)*
+-  obviously have the function return `{ type, payload }`
+
+<br>
+
+**TYPE PROBLEM / BUG 🙈**
+
+So coming accross an issue with `categoriesReducer` and `categories.actions` and that is that this is actually not 'type safe'.  
+
+```
+Uncaught error:  The slice reducer for key 'categories' retunred underfined durin initialization.  If the state passsed to the reducer is undefined, you must acplicitly return the initial state.  The iniitial state may not be undefined.
+```
+
+Further note:  No error is being thrown , even if there is no default state
+
+**Solution : 😊**
+
+Need to extend the action creators so that they can be doing the type checking for us - using the .match method 
+
+Therefore in the `reducer.utils` file :
+
+- creating a "matcher" that will match the 'action creator' with the return type of the 'action' itself.
+  - using function overloading creating `withMatcher` functions 
+    - 1. 
+    - 2.
+    - 3.
+  - 
+
+In the `categories.actions` :
+-  Importing the `withMatcher` function and wrapping around each of the action creators
+-  updating the switch casae (now using classical if conditionals)
+
+
+<br>
+This has been a really intense way to write this app and I have been told that redux and typescript can be the most challenging part in the front-end world as it requires a good understanding of various methadologies.  For example 
+   -  TypeGuards 
+   -  .math method 
+   -  Magical Types
+   -  Type Predicate Functions 
+   -  Intersection and Return Types
+   -  Overloading Functions
+   -  etc...
+
+
+
+
+
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+#### Converting `Categories` :
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+
+
+-  Conveting the `categories.types` to `.ts`: 
+    -  using an enum type for the different action types
+    -  creating a categories array type 
+        -  requires custom CategoryItem type - as an array
+
+<br>
+
+- Converting `categories.action` to `.ts`:
+    -  Requires categories array type - created in & imported from the `categories.types` file
+    -  Import { CreateAction, Action and ActionWithPayload } from the `reducer.utils` file
+    -  Creating Types for the different ACTION_TYPES - depending on weather Action/ActionWithPayload
+    -  Updating the code to make use of the newly created Types
+    -  Reducer can only accept these Action_TYPES types 
+        - therefore created a union type with these three Action's 
+
+<br>
+
+-  Converting `categories.reducer` to `.ts`:
+    -  Importing in the CategoryAction (union) from the categories.action:
+    -  Discriminating union - [what is this?](https://css-tricks.com/typescript-discriminated-unions/)
+    -  Typing our the Categories state
+    -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
+
+<br>
+
+-  Converting `categories.selector` to `.ts`:
+    -  importing `CategoriesState` from `reducer`, shape of the state reffering to category state.
+    -  TypeScrip will then infer the rest of the state calls
+    -  Creating type for `CategoryMap` in `category.types` and importing
+    -  For the `selectCategoriesMap`:
+        -  Type the `categories` to use the `CategoryMap` type
+        -  use `as CategoryMap` as a type assertion for the final resulting object
+
+<br>
+
+I will convert the sagas at the end - this looks complicated.  
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+#### Converting `Cart` :
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+-  Conveting the `cart.types` to `.ts`: 
+    -  using an enum type for the different action types
+    -  creating a custom CartItem Type (extended from the CategoryITem from the categories.types)
+
+<br>
+
+-  Conveting the `cart.actions` to `.ts`: 
+   -  Updating the helper functions - typing 
+   -  Creating types for the `setIsCartOpen` & `SetCartItems`
+   -  Creating withMatch for `setIsCartOpen` & `setCartItems`
+   -  Typing the variables in the Adding, Removing and Clearing Cart Items
+
+<br>
+
+-  Conveting the `cart.reducer` to `.ts`: 
+   -  Importing relevant files `AnyAction`, `CartItem` and the `setCartItems, setIsCartOpen`
+   -  Typing out the `CartState`
+   -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
+
+<br>
+
+-  Conveting the `cart.selector` to `.ts`: 
+   -  importing the `CartState` form the `CartReducer`
+   -  Making minor amendments tot the createSelectors:  "type"
+
+<br>
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+#### Converting `Firebase` *(prerequisite to user-redux)* : 
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+-  updating `addCollectionAndDocuments`:
+   -  Typing out the function
+   -  Becuase `objectToAdd` could be an array of almost anything
+      -  creating a `ObjectToAdd` type with the one known item which is a title (as string)
+      -  then adding `<T extends ObjectToAdd>`
+      -  thus making our `objectToAdd` as `T[]`
+      -  becuase this will be a promise that returns nothing giving it a type `promise<void>`
+  
+
+<br>
+
+- updating the `getCategoriesAndDocuments`:
+  - Typing out the function 
+  - This function is returning our Category Data 
+    -  we have already created a type for this `Category`
+    -  importing this type from `category.types` file 
+    -  Because this is a promise the type we get back will be `Promise<Category[]>` 
+    -  While I know what data we are getting back from this 3rd-party-API (firebase)- TypeScript does not 
+      -  Therefore need cast the value
+         -  return statement need to tell TS that returning a `Category`
+
+
+<br>
+
+-  updating the `createUserDocumentFormAuth`
+   -  for the `userAuth` so firebase actually gives us a type here called `user` 
+      -  import the `User` from firebase
+      -  `userAuth: User`
+
+   -  `additionalInformation` which in this website's current state is just a display name
+      -  creating a type `AdditionalInformation`
+         -  because displayname can be optional will use a `?`
+         -  `displayname? : string;`
+   -  This function is returning all the usersData OR nothing (logging out)
+
+   -  Firestore has/provides a typed `QueryDocumentSnapshot`
+      -  importing this type 
+      -  requires `<our custom Data Set>`
+
+    -  Creating `UserData` type
+         -  createdAt, displayName, email 
+
+    -  funciton will be return a promise of this data or nothing
+      -  include in the top `Promise<void | QueryDocumentsSnapshot<UserData>>` 
+      -  and casting the return of `userSnapshot as QueryDocumentSnapshot<UserData>`
+  
+   -  Handleing the catch.error
+      -  cannot get the error.message without typing our the error.
+      -  path of least resistance would just have the whole error printed out
+
+
+<br>
+
+- For the `createAuthUserWithEmailAndPassword` & `signInAuthUserWithEmailAndPassword` functions
+  - typing the inputs
+  - because this is returning a firebase type it already infers the type 
+    - `Promise<UserCredential>` auto completed by firebase
+
+<br>
+
+- For the `SignOutUser` the same as the above it is inferred by Firebase
+  - `signOut(auth: Auth): Promise<void>`
+
+<br>
+
+-  For the `onAuthStateChangedListener` which is an observer function 
+   -  Once again Firebase provides a type for this callback being `NextOrObserver` - *Type definition for an event callback*
+      -  import from firebase
+      -  type the callback as this `NextOrObserver<User>`
+      -  our event being calledback is obviously the `<User>`
+
+<br>
+
+- For the `getCurrentUser` fucntion that returns our user or nothing at all
+  - fucntion returns `: Promise<User | null>`
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+#### Converting `user` : 
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+-  Conveting the `user.types` to `.ts`: 
+   -  creating an enum for all the different action type names
+
+<br>
+
+-  Conveting the `user.actions` to `.ts`: 
+   -  Importing `AdditionalInformation` & `UserData`
+   -  Importing `createAction` & `Action` & `ActionWithPayload` & `withMatch` 
+   -  now converting all the various actions 
+      -  typing the return statement
+      -  typing params 
+      -  using withMatcher 
+
+<br>
+
+-  Conveting the `user.reducer` to `.ts`: 
+   - Importing relevant actions 
+   -  Typing out the `UserState`
+   -  amending on what the switch case key is and using AnyAction to match the `action` with the different `types`
+
+<br>
+
+-  Conveting the `user.selector` to `.ts`: 
+   -  importing the `CreateSelector` and `UserState`
+   -  Adding the type state to the reducer and amending fixing the return to work with typescript
+   -  Creating a `selectCurrentUser` Selector. 
+
+<br>
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+
+#### Typing `RootReducer`, `Root-State` & `Custom-Middleware` :
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+`Root-reducer.js` --> **TypeScript** 
+-  Very simple to do as everything is already typed 
+-  Converting the file extention to `.ts`
+
+<br>
+
+`store.js` -->  **TypeScript**
+-  typing out the rootstate
+   -  using `ReturnType<typeof rootReducer>`
+      -  `ReturnType` is because each one of these reducers are just functions
+      -  We cant simply just pass the `rootReducer` as this will result in an error
+         -  instead we need to get the type and if we look at the type of rootReducer its actually a combination of all the different reducers.
+
+
+-  Now we can export this RootState to all our other reducers (in the various selectors where we called state) and our `state` type will now be the new `RootState` type.
+   -  importing the RootState type to the following:
+      -  store
+      -  cart
+      -  user 
+
+
+- Getting a type error `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
+  - This happening because we are extending on the window type
+    - declare global with interface window withour extention `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
+      - This is an optional key so using a `?` in the statement
+      - This is a type of compose and therefore `typeof compose`
+
+
+<br>
+
+`middleware` -->  **TypeScript**
+
+- Import warning on 3rd party redux-logger
+  - Need to import the @types for the 3rd party redux-logger - 
+    - `npm install @types/redux-logger`
+
+
+- Typing out the Custom Middleware 
+  - `import { Middleware } from "redux"` - > empty object in this case
+  - `import { RootState } from '../store'`
+    - Simply add a type to the Middleware using the newly imported states
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+
+#### Typing `Redux-Saga` :
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+This was rather challenging at first but these two resources helped significantly:
+
+[TypeScript and Redux Sagas](https://understandable.dev/deep-dives/typescript-and-redux-sagas/)
+[Implement Redux-Saga in your React TypeScript Project](https://medium.com/edonec/implement-redux-saga-in-your-react-typescript-project-1d79c4a2d726)
+
+**Importing** `typed-redux-saga` & `babel-plugin-macros` 
+- `npm install --dev babel-plugin-macros`
+- `npm install @types/redux-logger`
+
+-  Fixing linting issues - *got some help with this*:
+   - In the `tsconfig.json`, under 'compiler' settings, adding the following to help handle error warnings:
+     - ` "downlevelIteration" : true, `
+     - [downlevelIteration explained](https://www.typescriptlang.org/tsconfig#downlevelIteration)
+
+<br>
+
+`categories.saga.js` --> **TypeScript**
+- Using `yield*` instead of the yield -  [How yield* works](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield*)
+- typing my `errors as Erros`
+
+<br>
+
+`user.saga.js` --> **TypeScript**
+- Using `yield*` same as above
+- Importing variouse `action`(types) and types from the `firebase.utils`
+- Involved quite a bit of typing and 
+- Had to add some conditionals to get everything to be type safe
+- typing my `errors as Erros`
+
+<br>
+
+Futher I found some missing types in my `firebase.utils` and `user.actions`, so had to fix those to get things working 
+
+
+<!-- CLOSING DIV -->
+</details>
+<br/>
+
+
+
+
+<!-- END  REDUX SECTION - CLOSING DIV -->
+</details>
+<br/><br/>
+
+
+### Converting Components & Routes --> **TypeScript** 
+
+<!-- Small container -->
+<details>
+<summary> Expand: </summary>
+<br/>
+
+**Converting `styling.jsx`**
+
+Adding the types library for styled components
+-  npm install @types/styled-components
+
+<br>
+
+In order of completion:
+
+
+**List of Components to Convert**
+
+- [x]  button 
+- [x]  form-input 
+- [x]  signin-form 
+- [x]  signup-form 
+- [x]  carticon 
+- [x]  cartdropdown 
+- [x]  cartitem 
+- [x]  product-card 
+- [x]  spinner
+- [x]  footer 
+- [x]  payment-form 
+- [x]  categorypreview 
+- [x]  checkoutitem 
+- [x]  directory 
+- [x]  directoryitem 
+- [x]  front-splash 
+- [x]  carousel 
+
+**List of Routes to Convert**
+
+- [x] navigation 
+- [x] category 
+- [x] about 
+- [x] authentication 
+- [x] categories-preview
+- [x] checkout 
+- [x] home 
+- [x] shop
 
 
 <!-- CLOSING DIV -->
@@ -1412,22 +2038,15 @@ Converting User Session files into Saga
 <br/><br/>
 
 
-##  Converting the project from JavaScript to TypeScript 🎯 🎯 🎯
-
-<hr/>
-
-<!-- Small container -->
-<details>
-<summary> Click here to see more: </summary>
+<!-- END  TYPESCRIPT SECTION - CLOSING DIV -->
+</details>
+<br/>
 <br/>
 
 
-<!-- CLOSING DIV -->
-</details>
-<br/><br/>
+## 
 
-
-## Migrating to Modern Redux 🎯🎯🎯
+## 7. Migrating to Modern Redux 🎯🎯🎯
 
 <hr/>
 
@@ -1446,7 +2065,9 @@ Converting User Session files into Saga
 </details>
 <br/><br/>
 
-## TEMPLATE
+## 
+
+## 8. Running the project on Netlify 🎯 🎯 🎯
 
 <hr/>
 
@@ -1455,13 +2076,16 @@ Converting User Session files into Saga
 <summary> Click here to see more: </summary>
 <br/>
 
+
 <!-- CLOSING DIV -->
 </details>
 <br/><br/>
 
 
-<!-- FINAL CLOSING DIV -->
 
+
+
+<!-- FINAL CLOSING DIV -->
 <!-- CLOSING DIV -->
 </details>
 <br/><br/>
