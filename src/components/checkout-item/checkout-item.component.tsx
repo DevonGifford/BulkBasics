@@ -49,7 +49,7 @@ const CheckoutItem: FC<CartItemProps> =({ cartItem }) => {
             {/* Description */}
             <BaseSpan> {name} </BaseSpan>
             
-            {/* Quantitiy */}
+            
             <Quantity>
                 {/* arrows to decrease */}
                 <Arrow onClick={removeItemHandler}>&#10094;</Arrow>

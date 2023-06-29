@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 import Button from '../button/button.component';
 
-
+/* --------------------------------------------------------
+    CONTAINERS
+----------------------------------------------------------*/ 
 
 export const FrontSplashContainer = styled.div`
     margin: 10px 2px 15px;
@@ -22,24 +24,6 @@ export const FrontSplashContainer = styled.div`
 }
 `;
 
-
-// export const BigHeadingContainer = styled.div`
-//   grid-column-start: 1;
-//   grid-column-end: span 2;
-//   height: auto;
-//   text-align: center;
-//   align-items: center;
-//   justify-content: center;
-//   border:4px solid #628045;
-//   background-color: #99b87c;
-//   opacity: 0.7;
-
-//   font-weight: bold;
-//   font-size: 16px;
-//   color: #ffffff;
-//   text-transform: uppercase;
-// `;
-
 export const HeadingContainer = styled.div`
 
   grid-column: 0 / 1;
@@ -49,60 +33,16 @@ export const HeadingContainer = styled.div`
   padding-bottom: 20px;
 
     p {
-            text-align: center;
-            font-size: 105%;
-            
-            margin-left: 1px;
-            margin-top: 10px;
-            margin-bottom: 4px;
+        text-align: center;
+        font-size: 105%;
+        
+        margin-left: 1px;
+        margin-top: 10px;
+        margin-bottom: 4px;
 
-            color: #52683f;
-            font-weight: bold;
+        color: #52683f;
+        font-weight: bold;
     }
-`;
-
-
-export const SmallHeading = styled.div`
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-
-    
-    text-align: center;
-    text-transform: uppercase;
-    font-family: Audiowide;
-    font-weight: 900;
-    font-size: 24px;
-    letter-spacing: 2.5px;
-    
-    color: #ffffff;
-    border-bottom: 4px solid white;
-
-`;
-
-export const SloganContainer = styled.div`
-    grid-column: span 2;
-    
-    height: auto;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    
-    font-family: Audiowide;
-    font-weight: bold;
-    font-size: 22px;
-    
-    text-align: center;
-    text-transform: uppercase;
-    color: #3b4b2c;
-
-
-
-
-    
-    /* border:4px solid #628045; */
-    /* background-color: #99b87c; */
-    /* opacity: 0.7; */
 `;
 
 
@@ -141,29 +81,73 @@ Button {
 
     &:hover {
         transform: translate(0%, -5%);
-        box-shadow: 5px 5px 4px #000000;
+        background-color: #2d4d2a;
+        color: white;
+        box-shadow: 5px 5px 4px #2d4d2a;
+        border: 3px solid #2d4d2a;
      
     }
 }
 
 `;
 
+
+export const SmallHeading = styled.div`
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+    
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Audiowide;
+    font-weight: 900;
+    font-size: calc(10px + 1vw);
+    letter-spacing: 2.5px;
+    
+    color: #ffffff;
+    border-bottom: 4px solid white;
+
+`;
+
+export const StyledParagraph = styled.div`
+  /* Shared styles for all <p> tags */
+    font-size: calc(12px + 0.5vw);
+    
+    
+    margin-left: 1px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+
+    text-align: center;
+    color: #f4f4f4;
+`;
+
+
+
+/* --------------------------------------------------------
+    BUTTONS & LOGO'S
+----------------------------------------------------------*/ 
+
 export const ButtonLogosContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 `;
 
 
 // 🎯🎯🎯🎯🎯🎯
 export const LogoStyling =styled.div`
-    cursor: pointer;
-    
+    cursor: pointer;    
 
     &:hover {
         transform: translate(0%, -10%); 
@@ -181,45 +165,51 @@ export const ButtonContainer =styled.div`
 
 
 
+/* --------------------------------------------------------
+    SALE BANNER
+----------------------------------------------------------*/ 
 export const SaleBanner = styled.div`
+  display: flex;
   width: 100%;
-  height: 50px;
-  border: 3px none #66804e;
+  height: 60px;
+  border: 1px none #66804e;
   background-color: #99b87c94;
   opacity: 0.7;
-  position: relative;
-
-  @media (max-width: 640px) {
-    height: 70px;
-  }
-`;
-
-const StyledParagraph = styled.p`
-  /* Shared styles for all <p> tags */
-  font-size: 13px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase ;
-  margin: 0;
+  justify-content: center;
+  align-content: spacearound;
 `;
 
 
 export const SaleHeading = styled(StyledParagraph)`
     color: #000000;
     font-family: Fira Code;
-    font-size: 100%;
+    font-size: calc(0.5rem + 1vw);
     font-weight: 700;
     text-align: center;
-    top: 50%;
-    left: 50%;
 
+    @media (max-width: 640px) {
+        margin-left: 20px;
+        margin-right: 20px;    
+    }
 `;
 
-export const SalePromo = styled(StyledParagraph)`
-    color: #000000;
-    font-weight: 600;
+
+/* --------------------------------------------------------
+    SLOGAN
+----------------------------------------------------------*/ 
+export const SloganContainer = styled.div`
+    grid-column: span 2;
+    
+    height: auto;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+    font-family: Audiowide;
+    font-weight: bold;
+    font-size: calc(10px + 1vw);
+    
     text-align: center;
-    top: 66%;
-    left: 50%;
-        
+    text-transform: uppercase;
+    color: #3b4b2c;
 `;
+

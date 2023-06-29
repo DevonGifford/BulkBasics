@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 
 import Autoplay from 'embla-carousel-autoplay';
@@ -16,17 +16,10 @@ import {
 } from './carousel.styles'
 
 
-// import Autoplay, {
-//   AutoplayType,
-//   AutoplayOptionsType,
-// } from 'embla-carousel-autoplay'
-
 type PropType = {
   options?: EmblaOptionsType
   slides: ReactNode[]
 }
-
-
 
 export const EmblaCarousel = (props: PropType) => {
   const { slides, options } = props

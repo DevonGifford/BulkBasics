@@ -7,17 +7,20 @@ export const ProductCartContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  padding-top: 10px;
 
   img {
     width: 100%;
-    height: 95%;
+    height: 100%;
     object-fit: cover;
     margin-bottom: 5px;
   }
 
   button {
     width: 80%;
+    font-size: calc(0.4rem + 0.5vw);
     opacity: 0.7;
+    flex-wrap: nowrap;
     position: absolute;
     top: 255px;
     display: none;
@@ -33,6 +36,13 @@ export const ProductCartContainer = styled.div`
       display: flex;
     }
   }
+
+  @media (max-width: 800px) {
+    button {
+      font-size: calc(0.7rem + 0.9vw);
+      font-weight: 800;
+    }
+  }
 `;
 
 export const Footer = styled.div`
@@ -40,18 +50,14 @@ export const Footer = styled.div`
   height: 5%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.5vw;
+  font-size: calc(0.7rem + 0.5vw);
   color: #4e613c;
+  padding-bottom: 15px;
 
-  @media (min-width: 1500px) {
-    font-size: 22px;
-    
-}
 `;
 
 export const Name = styled.span`
   width: 80%;
-  margin-bottom: 15px;
 `;
 
 export const Price = styled.span`

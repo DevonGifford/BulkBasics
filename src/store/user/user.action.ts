@@ -34,6 +34,16 @@ export const googleSignInStart = withMatcher((): GoogleSignInStart =>
   createAction(USER_ACTION_TYPES.GOOGLE_SIGN_IN_START)
 );
 
+/*---------------------------------------------------------------------------
+    GitHub Sign in ✔
+-----------------------------------------------------------------------------*/
+export type GithubSignInStart = Action<USER_ACTION_TYPES.GITHUB_SIGN_IN_START>;
+
+export const githubSignInStart = withMatcher((): GithubSignInStart =>
+  createAction(USER_ACTION_TYPES.GITHUB_SIGN_IN_START)
+);
+
+
 
 /*---------------------------------------------------------------------------
     Email Sign In ✔

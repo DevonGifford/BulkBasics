@@ -11,7 +11,7 @@ import {
   Preview,
   SeeMore,
   StyledIconLink,
-  StyledGrMore,
+  IconImage,
 } from './category-preview.styles';
 
 type CategoryPreviewProps = {
@@ -25,7 +25,7 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
     <CategoryPreviewContainer>
       
       <TitleContainer to={title}>
-        <Title to={title}>{title.toUpperCase()}</Title>
+        <Title>{title.toUpperCase()}</Title>
       </TitleContainer>
       
       
@@ -40,7 +40,8 @@ const CategoryPreview: FC<CategoryPreviewProps> = ({ title, products }) => {
       <SeeMore>
         
         <StyledIconLink to={title}>
-          <StyledGrMore/>
+          see more<br/>
+          <IconImage/>
         </StyledIconLink>
 
       </SeeMore>

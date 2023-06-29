@@ -19,6 +19,7 @@ import {
   getCurrentUser,
   createUserDocumentFromAuth,
   signInWithGooglePopup,
+  signInWithGithubPopup,
   signInAuthUserWithEmailAndPassword,
   createAuthUserWithEmailAndPassword,
   signOutUser,
@@ -51,6 +52,15 @@ export function* getSnapshotFromUserAuth(
 export function* signInWithGoogle() {
   try {
     const { user } = yield* call(signInWithGooglePopup);
+    yield* call(getSnapshotFromUserAuth, user);
+  } catch (error) {
+    yield* put(signInFailed(error as Error));
+  }
+}
+
+export function* signInWithGithub() {
+  try{
+    const { user } = yield* call(signInWithGithubPopup);
     yield* call(getSnapshotFromUserAuth, user);
   } catch (error) {
     yield* put(signInFailed(error as Error));
@@ -120,6 +130,10 @@ export function* onGoogleSignInStart() {
   yield* takeLatest(USER_ACTION_TYPES.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
+export function* onGithubSignInStart() {
+  yield* takeLatest(USER_ACTION_TYPES.GITHUB_SIGN_IN_START, signInWithGithub);
+}
+
 export function* onCheckUserSession() {
   yield* takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated);
 }
@@ -146,6 +160,7 @@ export function* userSagas() {
   yield* all([
     call(onCheckUserSession),
     call(onGoogleSignInStart),
+    call(onGithubSignInStart),
     call(onEmailSignInStart),
     call(onSignUpStart),
     call(onSignUpSuccess),

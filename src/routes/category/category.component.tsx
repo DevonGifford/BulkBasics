@@ -9,8 +9,12 @@ import Footer from '../../components/footer/footer.component';
 import Spinner from '../../components/spinner/spinner.component';
 
 import { 
+  CategoryWrapper,
   CategoryContainer, 
-  Title, 
+  Title,
+  Slogan,
+  FooterWrapper,
+  PageWrapper, 
 } from './category.styles';
 
 
@@ -34,18 +38,32 @@ const Category = () => {
 
   return (
     <Fragment>
-      <Title>{category.toUpperCase()}</Title>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-      <CategoryContainer>
-        {products &&
-          products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-      </CategoryContainer>
-      )}
-      <Footer />
+      <PageWrapper>
+
+        <CategoryWrapper>
+          
+          <Title>{category.toUpperCase()}</Title>
+          
+          {isLoading ? (
+            <Spinner />
+            ) : (
+              <CategoryContainer>
+            {products &&
+              products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+                ))}
+          </CategoryContainer>
+          )}
+
+          <Slogan>WE ONLY PROVIDE WHAT YOU NEED NOTHING MORE & NOTHING LESS.</Slogan>
+
+        </CategoryWrapper>
+        
+        <FooterWrapper>
+          <Footer />
+        </FooterWrapper>
+
+      </PageWrapper>
     </Fragment>
   );
 };
