@@ -22,6 +22,8 @@ import {
   TotalText,
 } from './checkout.styles';
 
+import { paymentIntent } from './../../utils/stripe/payment-intent-utils';
+
 
 const Checkout = () => {
 
@@ -30,7 +32,28 @@ const Checkout = () => {
   const cartTotal = useSelector(selectCartTotal);
 
   const navigate = useNavigate();
-  const onNavigateHandler = () => navigate('/checkout/payment')
+  
+  //THE OLD WAY
+  //const onNavigateHandler = () => navigate('/checkout/payment')
+
+  const checkout = async () => {
+    try {
+      const client_secret: unknown = await paymentIntent(
+        '/.netlify/functions/create-payment-intent', cartTotal
+        )
+      console.log('this is my client_secret in the checkout component: ',client_secret);
+      
+      navigate('/checkout/payment', {
+        state: {
+        client_secret
+      }
+    })
+    }catch (error) {
+      console.log(error);
+      
+      alert('An error has occurred; try again later!')
+    }
+  };
 
 
   return (
@@ -76,7 +99,7 @@ const Checkout = () => {
           <Button
             buttonType = {BUTTON_TYPE_CLASSES.inverted}
             type = 'button' 
-            onClick={onNavigateHandler}
+            onClick={checkout}
           >
             CHECKOUT
           </Button>

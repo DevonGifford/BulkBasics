@@ -1,8 +1,6 @@
 import {useState, useEffect, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStripe } from '@stripe/react-stripe-js';
-import { useSelector } from 'react-redux';
-import { selectCartTotal } from '../../store/cart/cart.selector';
 
 const PaymentStatus = () => {
   const navigate = useNavigate();
@@ -10,7 +8,6 @@ const PaymentStatus = () => {
   const [message, setMessage] = useState<any | null>(null);
 
   useEffect(() => {
-    const amount = useSelector(selectCartTotal)
 
 
     if (!stripe) {

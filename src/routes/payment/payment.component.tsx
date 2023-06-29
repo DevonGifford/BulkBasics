@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import LeftTop from '../../components/checkout-halves/left-top/left.component';
 import RightBottom from '../../components/checkout-halves/right-bottom/right.component';
 import Footer from '../../components/footer/footer.component';
@@ -24,15 +24,71 @@ import {
 import { useSelector } from 'react-redux';
 import { selectCartTotal } from '../../store/cart/cart.selector';
 import PaymentForm from '../../components/payment-form/payment-form.component';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+//------------------------------------
+import { stripePromise } from '../../utils/stripe/stripe.utils';
+import { Elements } from '@stripe/react-stripe-js';
+
+
+//------------------------------------
+
+export type StripeTypes = {
+    clientSecret: string;
+    appearance: {
+      theme: "stripe",
+      variables: {
+        colorPrimary: string
+      }
+    }
+  };
+
+interface PaymentProps {
+    secret: string; // Define the 'secret' prop type
+  }
+
+//------------------------------------
 
 const Payment = (): JSX.Element => {
     const cartTotal = useSelector(selectCartTotal);
     const [menuVisible, setMenuVisible] = useState(false);
 
+    
+    const params = useLocation();
+    const secret: any = params.state.client_secret;
+    const navigate = useNavigate();
+    console.log(typeof secret);
+    console.log('this is my client_Secret in the payment-component :', secret);
+    
+    
+    //------------------------------------
     const toggleMenu = (): void => {
         console.log('toggle toggleMenu:', menuVisible);
         setMenuVisible(!menuVisible);
     };
+
+
+    //-----------------------------------------------------
+    useEffect(() => {
+        if (!stripePromise || !secret) {
+          navigate('/')
+        }
+      }, [secret, navigate])
+  
+      const options: StripeTypes = {
+        // passing in the client secret
+        clientSecret: secret,
+        // customizable with appearance API
+        appearance: {
+          theme: 'stripe',
+          variables: {
+            colorPrimary: '#008b8b'
+          }
+        },
+      };
+
+
+
 
   return (
     <Fragment>
@@ -90,7 +146,12 @@ const Payment = (): JSX.Element => {
                         <RightBottom />
                     )}
 
-                    <PaymentForm />
+                    {secret && 
+                        <Elements stripe={stripePromise} options={options}>
+                            <PaymentForm  />
+                        </Elements>
+                    }
+                    {/* secret={secret.client_secret} */}
                     
                 </RightSide>
                 

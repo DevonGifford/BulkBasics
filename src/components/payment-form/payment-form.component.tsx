@@ -2,7 +2,7 @@ import { useState, FormEvent } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import { StripeCardElement, PaymentMethod } from '@stripe/stripe-js';
+import { StripeCardElement, PaymentMethod, StripePaymentElement } from '@stripe/stripe-js';
 
 import { 
   PaymentElement, 
@@ -41,7 +41,7 @@ const PaymentForm = () => {
     const currentUser = useSelector(selectCurrentUser);
 
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
-    const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
+    const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 
     /* ------------------------------------------------------------------------
@@ -64,55 +64,34 @@ const PaymentForm = () => {
       }
 
 
-      //Getting the Card Details 
-      const paymentElement = elements.getElement(PaymentElement) as StripeCardElement;
-      console.log('payementEL: ',paymentElement);
-
-      if (!paymentElement) {
-        // Card Element is not available, handle the error
-        console.log('Payment Element not found');
-        return;
-      }
-
       //Loading animation - [start]
       setIsProcessingPayment(true);
 
 
+      //Using the 
+      const {error} = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          // redirect to route thankyou - need to create a route for this 🎯
+          return_url: 'http://localhost:8888',
+          payment_method_data: {
+            billing_details: {
+              name: currentUser? currentUser.displayName : 'guest',
+              email: currentUser? currentUser.email : 'guest@gmail.com',
+              phone: '7873679090',
+              address: {
+                line1: 'Calle de Muller, 1',
+                city: 'Madrid',
+                state: 'Madrid',
+                postal_code: '28039',
+                country: 'ESP'
+              }
+            }
+          }
+        },
+      });
 
 
-      // const { error, paymentMethod } = await stripe.createPaymentMethod({
-      //   type: 'card',
-      //   card: paymentElement,
-      // });
-  
-      // if (error) {
-      //   // Handle error creating payment method.
-      //   console.log(error);
-      //   setIsProcessingPayment(false);
-      //   return ;
-      // }
-
-
-      // console.log(paymentMethod);
-
-
-
-
-
-
-
-
-
-
-
-      // // Trigger form validation and wallet collection
-      // const {error: submitError} = await elements.submit();
-      // if (submitError) {
-      //   console.log('LIVE TEST - submit error');
-      //   const error: Error = new Error(submitError.message);
-      //   handleError(error);
-      //   return;
-      // }
 
 
       // //PAYMENT INTENT - Create the SetupIntent and obtain clientSecret 
@@ -135,7 +114,7 @@ const PaymentForm = () => {
       // console.log('LIVE TESTING - client secret: ', clientSecret)
 
 
-      // 🙈🙈🙈
+      // //🙈🙈🙈
       // // Confirm the PaymentIntent using the details collected by the Payment Element
       // const {error} = await stripe.confirmPayment({
       //   elements,
@@ -147,40 +126,54 @@ const PaymentForm = () => {
       //   // redirect: "if_required",
       // });
 
-      //TEST 🧪🧪🧪
+      // //TEST 🧪🧪🧪
 
-      // const PaymentElement = elements.create('payment');
-      // console.log("Payment Element: ", PaymentElement);
+      // // const PaymentElement = elements.create('payment');
+      // // console.log("Payment Element: ", PaymentElement);
 
-      // const card = elements.getElement(CardNumberElement)
-      // console.log('payWithCard', card)
+      // // const card = elements.getElement(CardNumberElement)
+      // // console.log('payWithCard', card)
 
       
 
-      // const SubmitPaymentToStripe = await stripe.confirmPayment({
-      //   elements,
-      //   clientSecret,
-      //   billing_details: {
-      //       name: currentUser ? currentUser.displayName : 'Guest',
-      //   },
-      //   confirmParams: {
-      //     return_url: 'http://localhost:8888',
-      //   },
-      // });
+      // // const SubmitPaymentToStripe = await stripe.confirmPayment({
+      // //   elements,
+      // //   clientSecret,
+      // //   billing_details: {
+      // //       name: currentUser ? currentUser.displayName : 'Guest',
+      // //   },
+      // //   confirmParams: {
+      // //     return_url: 'http://localhost:8888',
+      // //   },
+      // // });
 
-      // const paymentResult = await stripe.confirmCardPayment(clientSecret, {
-      //   payment_method: {
-      //     card: PaymentElement,
-      //     billing_details: {
-      //       name: currentUser ? currentUser.displayName : 'Guest',
-      //     },
-      //   },
-      // });
+      // // const paymentResult = await stripe.confirmCardPayment(clientSecret, {
+      // //   payment_method: {
+      // //     card: PaymentElement,
+      // //     billing_details: {
+      // //       name: currentUser ? currentUser.displayName : 'Guest',
+      // //     },
+      // //   },
+      // // });
 
 
       //Loading animation - [COMPLETE]
+
+
       setIsProcessingPayment(false);
       console.log('LIVE TESTING -  payment handler completed');
+
+      if (error) {
+        // This point will only be reached if there is an immediate error when
+        // confirming the payment. Show error to your customer (for example, payment
+        // details incomplete)
+        setErrorMessage(error.message);
+      } else {
+        // Your customer will be redirected to your `return_url`. For some payment
+        // methods like iDEAL, your customer will be redirected to an intermediate
+        // site first to authorize the payment, then redirected to the `return_url`.
+      }
+    
       
 
     };
@@ -210,6 +203,6 @@ const PaymentForm = () => {
       </FormContainer>
     </PaymentFormContainer>
   )
-}
+};
 
 export default PaymentForm;
