@@ -71,8 +71,13 @@ const About = () => {
             <br/>
 
             <TextSection>
-                This website is designed to showcase my portfolio and demonstrate my skills in web development. It is not a real website, but a practice project to improve my abilities.
-                It's fully functional however some links will take you here and none of the products are real
+                {/* This website is designed to showcase my portfolio and demonstrate my skills in web development. It is not a real website, but a practice project to improve my abilities.
+                It's fully functional however some links will take you here and none of the products are real */}
+                This project serves as a personal learning experience, allowing me to test my abilities in seeing a project through from start to finish. Rather than replicating existing stores, the focus is on developing robust business logic and integrating various technologies.
+                <br/><br/>
+                My goal was to fully immerse myself in building an ecommerce application, exploring different topics and honing my implementation and integration skills. While efficiency could have been prioritized, the main objective was to gain comprehensive knowledge.
+                <br/><br/>
+                This project doesn't aim to create a real store with actual products. Instead, the focus is on building business logic and refining development skills, simulating real-world scenarios and mirroring professional work environments
             </TextSection>
             
             <SmallHeading>Technologies Used</SmallHeading>
@@ -80,17 +85,9 @@ const About = () => {
             <IconContainer>
                 <div>
                     <StyledIcon>
-                        <SiHtml5/>
+                        <SiTypescript/>
                     </StyledIcon>
-                    HTML5 
-                </div>
-
-                <div>
-                    <StyledIcon>
-                        <SiCss3/>
-                    </StyledIcon>
-                    CSS3
-
+                    TypeScript
                 </div>
 
                 <div>
@@ -102,9 +99,9 @@ const About = () => {
 
                 <div>
                     <StyledIcon>
-                        <SiTypescript/>
+                        <SiVite/>
                     </StyledIcon>
-                    TypeScript
+                    Vite
                 </div>
 
                 <div>
@@ -114,12 +111,6 @@ const About = () => {
                     React.js
                 </div>
 
-                <div>
-                    <StyledIcon>
-                        <SiStyledcomponents/>
-                    </StyledIcon>
-                    Styled components
-                </div>
 
                 <div>
                     <StyledIcon>
@@ -142,12 +133,6 @@ const About = () => {
                     Redux Saga
                 </div>
 
-                <div>
-                    <StyledIcon>
-                        <SiVite/>
-                    </StyledIcon>
-                    Vite
-                </div>
 
                 <div>
                     <StyledIcon>
@@ -170,20 +155,40 @@ const About = () => {
                     Jest Testing
                 </div>
 
+                <div>
+                    <StyledIcon>
+                        <SiHtml5/>
+                    </StyledIcon>
+                    HTML5 
+                </div>
+
+                <div>
+                    <StyledIcon>
+                        <SiStyledcomponents/>
+                    </StyledIcon>
+                    Styled-C
+                </div>
+
+                <div>
+                    <StyledIcon>
+                        <SiCss3/>
+                    </StyledIcon>
+                    CSS3
+                </div>
             </IconContainer>
 
         
             <ButtonContainer>  
 
                 <Button
-                buttonType={BUTTON_TYPE_CLASSES.google}
+                buttonType={BUTTON_TYPE_CLASSES.inverted}
                 type='button'
                 >
                 how I built this
                 </Button>
 
                 <Button
-                buttonType={BUTTON_TYPE_CLASSES.google}
+                buttonType={BUTTON_TYPE_CLASSES.inverted}
                 type='button'
                 >
                 Source Code
@@ -199,22 +204,18 @@ const About = () => {
 
             <BigHeading>About me</BigHeading>
 
-            
-             
-                <ImageContainer src="https://media.licdn.com/dms/image/D4E03AQEUZpd3TiEITQ/profile-displayphoto-shrink_800_800/0/1682698436823?e=1691625600&v=beta&t=6joJA9FA5yXO6XjNSCbgDgBob8tZ2aPXGj0JG1r2Uqw" alt="Profile Picture">
-                </ImageContainer>
-             
-                
-
-            
+            <ImageContainer src="https://media.licdn.com/dms/image/D4E03AQEUZpd3TiEITQ/profile-displayphoto-shrink_800_800/0/1682698436823?e=1691625600&v=beta&t=6joJA9FA5yXO6XjNSCbgDgBob8tZ2aPXGj0JG1r2Uqw" alt="Profile Picture" />
             
             <LinksContainer>
               
                 <TextSection>
-                    Hello! My name is Devon Gifford and I am a full stack developer with a passion for learning and problem solving. I have a strong foundation in front and back end development, and I am skilled in creating user-friendly and responsive web applications using React and its ecosystem.
-                    <br/>
-                    <br/>
-                    My interest in web development started when I was creating websites for my freelance marketing clients in South Africa. Since then, after moving to Europe, I had an opportunity to work in QA for one of the major FAANG companies, where I realized my passion for problem-solving.  
+                Hello! I'm Devon Gifford, a dedicated full stack developer experienced in front and back end development. I'm passionate about learning and problem-solving, specializing in creating user-friendly web applications using React and its ecosystem.
+                <br/><br/>
+                My journey into web development began while creating websites for freelance marketing clients in South Africa. This sparked my fascination with the field, leading me to explore QA at a major FAANG company in Europe, where I further refined my problem-solving skills.
+                <br/><br/>
+                In addition to my start-up experience, I hold a Bachelor's degree in Business Administration. As a self-taught programmer, I have invested time and effort into mastering React and staying current with industry trends.
+                <br/><br/>
+                I'm excited to tackle new challenges, collaborate with passionate teams, and deliver innovative solutions. Let's connect and create something impactful together!
                 </TextSection>
 
                 <MailEmailContainer>
@@ -236,7 +237,7 @@ const About = () => {
                     </PersonalWebsite>
 
                     <PersonalEmail>
-                        <SmallHeading>You can also email me here</SmallHeading>
+                        <SmallHeading>Send me an Email</SmallHeading>
                         <div>
                             <a 
                               href="mailto:devongifford@outlook.com" 
@@ -328,16 +329,12 @@ const About = () => {
         </AboutMeContainer>
            
            
-
-
-
-
         <FooterContainer>
             <TextSection>
-                Built from scratch by Devon Gifford
+                Built from scratch by <br/> Devon Gifford
             </TextSection>
             <TextSection>
-                 2023 Portfolio Project. All rights reserved.
+                 2023 Portfolio Project. <br/>All rights reserved.
             </TextSection>
         </FooterContainer>
 

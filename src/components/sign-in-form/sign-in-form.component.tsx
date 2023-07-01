@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
 
-import { googleSignInStart, emailSignInStart } from '../../store/user/user.action';
+import { googleSignInStart, emailSignInStart, githubSignInStart } from '../../store/user/user.action';
 
-import { SignInContainer, ButtonsContainer, TitleWrapper } from './sign-in-form.styles';
+import { SignInContainer, ButtonsContainer, TitleWrapper, GoogleIcon, GitHubIcon, FacebookIcon } from './sign-in-form.styles';
 
 /*------------------------------------------------------------
 //Setting Default Form Fields
@@ -33,6 +33,12 @@ const SignInForm = () => {
   -------------------------*/ 
   const signInWithGoogle = async () => {
     dispatch(googleSignInStart());
+  };
+
+  /*Handle GitHub Sign in
+  -------------------------*/ 
+  const signInWithGithub = async () => {
+    dispatch(githubSignInStart());
   };
 
   /*Handle Email+Password  (submit & sign-in)
@@ -89,13 +95,38 @@ const SignInForm = () => {
         />
         <ButtonsContainer>
           <Button type='submit'>Sign In</Button>
+
+          <br/>
+
+          <p>or sign in with:</p>
+
+          <br/>
+          
           <Button
             buttonType={BUTTON_TYPE_CLASSES.google}
             type='button'
             onClick={signInWithGoogle}
           >
-            Sign In With Google
+            <GoogleIcon />
           </Button>
+
+          <Button
+            buttonType={BUTTON_TYPE_CLASSES.github}
+            type='button'
+            onClick={signInWithGithub}
+          >
+            <GitHubIcon/>
+          </Button>
+
+          {/* <Button
+            buttonType={BUTTON_TYPE_CLASSES.facebook}
+            type='button'
+            
+          >
+            <FacebookIcon />
+          </Button> */}
+
+
         </ButtonsContainer>
       </form>
     </SignInContainer>

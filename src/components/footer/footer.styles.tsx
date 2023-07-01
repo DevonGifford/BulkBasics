@@ -18,10 +18,10 @@ export const BigFooter = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-column-gap: 25px;
+    grid-column-gap: 30px;
     grid-row-gap: 0px;
 
-    margin: 35px 10px 20px 20px; 
+    margin: 35px 10px 20px 10px; 
 
     @media (max-width: 900px) {
         grid-column-gap: 5px;
@@ -35,7 +35,6 @@ export const BigFooter = styled.div`
         align-content: center;
         align-items: center;
     }
-
 `;
 
 export const ColumnSection1 = styled.div`
@@ -78,7 +77,7 @@ export const ColumnSection4 = styled.div`
 export const ColumnSectionBig = styled.div`
     grid-column: 5 / span 2;
     color: #cecece;
-    padding-left: 40px;
+    padding-left: 15px;
 
     p{
         margin-top: 10px;
@@ -103,7 +102,7 @@ export const ColumnHeading = styled.div`
 
     @media (max-width: 700px) {
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-top: 5px;
     }
 `;
@@ -115,7 +114,7 @@ export const ColumnEntry = styled.div`
     ul{
         margin: 0px;
         padding-bottom: 15px;
-        padding-top: 8px;
+        padding-top: 10px;
         position: relative;
         left: -35px;  
     }

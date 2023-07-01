@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,6 +11,7 @@ import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 import Logo from '../../assets/logo.png'
+
 import {
   NavigationContainer,
   LogoContainer,
@@ -25,15 +26,17 @@ import {
 
 const Navigation = () => {
   const dispatch = useDispatch();
-//Get the current user - get CONTEXT
-  //const { currentUser } = useContext(UserContext); - replace for redux 
   const currentUser = useSelector(selectCurrentUser);
-
-//Get the status of the cart (open/closed)
-  //const { isCartOpen }= useContext(CartContext); - replace for redux
   const isCartOpen = useSelector(selectIsCartOpen);
   
   const signOutUser = () => dispatch(signOutStart());
+
+  const [navToggle, setNavToggle] = useState(false);
+
+  const handleNavToggle = () => {
+    //console.log('Toggle fired');
+    setNavToggle(!navToggle);
+  };
 
 
   return (
@@ -58,16 +61,17 @@ const Navigation = () => {
           )}
           <CartIcon />
 
-
         </NavLinks>
+{/* 
+        <MobileNavLinks onClick={handleNavToggle}>
+          <Hamburger />
+
+        </MobileNavLinks> */}
         
         {isCartOpen && <CartDropdown />}
       
       </NavigationContainer>
       <Outlet />
-
-
-
     </Fragment>
   );
 };

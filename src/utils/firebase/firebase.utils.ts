@@ -6,6 +6,7 @@ import {
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
+  GithubAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -45,6 +46,12 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 
+const githubProvider = new GithubAuthProvider();
+
+githubProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
 googleProvider.setCustomParameters({
   prompt: 'select_account',
 });
@@ -52,6 +59,9 @@ googleProvider.setCustomParameters({
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
+
+export const signInWithGithubPopup = () => signInWithPopup(auth, githubProvider);
+export const signInWithGithubRedirect = () => signInWithRedirect(auth, githubProvider);
 
 export const db = getFirestore();
 

@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 
-//import { CategoriesContext } from '../../contexts/categories.context';
 import { useSelector } from 'react-redux';
 import { selectCategoriesMap, selectIsLoading } from '../../store/categories/categories.selector';
 

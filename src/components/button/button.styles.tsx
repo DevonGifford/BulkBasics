@@ -28,12 +28,34 @@ export const BaseButton = styled.button`
 `;
 
 export const GoogleSignInButton = styled(BaseButton)`
-  background-color: #3f6d3b;
+  background-color: #1d42d8;
   color: white;
   font-size: 11px;
 
   &:hover {
-    background-color: #809e64d6;
+    background-color: #e8f353c8;
+    border: none;
+  }
+`;
+
+export const GitHubSignInButton = styled(BaseButton)`
+  background-color: #030021;
+  color: white;
+  font-size: 11px;
+
+  &:hover {
+    background-color: #070842;
+    border: none;
+  }
+`;
+
+export const FaceBookSignInButton = styled(BaseButton)`
+  background-color: #3427c0;
+  color: white;
+  font-size: 11px;
+
+  &:hover {
+    background-color: #1d17d9dc;
     border: none;
   }
 `;

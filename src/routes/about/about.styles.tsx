@@ -16,7 +16,7 @@ export const BiggestHeading = styled.div`
 
 export const BigHeading = styled.div`
     text-align: center;
-    border: 2px solid black;
+    border: 2px solid #3f6d3b;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
     font-size:calc(30px + 1vw);
@@ -25,8 +25,8 @@ export const BigHeading = styled.div`
     padding-top: 15px;
     padding-bottom: 15px;
 
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     
     font-family: Audiowide;
@@ -75,10 +75,9 @@ export const HeadingSplash = styled.div`
     justify-content: center;
     text-align: center;
     background-color: #809e64d6;
-
+    
     padding-top: 20px;
     padding-bottom: 40px;
-
 `;
 
 
@@ -93,7 +92,7 @@ export const AboutProjectContainer = styled.div`
     justify-content: center;
     text-align: center;
         
-    padding-top: 20px;
+    padding-top: 35px;
     padding-bottom: 35px;
 
     color: #334e30;
@@ -110,21 +109,35 @@ export const ButtonContainer = styled.div`
     
     gap: 10px;
     padding: 20px;
+
+    @media (max-width: 400px) {
+        width: 100px;
+
+        Button {
+            font-size: 8px;
+        }
+        
+    }
 `;
 
 
 export const IconContainer = styled.div`
-    margin: 10px 90px 10px 90px;
+    margin: 10px 50px 10px 50px;
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
 
     justify-content: center;
+
+    @media screen {
+        gap: 13px;
+        font-size: x-small;
+    }
     
 `;
 
 export const StyledIcon = styled.div`
-    font-size: 2.8rem;
+    font-size: calc(1rem + 1.5vw);
     padding-top: 20px;
     color: #334e30;
 
@@ -164,7 +177,7 @@ export const AboutMeContainer = styled.div`
     justify-content: center;
     text-align: center;
 
-    padding-top: 20px;
+    padding-top: 35px;
     padding-bottom: 35px;
 `;
 
@@ -175,24 +188,25 @@ export const AboutMeContent = styled.div`
     gap: 20px;
 
     
-    @media (max-width: 1000px) {
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+@media (max-width: 1000px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-`
+`;
 
 export const ImageContainer = styled.img`
     border-radius: 50%;
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 150px;
+    max-width: 300px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding-top: 30px;
+    margin-top: 30px;
+    border: 5px solid #334e30;
     
 `
 
@@ -216,25 +230,35 @@ export const LinksContainer = styled.div`
 export const MailEmailContainer = styled.div`
     display: flex;
     flex-wrap: nowrap;
-    gap: 10px;
+    justify-content: center;
+    gap: 50px;
 
     margin-left: 40px;
     margin-right: 40px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
         display: flex;
         flex-direction: column;
+        gap: 15px;
     }
 `;
 
 export const PersonalWebsite = styled.div`
     color: #334e30;
     width: 500px;
+
+    @media (max-width: 450px) {
+        width: 250px;
+    }
 `;
 
 export const PersonalEmail = styled.div`
     color: #334e30;
     width: 500px;
+
+    @media (max-width: 450px) {
+        width: 250px;
+    }
 `;
 
 /*-----------------------------------------------------

@@ -8,6 +8,10 @@ export const Embla = styled.div `
   --slide-height: 34rem;
   padding: 1px;
   padding-top: 4px;
+
+  @media (max-width: 500px) {
+    --slide-height: 20rem;
+  }
   `;
 
 export const EmblaViewPort = styled.div `
@@ -57,6 +61,13 @@ export const EmblaSlideOverlay = styled.div `
   @media (max-width: 640px) {
     font-weight: 500;
     font-size: 150%;
+    left: 5%;
+  }
+
+  @media (max-width: 440px) {
+    font-weight: 500;
+    font-size: 120%;
+    left: 5%;
   }
 
 `;
@@ -77,8 +88,17 @@ export const EmblaSlideOverlay2 = styled.div `
 
   @media (max-width: 640px) {
     font-weight: 500;
-    font-size: 120%;
-    top: 14%;
+    font-size: 115%;
+    top: 17%;
+    left: 5%;
   }
+
+  @media (max-width: 440px) {
+    font-weight: 500;
+    font-size: 100%;
+    top: 15%;
+    left: 5%;
+  }
+
 
 `;

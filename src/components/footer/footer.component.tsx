@@ -29,6 +29,7 @@ const Footer = () => {
 
   return (
     <Fragment>
+        
         <FooterContainer>
 
             <BigFooter> 
@@ -112,23 +113,14 @@ const Footer = () => {
 
                 {/* Column 4  */}
                 <ColumnSection4>
-                    {/* REAL WEBSITES  */}
-                    {/* <ColumnHeading>OTHER WEBSITES</ColumnHeading>
-                    <ColumnEntry onClick={onNavigateHandler}>
-                        <ul>
-                            <li>Rogue Fitness </li>
-                            <li>Barbell Apparel </li>
-                            <li>GymShark </li>
-                            <li>MyProtein </li>
-                            <li>HSN Store </li>
-                        </ul>
-                    </ColumnEntry> */}
 
                     {/* CONTACT US */}
                     <ColumnHeading>CONTACT US</ColumnHeading>
                     <ColumnEntry>
                         <p><strong>Customer Care:</strong><br/>123-456-789 </p>
+                        <br/>
                         <p><strong>Business Number:</strong><br/>123-456-789 </p>
+                        <br/>
                         <p><strong>Fax:</strong><br/>987-654-321 </p>
                         <br/>
                         <p><strong>Bulk Basics HQ</strong></p>
@@ -224,14 +216,11 @@ const Footer = () => {
 
             </BigFooter>
 
-
-
             <SmallFooter>
                 <h5>2023 Portfolio Project. All rights reserved. </h5>
             </SmallFooter>
 
         </FooterContainer>
-
 
     </Fragment>
   )
