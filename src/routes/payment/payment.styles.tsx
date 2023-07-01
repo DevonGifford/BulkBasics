@@ -75,6 +75,15 @@ export const RightSideConetent = styled.div`
   flex-direction: column;
 `;
 
+export const WarningHeading = styled.div`
+  font-family: fira code;
+  font-size: calc(0.8rem + 0.5vw);
+  font-weight: 700;
+  color: red;
+  text-align: center;
+  padding-bottom: 40px;
+`;
+
 /*    BOXES - DEV BOX
 -----------------------------------------------*/ 
 export const DevCheckBox = styled.div`

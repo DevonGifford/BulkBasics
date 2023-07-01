@@ -19,6 +19,7 @@ import {
   OrderSummaryTextTotal,
   OrderSummaryAmountTotal,
   DottedLine,
+  WarningHeading,
 } from './payment.styles';
 
 import { useSelector } from 'react-redux';
@@ -107,50 +108,52 @@ const Payment = (): JSX.Element => {
 
                   <RightSideConetent>                    
 
-                      <OrderSummaryContainer>
-                          <RightSideHeading>Cart Total</RightSideHeading>
-                          <p>💪 <em>Your first order's shipping cost is on us!</em> </p>
+                    <OrderSummaryContainer>
+                      <RightSideHeading>Cart Total</RightSideHeading>
+                      <p>💪 <em>Your first order's shipping cost is on us!</em> </p>
 
-                          <OrderSummarySection>
-                              <OrderSummaryText>Sub-Total:</OrderSummaryText>
-                              <OrderSummaryAmount>{cartTotal} €</OrderSummaryAmount>
-                          </OrderSummarySection>
-
-
-                          <OrderSummarySection>
-                              <OrderSummaryText>Shipping:</OrderSummaryText>
-                              <OrderSummaryAmount>0 €</OrderSummaryAmount>
-                          </OrderSummarySection>
-
-                          <DottedLine />
-
-                          <OrderSummarySection>
-                              <OrderSummaryTextTotal>TOTAL:</OrderSummaryTextTotal>
-                              <OrderSummaryAmountTotal>{cartTotal} €</OrderSummaryAmountTotal>
-                          </OrderSummarySection>
-
-                          <br/><br/>
-
-                      </OrderSummaryContainer>
-                                                        
-                      <DropdownButton 
-                          onClick={toggleMenu}
-                      >
-                          <b>{menuVisible? '▲ Hide' : '▼ Show'}</b> order summary 
-                      </DropdownButton>
-
-                  </RightSideConetent>
+                      <OrderSummarySection>
+                          <OrderSummaryText>Sub-Total:</OrderSummaryText>
+                          <OrderSummaryAmount>{cartTotal} €</OrderSummaryAmount>
+                      </OrderSummarySection>
 
 
-                  {menuVisible && (
-                      <RightBottom />
-                  )}
+                      <OrderSummarySection>
+                          <OrderSummaryText>Shipping:</OrderSummaryText>
+                          <OrderSummaryAmount>0 €</OrderSummaryAmount>
+                      </OrderSummarySection>
 
-                  {secret && 
-                      <Elements stripe={stripePromise} options={options}>
-                          <PaymentForm  />
-                      </Elements>
-                  }
+                      <DottedLine />
+
+                      <OrderSummarySection>
+                          <OrderSummaryTextTotal>TOTAL:</OrderSummaryTextTotal>
+                          <OrderSummaryAmountTotal>{cartTotal} €</OrderSummaryAmountTotal>
+                      </OrderSummarySection>
+
+                      <br/><br/>
+
+                    </OrderSummaryContainer>
+                                                      
+                    <DropdownButton 
+                        onClick={toggleMenu}
+                    >
+                        <b>{menuVisible? '▲ Hide' : '▼ Show'}</b> order summary 
+                    </DropdownButton>
+
+                </RightSideConetent>
+
+
+                {menuVisible && (
+                    <RightBottom />
+                )}
+
+                {secret && 
+                    <Elements stripe={stripePromise} options={options}>
+                        <PaymentForm  />
+                    </Elements>
+                }
+
+                <WarningHeading> Warning:  This is NOT a real website <br/> Please use the Test-Card provided in the order summary</WarningHeading>
                     
                 </RightSide>
                 
