@@ -4,7 +4,8 @@ import { CART_ACTION_TYPES, CartItem } from './cart.types';
 import { 
   createAction,
   ActionWithPayload,
-  withMatcher, 
+  withMatcher,
+  Action,
 } from '../../utils/reducer/reducer.utils';
 
 
@@ -13,6 +14,7 @@ HELPER FUNCTIONS
 ------------------------------------*/
 
 // Adding single Item to the Cart - (empty cart create cart) 
+//----------------------------------------------------------
 const addCartItem = (
   cartItems: CartItem[], 
   productToAdd: CategoryItem
@@ -38,6 +40,7 @@ const addCartItem = (
 
 
 //Removing Single Item from the Cart
+//------------------------------------
 const removeCartItem = (
   cartItems: CartItem[], 
   cartItemToRemove: CategoryItem
@@ -46,7 +49,7 @@ const removeCartItem = (
 // find cart item to remove
 const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === cartItemToRemove.id
-);;
+);
 
 //check if this is the last item - if so remove entire item from cart
 if (existingCartItem && existingCartItem.quantity === 1) {
@@ -64,6 +67,7 @@ return cartItems.map((cartItem) =>
 
 
 // Remove entire Item from the cart
+//--------------------------------------
 const clearCartItem = (
   cartItems: CartItem[], 
   cartItemToClear: CategoryItem
@@ -76,7 +80,9 @@ cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 /*------------------------------------
 ACTION CREATORS
 ------------------------------------*/
+
 //Setting the Cart UI Open/Close
+//------------------------------------
 export type SetCartIsOpen = ActionWithPayload<
   CART_ACTION_TYPES.SET_IS_CART_OPEN,
   boolean
@@ -89,6 +95,7 @@ export const setIsCartOpen = withMatcher((boolean: boolean) =>
 
 
 //Adding Removing and Clearing Cart Items
+// ----------------------------------------------
 export type SetCartItems = ActionWithPayload<
   CART_ACTION_TYPES.SET_CART_ITEMS,
   CartItem[]
@@ -124,3 +131,13 @@ export const clearItemFromCart = (
     const newCartItems = clearCartItem(cartItems, cartItemToClear);
     return setCartItems(newCartItems);
 };
+
+
+//Clearing the entire cart
+//------------------------------------------------
+
+export type ClearCart = Action<CART_ACTION_TYPES.SET_CLEAR_CART>;
+
+export const clearCart = withMatcher((): ClearCart =>
+  createAction(CART_ACTION_TYPES.SET_CLEAR_CART)
+);

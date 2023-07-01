@@ -19,8 +19,8 @@ export const paymentIntent = async <T>(
 
     const data = await res.json();
     const clientSecret = data.paymentIntent.client_secret;
-    console.log('this is the typeof check: ', typeof clientSecret)
-    console.log('this is the data itself: ', clientSecret);
+    //console.log('this is the typeof check: ', typeof clientSecret)
+    //console.log('this is the data itself: ', clientSecret);
 
     // const {client_secret: clientSecret} = await res.json();
     return await clientSecret;

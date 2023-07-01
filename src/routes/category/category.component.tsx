@@ -32,7 +32,7 @@ const Category = () => {
 
 
   useEffect(() => {
-    console.log('effect fired calling setProducts');
+    //console.log('effect fired calling setProducts');
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 

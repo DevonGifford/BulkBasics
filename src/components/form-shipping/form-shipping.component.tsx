@@ -71,8 +71,8 @@ const ShippingForm: React.FC = () => {
       const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         // Handle form submission logic, e.g., send data to the server
-        // At the moment I do not need to collect any of the data
-        console.log(shippingDetails);
+        // At the moment I do not need to collect any of the data but I could do it here
+        //console.log(shippingDetails);
         resetShippingForm();
       };
   

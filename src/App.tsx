@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import Spinner from './components/spinner/spinner.component';
 import { checkUserSession } from './store/user/user.action';
 import { GlobalStyle } from './global.styles';
+import Thankyou from './routes/payment-confirmation/payment-confirmation.component';
 
 // import Navigation from './routes/navigation/navigation.component';
 // import Authentication from './routes/authentication/authentication.component';
@@ -40,6 +41,7 @@ const App = () => {
           <Route path='checkout' element={<Checkout />} />
           <Route path='about' element={<About />} />
           <Route path='checkout/payment' element={<Payment />} />
+          <Route path='checkout/payment/payment-confirmation' element={<Thankyou />} />
         </Route>
 
       </Routes>

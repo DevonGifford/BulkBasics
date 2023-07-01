@@ -41,7 +41,7 @@ const Checkout = () => {
       const client_secret: unknown = await paymentIntent(
         '/.netlify/functions/create-payment-intent', cartTotal
         )
-      console.log('this is my client_secret in the checkout component: ',client_secret);
+      //console.log('this is my client_secret in the checkout component: ',client_secret);
       
       navigate('/checkout/payment', {
         state: {

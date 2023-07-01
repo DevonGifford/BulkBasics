@@ -1,7 +1,7 @@
 import { AnyAction } from "redux";
 
-import { CartItem } from "./cart.types";
-import { setCartItems, setIsCartOpen } from "./cart.action";
+import { CART_ACTION_TYPES, CartItem } from "./cart.types";
+import { setCartItems, setIsCartOpen, clearCart} from "./cart.action";
 
 
 export type CartState = {
@@ -33,6 +33,10 @@ export const cartReducer = (
             cartItems: action.payload
         };
     }
+
+    if (action.type === CART_ACTION_TYPES.SET_CLEAR_CART) {
+        return CART_INITIAL_STATE;
+      }
 
     return state;
 };

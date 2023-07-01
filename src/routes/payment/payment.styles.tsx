@@ -49,8 +49,8 @@ export const DropdownButton = styled.button`
 
   cursor: pointer;
 
-  &:hover + & {
-    color: blue;
+  &:hover {
+    color: #3f8b38;
   }
 `;
 
@@ -73,6 +73,27 @@ export const RightSide = styled.div`
 export const RightSideConetent = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+/*    BOXES - DEV BOX
+-----------------------------------------------*/ 
+export const DevCheckBox = styled.div`
+    align-self: center;
+    width: calc(250px + 25vw);
+    max-width: 600px;
+    height: fit-content;
+    border: 2px solid red;
+    margin: 20px 10px 20px 10px;
+    padding: 20px 20px 20px 20px; 
+
+    background-color: #e1787863;
+
+    font-size: large;
+    font-weight: 600;
+
+    @media (max-width: 400px) {
+        font-size: small;
+    }
 `;
 
 

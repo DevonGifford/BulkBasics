@@ -34,7 +34,7 @@ const Navigation = () => {
   const [navToggle, setNavToggle] = useState(false);
 
   const handleNavToggle = () => {
-    console.log('Toggled my boy');
+    //console.log('Toggle fired');
     setNavToggle(!navToggle);
   };
 

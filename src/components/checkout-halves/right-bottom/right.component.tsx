@@ -68,15 +68,15 @@ const RightBottom = () => {
             {/* DEVELOPERS CHECKBOX */}
             <DevCheckBox>
                 <p>
-                    Hey, your friendly developer here!
+                    Hey, your friendly developer here! 👋
                     <br/><br/>
                     Just a heads up you can use this test card:
                     <br/><br/>
-                    <em>Card Number:</em> &nbsp; &nbsp; 4242 4242 4242 4242<br/>
-                    <em>Expirey Data:</em> &nbsp; &nbsp; 12/25 <br/>
-                    <em>CVC:</em> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 424 <br/>
+                    &nbsp;&nbsp;<em>Card Number:</em> &nbsp; &nbsp; 4242 4242 4242 4242<br/>
+                    &nbsp;&nbsp;<em>Expirey Data:</em> &nbsp; &nbsp; 12/25 <br/>
+                    &nbsp;&nbsp;<em>CVC:</em> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 424 <br/>
                     <br/><br/>
-                    Furthermore, to test the Payment: 
+                    Furthermore, to test the Payment Process: 
                     <br/><br/>
                     <li><em>you do not need to complete any of the Shipping Details</em></li>
                     <li><em>you do not need to be signed in either</em></li>

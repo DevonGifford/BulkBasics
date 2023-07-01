@@ -60,7 +60,6 @@ export const DevCheckBox = styled.div`
 
     @media (max-width: 400px) {
         font-size: small;
-        color: blue;
     }
 `;
 

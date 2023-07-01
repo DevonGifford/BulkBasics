@@ -57,13 +57,13 @@ const Payment = (): JSX.Element => {
     const params = useLocation();
     const secret: any = params.state.client_secret;
     const navigate = useNavigate();
-    console.log(typeof secret);
-    console.log('this is my client_Secret in the payment-component :', secret);
+    // console.log('this is my client_Secret in the payment-component :', secret);
+    // console.log(typeof secret);
     
     
     //------------------------------------
     const toggleMenu = (): void => {
-        console.log('toggle toggleMenu:', menuVisible);
+        //console.log('toggle toggleMenu:', menuVisible);
         setMenuVisible(!menuVisible);
     };
 
@@ -105,57 +105,57 @@ const Payment = (): JSX.Element => {
                 {/* aka. TOP */}
                 <RightSide>
 
-                    <RightSideConetent>                    
+                  <RightSideConetent>                    
 
-                        <OrderSummaryContainer>
-                            <RightSideHeading>Cart Total</RightSideHeading>
-                            <p>💪 <em>Your first order's shipping cost is on us!</em> </p>
+                      <OrderSummaryContainer>
+                          <RightSideHeading>Cart Total</RightSideHeading>
+                          <p>💪 <em>Your first order's shipping cost is on us!</em> </p>
 
-                            <OrderSummarySection>
-                                <OrderSummaryText>Sub-Total:</OrderSummaryText>
-                                <OrderSummaryAmount>{cartTotal} €</OrderSummaryAmount>
-                            </OrderSummarySection>
-
-
-                            <OrderSummarySection>
-                                <OrderSummaryText>Shipping:</OrderSummaryText>
-                                <OrderSummaryAmount>0 €</OrderSummaryAmount>
-                            </OrderSummarySection>
-
-                            <DottedLine />
-
-                            <OrderSummarySection>
-                                <OrderSummaryTextTotal>TOTAL:</OrderSummaryTextTotal>
-                                <OrderSummaryAmountTotal>{cartTotal} €</OrderSummaryAmountTotal>
-                            </OrderSummarySection>
-
-                            <br/><br/>
-
-                        </OrderSummaryContainer>
-                                                         
-                        <DropdownButton 
-                            onClick={toggleMenu}
-                        >
-                            <b>{menuVisible? '▲ Hide' : '▼ Show'}</b> order summary 
-                        </DropdownButton>
-
-                    </RightSideConetent>
+                          <OrderSummarySection>
+                              <OrderSummaryText>Sub-Total:</OrderSummaryText>
+                              <OrderSummaryAmount>{cartTotal} €</OrderSummaryAmount>
+                          </OrderSummarySection>
 
 
-                    {menuVisible && (
-                        <RightBottom />
-                    )}
+                          <OrderSummarySection>
+                              <OrderSummaryText>Shipping:</OrderSummaryText>
+                              <OrderSummaryAmount>0 €</OrderSummaryAmount>
+                          </OrderSummarySection>
 
-                    {secret && 
-                        <Elements stripe={stripePromise} options={options}>
-                            <PaymentForm  />
-                        </Elements>
-                    }
-                    {/* secret={secret.client_secret} */}
+                          <DottedLine />
+
+                          <OrderSummarySection>
+                              <OrderSummaryTextTotal>TOTAL:</OrderSummaryTextTotal>
+                              <OrderSummaryAmountTotal>{cartTotal} €</OrderSummaryAmountTotal>
+                          </OrderSummarySection>
+
+                          <br/><br/>
+
+                      </OrderSummaryContainer>
+                                                        
+                      <DropdownButton 
+                          onClick={toggleMenu}
+                      >
+                          <b>{menuVisible? '▲ Hide' : '▼ Show'}</b> order summary 
+                      </DropdownButton>
+
+                  </RightSideConetent>
+
+
+                  {menuVisible && (
+                      <RightBottom />
+                  )}
+
+                  {secret && 
+                      <Elements stripe={stripePromise} options={options}>
+                          <PaymentForm  />
+                      </Elements>
+                  }
                     
                 </RightSide>
                 
             </PaymentWrapper>
+
         </ComponentWrapper>
 
         <FooterContainer>
